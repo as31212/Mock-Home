@@ -10,7 +10,7 @@ const Home : React.FC = ()=>{
                 <h2 className="text-5xl font-semibold">Find the property you love</h2>
                 <p className="text-gray-500">We help people find homes they want at an affordable price</p>
                 <div className="bg-white p-10 rounded-lg shadow flex flex-col" id="search">
-                    <div className="flex gap-4 justify-center" id="buttons">
+                    <div className="flex flex-wrap gap-4 justify-center" id="buttons">
                         <button className="shadow font-semibold px-20 py-2 rounded-lg bg-gray-300 hover:bg-black hover:text-white duration-200">Buy</button>
                         <button className="shadow font-semibold px-20 py-2 rounded-lg bg-gray-300 hover:bg-black hover:text-white duration-200">Rent</button>
                     </div>
