@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import { AgentInterface} from "../interfaces/AgentInterface";
 
 interface AgentProps{
-agentData : AgentInterface | null;
+agentData : AgentInterface[] | null;
 }
 
 const Agents : React.FC<AgentProps> = ({agentData})=>{

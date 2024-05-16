@@ -47,6 +47,18 @@ function App() {
     fetchAgents();
   },[])
 
+  // pagination logic
+  const [page,setPage] = useState<number>(1);
+  const numberPageSet = (page : number) : void => {
+    setPage(page);
+
+    
+  }
+  // debug
+  useEffect(()=>{
+    console.log(page);
+    
+  },[page])
   return (
     <>
       <Router>
@@ -56,7 +68,7 @@ function App() {
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
           <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
           <Route path="/Agents" element={<Agents agentData={agentData} />} />
-          <Route path="/Listing" element={<Listing listingData={listingData} />} />
+          <Route path="/Listing" element={<Listing page={page} numberPageSet={numberPageSet} listingData={listingData} />} />
           <Route path="/About" element={<About />} />
           Listing
         </Routes>
