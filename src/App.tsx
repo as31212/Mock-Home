@@ -14,7 +14,7 @@ function App() {
 
   // fetch listings
 
-  const [listingData,setListingData] = useState<ListingInterface | null>(null);
+  const [listingData,setListingData] = useState<ListingInterface[] | null>(null);
  
   const fetchListings = async()=>{
     try{const res = await fetch('/JsonFiles/ListingsInfo.json');
@@ -31,7 +31,7 @@ function App() {
   },[])
 
   // fetch Agents
-  const [agentData,setAgentData] = useState<AgentInterface | null>(null);
+  const [agentData,setAgentData] = useState<AgentInterface[] | null>(null);
  
   const fetchAgents = async()=>{
     try{const res = await fetch('/JsonFiles/AgentInfo.json');
