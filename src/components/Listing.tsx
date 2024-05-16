@@ -1,7 +1,11 @@
 import Footer from "./Footer";
 import { ListingInterface } from "../interfaces/ListingsInterface";
 
-const Listing : React.FC<ListingInterface | null> = ({listingData})=>{
+interface ListingProps{
+    listingData : ListingInterface;
+}
+
+const Listing : React.FC<ListingProps> = ({listingData})=>{
 
     return(
         <>
