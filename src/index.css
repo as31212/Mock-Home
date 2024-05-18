@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 1100px) {
+    #home-page-two{
+        flex-wrap: wrap;
+    }
+    .home-2-box{
+        width: 100%;
+    }
+    .page-2-large-div{
+        width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    #main-nav{
+        display: none;
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+@media (min-width: 700px) {
+    #hamburger-nav{
+        display: none;
+    }
+    #hamburger{
+        display: none;
+    }
+}

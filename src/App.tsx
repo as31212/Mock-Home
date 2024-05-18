@@ -9,6 +9,7 @@ import AgentsDetails from "./components/AgentDetails";
 import Home from "./components/Home";
 import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
 
@@ -47,6 +48,13 @@ function App() {
     fetchAgents();
   },[])
 
+  // hamburger menu toggle logic
+  const [menu,setMenu] = useState<boolean>(false);
+  const toggleMenu = ():void =>{
+    setMenu(!menu);
+  }
+
+
   // pagination logic
   const [page,setPage] = useState<number>(1);
   const numberPageSet = (page : number) : void => {
@@ -72,7 +80,8 @@ function App() {
   return (
     <>
       <Router>
-        <Nav />
+        <Nav menu={menu} toggleMenu={toggleMenu} />
+        <ScrollToTop />
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/AgentsDetails" element={<AgentsDetails />} />

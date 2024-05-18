@@ -1,13 +1,15 @@
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import { MdManageSearch } from "react-icons/md";
 import { FiEye } from "react-icons/fi";
 import { FaHouseFlag } from "react-icons/fa6";
 import { FaAward } from "react-icons/fa6";
 
+
 const Home: React.FC = () => {
   return (
     <>
-      <div id="home-page-one" className="h-screen flex flex-col lg:flex-row justify-center items-center bg-orange-50">
+      <div id="home-page-one" className="h-auto flex flex-col lg:flex-row justify-center items-center bg-orange-50">
         <div className="w-full lg:w-1/2">
           <img
             className="w-full h-auto object-cover"
@@ -62,18 +64,22 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div id="home-page-two" className="h-screen flex flex-wrap justify-center items-center gap-5">
-      <div className="min-w-96 max-w-lg bg-orange-100 rounded-2xl h-1/3 flex flex-col justify-center gap-5 p-5 ">
+      <div id="home-page-two" className=" min-h-screen flex justify-center items-center p-5 gap-5">
+      <div className="page-2-large-div h-[500px] w-1/2 bg-orange-200 rounded-2xl flex flex-col justify-center gap-5 p-5 ">
         <h2 className="font-bold text-2xl">Home acquisition and rental made simple</h2>
         <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque pariatur, cupiditate beatae enim inventore natus aut,.</p>
-        <button className="bg-black text-white w-32 py-3 rounded-lg ">Get Started</button>
+        <Link to='/Listing'>
+          <button className="bg-black text-white w-32 py-3 rounded-lg ">
+           Get Started
+          </button>
+        </Link>
       </div>
-      <div className="min-w-96 max-w-lg h-1/3 flex flex-wrap gap-2">
-    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-lg p-5 gap-3"><MdManageSearch className="mx-auto text-3xl"/><h2>Search your location</h2></div>
-    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-lg p-5 gap-3"><FaHouseFlag className="mx-auto text-3xl"/>
+      <div className="page-2-large-div min-w-96 h-[500px] w-1/3 flex flex-wrap gap-2">
+    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"><MdManageSearch className="mx-auto text-3xl text-orange-400"/><h2>Search your location</h2></div>
+    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"><FaHouseFlag className="mx-auto text-3xl text-orange-400"/>
 <h2>Get your dream house</h2></div>
-    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-lg p-5 gap-3"><FiEye className="mx-auto text-3xl"/><h2>Visit appointment</h2></div>
-    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-lg p-5 gap-3"><FaAward className="mx-auto text-3xl"/><h2>World class agents</h2></div>
+    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"><FiEye className="mx-auto text-3xl text-orange-400"/><h2>Detailed Walk-Throughs</h2></div>
+    <div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"><FaAward className="mx-auto text-3xl text-orange-400"/><h2>World class agents</h2></div>
       </div>
       </div>
       <Footer />

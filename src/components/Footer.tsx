@@ -7,7 +7,7 @@ const Footer : React.FC = ()=>{
 
     return(
         <>
-        <footer className="flex justify-around h-20 p-5 bg-black text-white text-md">
+        <footer className="flex justify-around h-auto min-h-20 p-5 bg-black text-white text-md">
         <div className='flex' id="logo">
             <Link to='/Home'>REAL-IT <FontAwesomeIcon icon={faHouse} /></Link>
         </div>
