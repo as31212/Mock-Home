@@ -51,8 +51,18 @@ function App() {
   const [page,setPage] = useState<number>(1);
   const numberPageSet = (page : number) : void => {
     setPage(page);
-
-    
+  }
+  const increasePage = ():void=>{
+    if(page === Math.floor((Number(listingData?.length) / 6))){
+      return;
+    }
+    setPage(page + 1);
+  }
+  const decreasePage = ():void=>{
+    if(page === 1){
+      return
+    }
+    setPage(page - 1);
   }
   // debug
   useEffect(()=>{
@@ -68,7 +78,7 @@ function App() {
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
           <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
           <Route path="/Agents" element={<Agents agentData={agentData} />} />
-          <Route path="/Listing" element={<Listing page={page} numberPageSet={numberPageSet} listingData={listingData} />} />
+          <Route path="/Listing" element={<Listing decreasePage={decreasePage} increasePage={increasePage} page={page} numberPageSet={numberPageSet} listingData={listingData} />} />
           <Route path="/About" element={<About />} />
           Listing
         </Routes>
