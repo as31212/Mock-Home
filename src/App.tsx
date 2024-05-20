@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {BrowserRouter as Router, Route, Routes, Link, useLocation } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes, Link, useLocation, useActionData } from "react-router-dom";
 import Nav from "./components/Nav";
 import Listing from "./components/Listing";
 import Agents from "./components/Agents";
@@ -77,13 +77,25 @@ function App() {
     console.log(page);
     
   },[page])
+
+
+  //Buy and rent toggle on home page false === buy && true === rent
+  const [rentBuy,setRentBuy] = useState<boolean>(false);
+  const falseRentBuy = ():void =>{
+    setRentBuy(false);
+  }
+  const trueRentBuy = ():void =>{
+    setRentBuy(true);
+  } 
+
+
   return (
     <>
       <Router>
         <Nav menu={menu} toggleMenu={toggleMenu} />
         <ScrollToTop />
         <Routes>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/Home" element={<Home rentBuy={rentBuy} falseRentBuy={falseRentBuy} trueRentBuy={trueRentBuy} />} />
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
           <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
           <Route path="/Agents" element={<Agents agentData={agentData} />} />

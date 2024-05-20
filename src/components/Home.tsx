@@ -8,8 +8,15 @@ import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { MdAddHome } from "react-icons/md";
 import { FaFireAlt } from "react-icons/fa";
 import { LuSmilePlus } from "react-icons/lu";
+import { FaRegCheckCircle } from "react-icons/fa";
 
-const Home: React.FC = () => {
+interface HomeInterface{
+  rentBuy: boolean;
+  falseRentBuy: ()=> void;
+  trueRentBuy: ()=> void;
+}
+
+const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => {
   return (
     <>
       <div
@@ -38,10 +45,10 @@ const Home: React.FC = () => {
             id="search"
           >
             <div className="flex flex-wrap gap-4 justify-center" id="buttons">
-              <button className="w-5/12 shadow font-semibold px-5 py-3 rounded-lg bg-gray-300 hover:bg-black hover:text-white duration-300">
+              <button onClick={()=>falseRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${rentBuy ? 'bg-gray-300' : 'bg-black text-white'}`}>
                 Buy
               </button>
-              <button className="w-5/12 shadow font-semibold px-5 py-3 rounded-lg bg-gray-300 hover:bg-black hover:text-white duration-300">
+              <button onClick={()=>trueRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${rentBuy ? 'bg-black text-white' : 'bg-gray-300'}`}>
                 Rent
               </button>
             </div>
@@ -89,7 +96,7 @@ const Home: React.FC = () => {
             pariatur, cupiditate beatae enim inventore natus aut,.
           </p>
           <Link to="/Listing">
-            <button className="bg-black text-white w-32 py-3 rounded-lg ">
+            <button className="bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300 ">
               Get Started
             </button>
           </Link>
@@ -167,6 +174,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* page 4 */}
       <div id="home-page-four" className="flex flex-wrap p-5 justify-center items-center min-h-screen h-auto bg-orange-50">
         <div className="text-page-4 w-[45vw] flex flex-col gap-5 justify-center ">
           <h2 className="text-4xl font-bold">Find Agents That Work For You</h2>
@@ -176,38 +185,43 @@ const Home: React.FC = () => {
             quis deleniti autem incidunt facere aut! Soluta, unde quae?
           </p>
           <Link to="/Agents">
-            <button className="bg-black text-white w-32 py-3 rounded-lg ">
+            <button className="bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
               Get Started
             </button>
           </Link>
         </div>
-        <div id="img-div-home-page-4" className="w-auto min-w-96 flex flex-col flex-wrap gap-3 h-[500px]">
-          <img className="w-80 special-image-home-page-4 h-[180px] rounded-lg" src="https://www.legalzoom.com/sites/lz.com/files/inline-images/man-woman-look-over-documents-with-agent.jpg" alt="agent talking to clients" />
-          <img className="w-80 images-home-page-4 h-[300px] rounded-lg" src="https://www.thestaffingstream.com/wp-content/uploads/2015/07/ThinkstockPhotos-465328301.jpg" alt="agent handing over keys" />
+        <div className="w-auto min-w-96 flex flex-col flex-wrap gap-3 h-[500px]">
+          <img className="w-80 images-home-page-4 h-[180px] rounded-lg" src="https://www.legalzoom.com/sites/lz.com/files/inline-images/man-woman-look-over-documents-with-agent.jpg" alt="agent talking to clients" />
+          <img id="img-div-home-page-4" className="w-80 h-[300px] rounded-lg" src="https://www.thestaffingstream.com/wp-content/uploads/2015/07/ThinkstockPhotos-465328301.jpg" alt="agent handing over keys" />
           <img className="w-80 images-home-page-4 h-[300px] rounded-lg" src="https://lirp.cdn-website.com/28156074/dms3rep/multi/opt/01+-+True+Homes+-+Huntley+-+R02-3x2-1920w.jpg" alt="home" />
           <img className="w-80 images-home-page-4 h-[180px] rounded-lg" src="https://www.thespruce.com/thmb/S1aye-s9z6VRA58-V8oRLSQwKCc=/5100x0/filters:no_upscale():max_bytes(150000):strip_icc()/SPR-luxury-kitchens-5211364-hero-688d716970544978bc12abdf17ce6f83.jpg" alt="kitchen" />
         </div>
       </div>
+{/* page 5 */}
+      <div id="home-page-five" className="flex gap-10 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto pb-96">
+  <div className="text-page-5 w-full lg:w-[45vw] flex flex-col gap-5 justify-center">
+    <h2 className="text-4xl font-bold">Top rated online realty service</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore est
+      inventore tempore quos cum ipsa modi nam ad numquam cumque adipisci,
+      quis deleniti autem incidunt facere aut! Soluta, unde quae?
+    </p>
+    <p className="flex gap-3 font-bold"><FaRegCheckCircle  className=" relative top-[2px] inline text-xl" /> Find excellent deals </p>
+    <p className="flex gap-3 font-bold"><FaRegCheckCircle  className=" relative top-[2px] inline text-xl" /> Friendly host & Fast support </p>
+    <p className="flex gap-3 font-bold"><FaRegCheckCircle  className=" relative top-[2px] inline text-xl" /> Secure payment system </p>
+    <Link to="/Agents">
+      <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
+        Get Started
+      </button>
+    </Link>
+  </div>
+  <div className="relative">
+    <img className="relative top-0 rounded-lg max-w-[900px] min-w-[300px] w-[70%] mx-auto" src="https://images.squarespace-cdn.com/content/v1/58420910f5e23112c08b8068/1486010598453-1F2QJGVXDTZLGMI8IM1V/1423PalomaAve_5492.jpg?format=2500w" alt="home-page-4" />
+    <div id="colored-shadow" className="bg-orange-400 max-w-[900px] min-w-[300px]  w-[70%] h-[100%] absolute top-[12%] left-[20%] z-[-1] rounded-lg mx-auto"></div>
+  </div>
+</div>
 
-      <div id="home-page-five" className="flex gap-5 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto">
-      <div className="text-page-5 w-[45vw] flex flex-col gap-5 justify-center ">
-          <h2 className="text-4xl font-bold">Top rated online realty service</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore est
-            inventore tempore quos cum ipsa modi nam ad numquam cumque adipisci,
-            quis deleniti autem incidunt facere aut! Soluta, unde quae?
-          </p>
-          <Link to="/Agents">
-            <button className="bg-black text-white w-32 py-3 rounded-lg ">
-              Get Started
-            </button>
-          </Link>
-        </div>
-        <div className="">
-          <img className=" rounded-lg w-auto  max-w-[800px]" src="https://images.squarespace-cdn.com/content/v1/58420910f5e23112c08b8068/1486010598453-1F2QJGVXDTZLGMI8IM1V/1423PalomaAve_5492.jpg?format=2500w" alt="home-page-4" />
-          <div id="background-img-page-4" className=""></div>
-        </div>
-      </div>
+
 
       <Footer />
     </>
