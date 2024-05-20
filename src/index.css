@@ -59,3 +59,51 @@
         left: 0px;
     }
 }
+
+/* nav menu to x stlyes */
+/* HamburgerMenu.css */
+/* HamburgerMenu.css */
+#hamburger {
+    cursor: pointer;
+  }
+  
+  .line {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  #line-1 {
+    transform-origin: top left;
+  }
+  
+  #line-3 {
+    transform-origin: bottom left;
+  }
+  
+  #hamburger.open #line-1 {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+  
+  #hamburger.open #line-2 {
+    opacity: 0;
+  }
+  
+  #hamburger.open #line-3 {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+  
+  #hamburger-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+  
+  #hamburger-nav.max-h-96 {
+    max-height: 400px; /* Adjust the value as needed to fit your content */
+  }
+  
+  .nav-content {
+    /* Add styles for your nav contents here */
+    display: block;
+  }
+  
+  

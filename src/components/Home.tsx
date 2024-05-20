@@ -96,7 +96,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
             pariatur, cupiditate beatae enim inventore natus aut,.
           </p>
           <Link to="/Listing">
-            <button className="bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300 ">
+            <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300 ">
               Get Started
             </button>
           </Link>
@@ -154,7 +154,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
           <div className="circle-icon-wrap bg-white rounded-full shadow-2xl p-5 w-[60px] h-[60px] flex justify-center items-center">
             <FaFireAlt className=" text-orange-400 text-7xl scale-[150%]" />
           </div>
-          <h2 className="font-bold text-4xl">700</h2>
+          <h2 className="font-bold text-4xl">700+</h2>
           <div className="text-wrapper text-center">
             <p className="text-[#4C788D] font-semibold text-2xl">Daily</p>
             <p className="text-[#4C788D] font-semibold text-2xl">
@@ -185,7 +185,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
             quis deleniti autem incidunt facere aut! Soluta, unde quae?
           </p>
           <Link to="/Agents">
-            <button className="bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
+            <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
               Get Started
             </button>
           </Link>
@@ -198,7 +198,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
         </div>
       </div>
 {/* page 5 */}
-      <div id="home-page-five" className="flex gap-10 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto pb-96">
+      <div id="home-page-five" className="flex gap-10 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto pb-10">
   <div className="text-page-5 w-full lg:w-[45vw] flex flex-col gap-5 justify-center">
     <h2 className="text-4xl font-bold">Top rated online realty service</h2>
     <p>

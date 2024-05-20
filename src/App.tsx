@@ -61,7 +61,7 @@ function App() {
     setPage(page);
   }
   const increasePage = ():void=>{
-    if(page === Math.floor((Number(listingData?.length) / 6))){
+    if(page === Math.floor((Number(listingData?.length) / 8))){
       return;
     }
     setPage(page + 1);
