@@ -73,7 +73,7 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu }) => {
         </ul>
         <div
           onClick={toggleMenu}
-          className={`flex flex-col gap-2 ${menu ? "open" : ""}`}
+          className={`flex flex-col gap-[8px] ${menu ? "open" : ""}`}
           id="hamburger"
         >
           <div className="bg-black w-[19px] h-[1px] line" id="line-1"></div>

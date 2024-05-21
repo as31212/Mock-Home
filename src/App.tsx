@@ -88,6 +88,16 @@ function App() {
     setRentBuy(true);
   } 
 
+  // search algo logic
+  const [searchAddress,setSearchAddress] = useState<string>('');
+  const changeSearchAddress = (e:React.ChangeEvent<HTMLInputElement>):void =>{
+    
+    setSearchAddress(e.target.value);
+  }
+  useEffect(()=>console.log(searchAddress),[searchAddress]
+  )
+
+
 
   return (
     <>
@@ -99,7 +109,7 @@ function App() {
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
           <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
           <Route path="/Agents" element={<Agents agentData={agentData} />} />
-          <Route path="/Listing" element={<Listing decreasePage={decreasePage} increasePage={increasePage} page={page} numberPageSet={numberPageSet} listingData={listingData} />} />
+          <Route path="/Listing" element={<Listing changeSearchAddress={changeSearchAddress} searchAddress={searchAddress} decreasePage={decreasePage} increasePage={increasePage} page={page} numberPageSet={numberPageSet} listingData={listingData} />} />
           <Route path="/About" element={<About />} />
           Listing
         </Routes>

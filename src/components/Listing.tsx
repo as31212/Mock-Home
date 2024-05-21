@@ -10,6 +10,8 @@ import { IoIosPin } from "react-icons/io";
 // I ran into a long ts error due to the fact that i didn't add "| null" to my listingData annotation within the prop interface
 
 interface ListingProps {
+  changeSearchAddress: (e:React.ChangeEvent<HTMLInputElement>)=> void;
+  searchAddress: string;
   increasePage: () => void;
   decreasePage: () => void;
   page: number;
@@ -18,6 +20,8 @@ interface ListingProps {
 }
 
 const Listing: React.FC<ListingProps> = ({
+  searchAddress,
+  changeSearchAddress,
   page,
   numberPageSet,
   listingData,
@@ -108,6 +112,8 @@ const Listing: React.FC<ListingProps> = ({
       <div className="p-10 bg-orange-50">
         <div id="search" className="flex flex-wrap justify-center gap-5">
           <input
+            value={searchAddress}
+            onChange={()=>changeSearchAddress(event)}
             className="py-3 pl-2 pr-8 border-2 text-xl rounded-xl"
             type="text"
             placeholder="Enter address"
