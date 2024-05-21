@@ -41,9 +41,14 @@
         width: 80%;
         height: auto;
         margin: 0 auto;
+        border-radius: 20px;
     }
     .images-home-page-4{
         display: none;
+    }
+    .get-started-btn{
+      border-radius: 40px;
+      width: 100%;
     }
 }
 @media (min-width: 700px) {

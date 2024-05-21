@@ -116,13 +116,14 @@ const Listing: React.FC<ListingProps> = ({
             onChange={()=>changeSearchAddress(event)}
             className="py-3 pl-2 pr-8 border-2 text-xl rounded-xl"
             type="text"
-            placeholder="Enter address"
+            placeholder="State/City/Street"
           />
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
             <option value="Buy">Buy</option>
             <option value="Rent">Rent</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
+            <option disabled selected value="price-range">Price Range</option>
             <option value="0-100,000">less-$100,000</option>
             <option value="100,000-200,000">$100,000-$200,000</option>
             <option value="200,000-300,000">$200,000-$300,000</option>
@@ -134,6 +135,36 @@ const Listing: React.FC<ListingProps> = ({
             <option value="800,000-900,000">$800,000-$900,000</option>
             <option value="900,000-1,000,000">$900,000-$1,000,000</option>
             <option value="1,000,000-more">$1,000,000+</option>
+          </select>
+          <select className="py-3 px-2 border-2 text-xl rounded-xl">
+          <option disabled selected value="type">type</option>
+            <option value="family">family</option>
+            <option value="single-family">single family</option>
+            <option value="apartment">apartment</option>
+          </select>
+          <select className="py-3 px-2 border-2 text-xl rounded-xl">
+          <option disabled selected value="type">bedrooms</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <select className="py-3 px-2 border-2 text-xl rounded-xl">
+          <option disabled selected value="type">bathrooms</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <select className="py-3 px-2 border-2 text-xl rounded-xl">
+          <option disabled selected value="type">sqft</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
           <button className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out">
             Search

@@ -96,7 +96,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
             pariatur, cupiditate beatae enim inventore natus aut,.
           </p>
           <Link to="/Listing">
-            <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300 ">
+            <button className="get-started-btn mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300 ">
               Get Started
             </button>
           </Link>
@@ -185,7 +185,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
             quis deleniti autem incidunt facere aut! Soluta, unde quae?
           </p>
           <Link to="/Agents">
-            <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
+            <button className="get-started-btn mt-16 mb-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
               Get Started
             </button>
           </Link>
@@ -210,7 +210,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
     <p className="flex gap-3 font-bold"><FaRegCheckCircle  className=" relative top-[2px] inline text-xl" /> Friendly host & Fast support </p>
     <p className="flex gap-3 font-bold"><FaRegCheckCircle  className=" relative top-[2px] inline text-xl" /> Secure payment system </p>
     <Link to="/Agents">
-      <button className="mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
+      <button className="get-started-btn mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
         Get Started
       </button>
     </Link>
