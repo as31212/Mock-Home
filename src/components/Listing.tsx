@@ -5,6 +5,7 @@ import { FaBed } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
+import { useEffect } from "react";
 
 // make sure to create an interface for props and make sure that if the data mutates in type, then you must accommodate for that by adding the other possible types
 // I ran into a long ts error due to the fact that i didn't add "| null" to my listingData annotation within the prop interface
@@ -17,6 +18,9 @@ interface ListingProps {
   page: number;
   numberPageSet: (page: number) => void;
   listingData: ListingInterface[] | null;
+  changeSort: (e:React.ChangeEvent<HTMLOptionElement>)=> void;
+  sort: string;
+  setListingData : (data: ListingInterface[] | null)=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -27,7 +31,50 @@ const Listing: React.FC<ListingProps> = ({
   listingData,
   increasePage,
   decreasePage,
+  sort,
+  changeSort,
+  setListingData
 }) => {
+  // this will determine how listing data will be sorted, I will then pass the sorted listing data to the listing template
+
+  
+
+  useEffect(()=>{
+    let sortedData = listingData;
+    switch (sort) {
+      case 'price-asc':
+        sortedData = [...listingData].sort((a, b) => a.price - b.price);
+        break;
+      case 'price-desc':
+        sortedData = [...listingData].sort((a, b) => b.price - a.price);
+        break;
+      case 'bedrooms-asc':
+        sortedData = [...listingData].sort((a, b) => a.bedrooms - b.bedrooms);
+        break;
+      case 'bedrooms-desc':
+        sortedData = [...listingData].sort((a, b) => b.bedrooms - a.bedrooms);
+        break;
+      case 'bathrooms-asc':
+        sortedData = [...listingData].sort((a, b) => a.bathrooms - b.bathrooms);
+        break;
+      case 'bathrooms-desc':
+        sortedData = [...listingData].sort((a, b) => b.bathrooms - a.bathrooms);
+        break;
+      case 'sqft-asc':
+        sortedData = [...listingData].sort((a, b) => a.square_footage - b.square_footage);
+        break;
+      case 'sqft-desc':
+        sortedData = [...listingData].sort((a, b) => b.square_footage - a.square_footage);
+        break;
+      default:
+        sortedData = listingData;
+    }
+    setListingData(sortedData);
+  },[sort])
+
+  
+  // look up
+
   const listingTemplate = listingData ? (
     [...listingData].slice(page * 8 - 8, page * 8).map((el) => {
       return (
@@ -152,6 +199,7 @@ const Listing: React.FC<ListingProps> = ({
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
           <option disabled selected value="type">bathrooms</option>
+            <option value="any">any</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -165,6 +213,22 @@ const Listing: React.FC<ListingProps> = ({
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
+          </select>
+          <select
+            onChange={()=>changeSort(event)}
+            className="py-3 px-2 border-2 text-xl rounded-xl"
+          >
+            <option disabled selected value="">
+              Sort
+            </option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="bedrooms-asc">Bedrooms: Low to High</option>
+            <option value="bedrooms-desc">Bedrooms: High to Low</option>
+            <option value="bathrooms-asc">Bathrooms: Low to High</option>
+            <option value="bathrooms-desc">Bathrooms: High to Low</option>
+            <option value="sqft-asc">Square Footage: Low to High</option>
+            <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
           <button className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out">
             Search
@@ -189,6 +253,7 @@ const Listing: React.FC<ListingProps> = ({
               onClick={() => increasePage()}
             >{">>"}</button>
           </a>
+          <button>{listingData ? Math.floor(listingData.length / 8) : ''}</button>
         </div>
       </div>
       <Footer />

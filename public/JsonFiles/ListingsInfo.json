@@ -13,7 +13,7 @@
     "description": "A beautiful 3-bedroom home in a quiet neighborhood.",
     "apt_type": "family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 2,
@@ -29,7 +29,7 @@
     "description": "Spacious 4-bedroom house with modern amenities.",
     "apt_type": "single family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 3,
@@ -45,7 +45,7 @@
     "description": "Luxurious 5-bedroom home in a prime location.",
     "apt_type": "family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 4,
@@ -61,7 +61,7 @@
     "description": "Modern 3-bedroom condo with stunning city views.",
     "apt_type": "apartment",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 5,
@@ -77,7 +77,7 @@
     "description": "Charming 4-bedroom home with a spacious backyard.",
     "apt_type": "single family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 6,
@@ -93,7 +93,7 @@
     "description": "Cozy 3-bedroom home with a modern kitchen.",
     "apt_type": "family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "description": "Beautiful 3-bedroom home in a great neighborhood.",
     "apt_type": "single family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 8,
@@ -125,7 +125,7 @@
     "description": "Spacious 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 9,
@@ -141,7 +141,7 @@
     "description": "Modern 4-bedroom home with an open floor plan.",
     "apt_type": "apartment",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 10,
@@ -157,7 +157,7 @@
     "description": "Charming 3-bedroom home with updated appliances.",
     "apt_type": "single family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 11,
@@ -173,7 +173,7 @@
     "description": "Beautiful 4-bedroom home with a swimming pool.",
     "apt_type": "family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 12,
@@ -189,7 +189,7 @@
     "description": "Luxurious 5-bedroom home with a large garden.",
     "apt_type": "single family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 13,
@@ -205,7 +205,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 14,
@@ -221,7 +221,7 @@
     "description": "Beautiful 4-bedroom home with mountain views.",
     "apt_type": "family",
     "agent_name": "Robert Miller",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 15,
@@ -237,7 +237,7 @@
     "description": "Cozy 3-bedroom home with a modern kitchen.",
     "apt_type": "single family",
     "agent_name": "Jessica Martinez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 16,
@@ -253,7 +253,7 @@
     "description": "Lovely 3-bedroom home with a swimming pool.",
     "apt_type": "apartment",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 17,
@@ -269,7 +269,7 @@
     "description": "Charming 3-bedroom home in a quiet neighborhood.",
     "apt_type": "family",
     "agent_name": "George Martinez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 18,
@@ -285,7 +285,7 @@
     "description": "Spacious 4-bedroom home with a large backyard.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 19,
@@ -301,7 +301,7 @@
     "description": "Luxurious 5-bedroom home with stunning city views.",
     "apt_type": "apartment",
     "agent_name": "Jane Doe",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 20,
@@ -317,7 +317,7 @@
     "description": "Modern 4-bedroom home with a beautiful garden.",
     "apt_type": "family",
     "agent_name": "Chris Lee",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 21,
@@ -333,7 +333,7 @@
     "description": "Beautiful 4-bedroom home with a large deck.",
     "apt_type": "single family",
     "agent_name": "Laura Garcia",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 22,
@@ -349,7 +349,7 @@
     "description": "Charming 3-bedroom home with modern finishes.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 23,
@@ -365,7 +365,7 @@
     "description": "Spacious 4-bedroom home with a pool.",
     "apt_type": "family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 24,
@@ -381,7 +381,7 @@
     "description": "Luxurious 5-bedroom home in a prime location.",
     "apt_type": "single family",
     "agent_name": "Karen Thomas",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 25,
@@ -397,7 +397,7 @@
     "description": "Expansive 6-bedroom home with panoramic views.",
     "apt_type": "apartment",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 26,
@@ -413,7 +413,7 @@
     "description": "Stunning 5-bedroom home near the beach.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 27,
@@ -429,7 +429,7 @@
     "description": "Beautiful 4-bedroom home with a large backyard.",
     "apt_type": "single family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 28,
@@ -445,7 +445,7 @@
     "description": "Charming 4-bedroom home with a cozy fireplace.",
     "apt_type": "apartment",
     "agent_name": "Robert Miller",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 29,
@@ -461,7 +461,7 @@
     "description": "Lovely 3-bedroom home with a large pool.",
     "apt_type": "family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 30,
@@ -477,7 +477,7 @@
     "description": "Beautiful 4-bedroom home with a mountain view.",
     "apt_type": "single family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 31,
@@ -493,7 +493,7 @@
     "description": "Spacious 5-bedroom home with a large garden.",
     "apt_type": "apartment",
     "agent_name": "Laura Garcia",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 32,
@@ -509,7 +509,7 @@
     "description": "Luxurious 5-bedroom home with a rooftop deck.",
     "apt_type": "family",
     "agent_name": "Chris Lee",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 33,
@@ -525,7 +525,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 34,
@@ -541,7 +541,7 @@
     "description": "Charming 4-bedroom home with a spacious patio.",
     "apt_type": "apartment",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 35,
@@ -557,7 +557,7 @@
     "description": "Spacious 4-bedroom home with a large yard.",
     "apt_type": "family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 36,
@@ -573,7 +573,7 @@
     "description": "Beautiful 4-bedroom home with a modern kitchen.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 37,
@@ -589,7 +589,7 @@
     "description": "Luxurious 5-bedroom home with city views.",
     "apt_type": "apartment",
     "agent_name": "Jane Doe",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 38,
@@ -605,7 +605,7 @@
     "description": "Luxurious 5-bedroom home with a large yard.",
     "apt_type": "family",
     "agent_name": "Karen Thomas",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 39,
@@ -621,7 +621,7 @@
     "description": "Spacious 4-bedroom home with modern finishes.",
     "apt_type": "single family",
     "agent_name": "Lisa Jackson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 40,
@@ -637,7 +637,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 41,
@@ -653,7 +653,7 @@
     "description": "Spacious 4-bedroom home with a pool.",
     "apt_type": "family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 42,
@@ -669,7 +669,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "single family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 43,
@@ -685,7 +685,7 @@
     "description": "Expansive 6-bedroom home with panoramic views.",
     "apt_type": "apartment",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 44,
@@ -701,7 +701,7 @@
     "description": "Luxurious 5-bedroom home with a large garden.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 45,
@@ -717,7 +717,7 @@
     "description": "Stunning 5-bedroom home near the beach.",
     "apt_type": "single family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 46,
@@ -733,7 +733,7 @@
     "description": "Beautiful 4-bedroom home with a large backyard.",
     "apt_type": "apartment",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 47,
@@ -749,7 +749,7 @@
     "description": "Beautiful 4-bedroom home with mountain views.",
     "apt_type": "family",
     "agent_name": "Robert Miller",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 48,
@@ -765,7 +765,7 @@
     "description": "Lovely 3-bedroom home with a swimming pool.",
     "apt_type": "single family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 49,
@@ -781,7 +781,7 @@
     "description": "Cozy 3-bedroom home with a modern kitchen.",
     "apt_type": "apartment",
     "agent_name": "Jessica Martinez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 50,
@@ -797,7 +797,7 @@
     "description": "Charming 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 51,
@@ -813,7 +813,7 @@
     "description": "Cozy 3-bedroom home with modern amenities.",
     "apt_type": "single family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 52,
@@ -829,7 +829,7 @@
     "description": "Spacious 5-bedroom home with a large garden.",
     "apt_type": "apartment",
     "agent_name": "Laura Garcia",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 53,
@@ -845,7 +845,7 @@
     "description": "Modern 4-bedroom home with a beautiful garden.",
     "apt_type": "family",
     "agent_name": "Chris Lee",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 54,
@@ -861,7 +861,7 @@
     "description": "Beautiful 4-bedroom home with a mountain view.",
     "apt_type": "single family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 55,
@@ -877,7 +877,7 @@
     "description": "Charming 4-bedroom home with a spacious patio.",
     "apt_type": "apartment",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 56,
@@ -893,7 +893,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 57,
@@ -909,7 +909,7 @@
     "description": "Luxurious 5-bedroom home with city views.",
     "apt_type": "single family",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 58,
@@ -925,7 +925,7 @@
     "description": "Luxurious 5-bedroom home with a rooftop deck.",
     "apt_type": "apartment",
     "agent_name": "Lisa Jackson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 59,
@@ -941,7 +941,7 @@
     "description": "Luxurious 5-bedroom home with stunning city views.",
     "apt_type": "family",
     "agent_name": "Jane Doe",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 60,
@@ -957,7 +957,7 @@
     "description": "Luxurious 5-bedroom home in a prime location.",
     "apt_type": "single family",
     "agent_name": "Karen Thomas",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 61,
@@ -973,7 +973,7 @@
     "description": "Spacious 4-bedroom home with a pool.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 62,
@@ -989,7 +989,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 63,
@@ -1005,7 +1005,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "single family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 64,
@@ -1021,7 +1021,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 65,
@@ -1037,7 +1037,7 @@
     "description": "Luxurious 5-bedroom home with a large garden.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 66,
@@ -1053,7 +1053,7 @@
     "description": "Stunning 5-bedroom home near the beach.",
     "apt_type": "single family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 67,
@@ -1069,7 +1069,7 @@
     "description": "Expansive 6-bedroom home with panoramic views.",
     "apt_type": "apartment",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 68,
@@ -1085,7 +1085,7 @@
     "description": "Beautiful 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 69,
@@ -1101,7 +1101,7 @@
     "description": "Lovely 3-bedroom home with a swimming pool.",
     "apt_type": "single family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 70,
@@ -1117,7 +1117,7 @@
     "description": "Beautiful 4-bedroom home with a mountain view.",
     "apt_type": "apartment",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 71,
@@ -1133,7 +1133,7 @@
     "description": "Charming 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 72,
@@ -1149,7 +1149,7 @@
     "description": "Cozy 3-bedroom home with modern amenities.",
     "apt_type": "single family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 73,
@@ -1165,7 +1165,7 @@
     "description": "Spacious 5-bedroom home with a large garden.",
     "apt_type": "apartment",
     "agent_name": "Laura Garcia",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 74,
@@ -1181,7 +1181,7 @@
     "description": "Modern 4-bedroom home with a beautiful garden.",
     "apt_type": "family",
     "agent_name": "Chris Lee",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 75,
@@ -1197,7 +1197,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 76,
@@ -1213,7 +1213,7 @@
     "description": "Charming 4-bedroom home with a spacious patio.",
     "apt_type": "apartment",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 77,
@@ -1229,7 +1229,7 @@
     "description": "Spacious 4-bedroom home with a large yard.",
     "apt_type": "family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 78,
@@ -1245,7 +1245,7 @@
     "description": "Beautiful 4-bedroom home with a modern kitchen.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 79,
@@ -1261,7 +1261,7 @@
     "description": "Luxurious 5-bedroom home with city views.",
     "apt_type": "apartment",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 80,
@@ -1277,7 +1277,7 @@
     "description": "Luxurious 5-bedroom home with stunning city views.",
     "apt_type": "family",
     "agent_name": "Jane Doe",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 81,
@@ -1293,7 +1293,7 @@
     "description": "Luxurious 5-bedroom home in a prime location.",
     "apt_type": "single family",
     "agent_name": "Karen Thomas",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 82,
@@ -1309,7 +1309,7 @@
     "description": "Spacious 4-bedroom home with modern finishes.",
     "apt_type": "apartment",
     "agent_name": "Lisa Jackson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 83,
@@ -1325,7 +1325,7 @@
     "description": "Spacious 4-bedroom home with a pool.",
     "apt_type": "family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 84,
@@ -1341,7 +1341,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "single family",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 85,
@@ -1357,7 +1357,7 @@
     "description": "Modern 4-bedroom home with a spacious living area.",
     "apt_type": "apartment",
     "agent_name": "Michael Brown",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 86,
@@ -1373,7 +1373,7 @@
     "description": "Stunning 5-bedroom home near the beach.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 87,
@@ -1389,7 +1389,7 @@
     "description": "Luxurious 5-bedroom home with a large garden.",
     "apt_type": "single family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 88,
@@ -1405,7 +1405,7 @@
     "description": "Expansive 6-bedroom home with panoramic views.",
     "apt_type": "apartment",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 89,
@@ -1421,7 +1421,7 @@
     "description": "Beautiful 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "John Smith",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 90,
@@ -1437,7 +1437,7 @@
     "description": "Lovely 3-bedroom home with a swimming pool.",
     "apt_type": "single family",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 91,
@@ -1453,7 +1453,7 @@
     "description": "Beautiful 4-bedroom home with a mountain view.",
     "apt_type": "apartment",
     "agent_name": "Sarah Johnson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 92,
@@ -1469,7 +1469,7 @@
     "description": "Charming 4-bedroom home with a large backyard.",
     "apt_type": "family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 93,
@@ -1485,7 +1485,7 @@
     "description": "Cozy 3-bedroom home with modern amenities.",
     "apt_type": "single family",
     "agent_name": "Steven Rodriguez",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 94,
@@ -1501,7 +1501,7 @@
     "description": "Spacious 5-bedroom home with a large garden.",
     "apt_type": "apartment",
     "agent_name": "Laura Garcia",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 95,
@@ -1517,7 +1517,7 @@
     "description": "Modern 4-bedroom home with a beautiful garden.",
     "apt_type": "family",
     "agent_name": "Chris Lee",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 96,
@@ -1533,7 +1533,7 @@
     "description": "Beautiful 4-bedroom home with a private pool.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 97,
@@ -1549,7 +1549,7 @@
     "description": "Charming 4-bedroom home with a spacious patio.",
     "apt_type": "apartment",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 98,
@@ -1565,7 +1565,7 @@
     "description": "Spacious 4-bedroom home with a large yard.",
     "apt_type": "family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 99,
@@ -1581,7 +1581,7 @@
     "description": "Beautiful 4-bedroom home with a modern kitchen.",
     "apt_type": "single family",
     "agent_name": "Emily Davis",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
   },
   {
     "id": 100,
@@ -1597,6 +1597,1608 @@
     "description": "Luxurious 5-bedroom home with city views.",
     "apt_type": "apartment",
     "agent_name": "David Wilson",
-    "buy_or_sell":"Buy"
+    "buy_or_rent":"Buy"
+  }
+  ,
+  {
+    "id": 101,
+    "address": "2387 Willow Lane",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 3800,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom apartment in the heart of the city.",
+    "apt_type": "apartment",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 102,
+    "address": "7849 Oak Street",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 2600,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1200,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 2-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "Sara Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 103,
+    "address": "998 Pine Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4500,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2500,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom family home with a large backyard.",
+    "apt_type": "family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 104,
+    "address": "1563 Maple Avenue",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom apartment with city views.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 105,
+    "address": "4692 Birch Road",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 106,
+    "address": "3445 Cedar Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 2900,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1500,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 2-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 107,
+    "address": "2817 Elm Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 108,
+    "address": "5290 Redwood Drive",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2100,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Stunning 4-bedroom single family home with plenty of space.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 109,
+    "address": "1023 Ash Lane",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom family home in a sought-after location.",
+    "apt_type": "family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 110,
+    "address": "6741 Maple Street",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 3900,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2200,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom apartment with high-end finishes.",
+    "apt_type": "apartment",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 111,
+    "address": "1548 Maple Drive",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 112,
+    "address": "2319 Pine Street",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89101",
+    "price": 3100,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 2-bedroom apartment with a city view.",
+    "apt_type": "apartment",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 113,
+    "address": "5417 Cedar Avenue",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97201",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1900,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home with a lovely garden.",
+    "apt_type": "family",
+    "agent_name": "Liam Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 114,
+    "address": "998 Pine Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "price": 5000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 4-bedroom apartment in the heart of the city.",
+    "apt_type": "apartment",
+    "agent_name": "Richard Perez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 115,
+    "address": "6742 Oak Lane",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77001",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "Linda Nelson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 116,
+    "address": "9123 Birch Road",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 3-bedroom family home with a garden.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 117,
+    "address": "1567 Maple Avenue",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02108",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom apartment in a prime location.",
+    "apt_type": "apartment",
+    "agent_name": "Karen Thomas",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 118,
+    "address": "8541 Pine Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 119,
+    "address": "4512 Cedar Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 120,
+    "address": "3210 Elm Drive",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3900,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2200,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 121,
+    "address": "7845 Maple Street",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 3-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 122,
+    "address": "5692 Oak Lane",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home with a lovely garden.",
+    "apt_type": "family",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 123,
+    "address": "8741 Birch Road",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 124,
+    "address": "4512 Pine Street",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom family home in a sought-after location.",
+    "apt_type": "family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 125,
+    "address": "6952 Elm Lane",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom single family home with a pool.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 126,
+    "address": "3214 Oak Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 4500,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom apartment in a prime location.",
+    "apt_type": "apartment",
+    "agent_name": "William Adams",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 127,
+    "address": "5487 Maple Drive",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 128,
+    "address": "2314 Pine Avenue",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 4-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 129,
+    "address": "7849 Cedar Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 130,
+    "address": "1548 Birch Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 131,
+    "address": "3490 Pine Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3800,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 132,
+    "address": "8741 Maple Avenue",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom apartment in a desirable area.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 133,
+    "address": "6952 Cedar Lane",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom family home with modern amenities.",
+    "apt_type": "family",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 134,
+    "address": "4512 Maple Drive",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 135,
+    "address": "7845 Elm Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 136,
+    "address": "9841 Pine Avenue",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 137,
+    "address": "4512 Cedar Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 5000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom single family home with high-end finishes.",
+    "apt_type": "single family",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 138,
+    "address": "3214 Birch Lane",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 139,
+    "address": "2314 Pine Avenue",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 4-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 140,
+    "address": "7849 Cedar Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 141,
+    "address": "3241 Maple Drive",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 142,
+    "address": "8971 Oak Avenue",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97201",
+    "price": 2800,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 2-bedroom apartment in a great location.",
+    "apt_type": "apartment",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 143,
+    "address": "543 Maple Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 4100,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2100,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom apartment with a city view.",
+    "apt_type": "apartment",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 144,
+    "address": "998 Oak Lane",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 2800,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 2-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  }
+  ,
+  {
+    "id": 145,
+    "address": "251 Pine Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4600,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2500,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom family home with a large backyard.",
+    "apt_type": "family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 146,
+    "address": "123 Maple Avenue",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom apartment with city views.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 147,
+    "address": "789 Birch Road",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 148,
+    "address": "987 Cedar Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 2900,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1500,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 2-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 149,
+    "address": "654 Elm Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 150,
+    "address": "321 Redwood Drive",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2100,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Stunning 4-bedroom single family home with plenty of space.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 151,
+    "address": "897 Ash Lane",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom family home in a sought-after location.",
+    "apt_type": "family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 152,
+    "address": "231 Maple Street",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 3900,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2200,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom apartment with high-end finishes.",
+    "apt_type": "apartment",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 153,
+    "address": "741 Maple Drive",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 154,
+    "address": "980 Pine Street",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89101",
+    "price": 3100,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 1400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 2-bedroom apartment with a city view.",
+    "apt_type": "apartment",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 155,
+    "address": "4517 Cedar Avenue",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97201",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1900,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home with a lovely garden.",
+    "apt_type": "family",
+    "agent_name": "Liam Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 156,
+    "address": "998 Pine Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "price": 5000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2400,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 4-bedroom apartment in the heart of the city.",
+    "apt_type": "apartment",
+    "agent_name": "Richard Perez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 157,
+    "address": "6742 Oak Lane",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77001",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "Linda Nelson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 158,
+    "address": "9123 Birch Road",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 3-bedroom family home with a garden.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 159,
+    "address": "1567 Maple Avenue",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02108",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom apartment in a prime location.",
+    "apt_type": "apartment",
+    "agent_name": "Karen Thomas",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 160,
+    "address": "8541 Pine Street",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 161,
+    "address": "4512 Cedar Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 162,
+    "address": "3210 Elm Drive",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3900,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2200,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 163,
+    "address": "7845 Maple Street",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3500,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1800,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 3-bedroom single family home in a quiet neighborhood.",
+    "apt_type": "single family",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 164,
+    "address": "5692 Oak Lane",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home with a lovely garden.",
+    "apt_type": "family",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 165,
+    "address": "8741 Birch Road",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 166,
+    "address": "4512 Pine Street",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom family home in a sought-after location.",
+    "apt_type": "family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 167,
+    "address": "6952 Elm Lane",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3400,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 3-bedroom single family home with a pool.",
+    "apt_type": "single family",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 168,
+    "address": "3214 Oak Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 4500,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom apartment in a prime location.",
+    "apt_type": "apartment",
+    "agent_name": "William Adams",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 169,
+    "address": "5487 Maple Drive",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 170,
+    "address": "2314 Pine Avenue",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 4-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 171,
+    "address": "7849 Cedar Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 172,
+    "address": "1548 Birch Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 173,
+    "address": "3490 Pine Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3800,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 174,
+    "address": "8741 Maple Avenue",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom apartment in a desirable area.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 175,
+    "address": "6952 Cedar Lane",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom family home with modern amenities.",
+    "apt_type": "family",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 176,
+    "address": "4512 Maple Drive",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 177,
+    "address": "7845 Elm Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 178,
+    "address": "9841 Pine Avenue",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 179,
+    "address": "4512 Cedar Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 5000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom single family home with high-end finishes.",
+    "apt_type": "single family",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 180,
+    "address": "3214 Birch Lane",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 181,
+    "address": "2314 Pine Avenue",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 4-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 182,
+    "address": "7849 Cedar Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 183,
+    "address": "1548 Birch Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 184,
+    "address": "3490 Pine Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3800,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 185,
+    "address": "8741 Maple Avenue",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom apartment in a desirable area.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 186,
+    "address": "6952 Cedar Lane",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom family home with modern amenities.",
+    "apt_type": "family",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 187,
+    "address": "4512 Maple Drive",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 188,
+    "address": "7845 Elm Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 189,
+    "address": "9841 Pine Avenue",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 190,
+    "address": "4512 Cedar Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94108",
+    "price": 5000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom single family home with high-end finishes.",
+    "apt_type": "single family",
+    "agent_name": "Michael Brown",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 191,
+    "address": "3214 Birch Lane",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "73301",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Kevin Walker",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 192,
+    "address": "2314 Pine Avenue",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33101",
+    "price": 4000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 4-bedroom single family home with a large backyard.",
+    "apt_type": "single family",
+    "agent_name": "Emily Davis",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 193,
+    "address": "7849 Cedar Road",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Lovely 4-bedroom apartment with modern amenities.",
+    "apt_type": "apartment",
+    "agent_name": "David Wilson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 194,
+    "address": "1548 Birch Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Cozy 3-bedroom family home in a quiet neighborhood.",
+    "apt_type": "family",
+    "agent_name": "Robert Miller",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 195,
+    "address": "3490 Pine Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "price": 3800,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Elegant 3-bedroom single family home with a great view.",
+    "apt_type": "single family",
+    "agent_name": "Chris Lee",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 196,
+    "address": "8741 Maple Avenue",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19103",
+    "price": 3200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1700,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Charming 3-bedroom apartment in a desirable area.",
+    "apt_type": "apartment",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 197,
+    "address": "6952 Cedar Lane",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Luxurious 4-bedroom family home with modern amenities.",
+    "apt_type": "family",
+    "agent_name": "Sarah Johnson",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 198,
+    "address": "4512 Maple Drive",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "price": 3600,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Beautiful 3-bedroom single family home in a prime location.",
+    "apt_type": "single family",
+    "agent_name": "George Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 199,
+    "address": "7845 Elm Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85001",
+    "price": 3700,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2000,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Spacious 4-bedroom apartment with a beautiful view.",
+    "apt_type": "apartment",
+    "agent_name": "Jessica Martinez",
+    "buy_or_rent": "rent"
+  },
+  {
+    "id": 200,
+    "address": "9841 Pine Avenue",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92101",
+    "price": 4200,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2300,
+    "image_url": "https://via.placeholder.com/150",
+    "description": "Modern 4-bedroom family home in a desirable area.",
+    "apt_type": "family",
+    "agent_name": "Laura Garcia",
+    "buy_or_rent": "rent"
   }
 ]
