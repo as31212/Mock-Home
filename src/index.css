@@ -50,6 +50,10 @@
       border-radius: 40px;
       width: 100%;
     }
+    #home-page-listings-header{
+      padding: 0;
+      justify-content: center;
+    }
 }
 @media (min-width: 700px) {
     #hamburger-nav{

@@ -123,6 +123,7 @@ const changeSort = (e:React.ChangeEvent<HTMLOptionElement>) : void =>{
                 rentBuy={rentBuy}
                 falseRentBuy={falseRentBuy}
                 trueRentBuy={trueRentBuy}
+                listingData={listingData}
               />
             }
           />

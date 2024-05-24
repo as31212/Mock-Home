@@ -9,14 +9,23 @@ import { MdAddHome } from "react-icons/md";
 import { FaFireAlt } from "react-icons/fa";
 import { LuSmilePlus } from "react-icons/lu";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { ListingInterface } from "../interfaces/ListingsInterface";
+import Listing from "./Listing";
+import { FaShower } from "react-icons/fa";
+import { FaBed } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { PiCirclesFourFill } from "react-icons/pi";
+import { IoIosPin } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
 
 interface HomeInterface{
   rentBuy: boolean;
   falseRentBuy: ()=> void;
   trueRentBuy: ()=> void;
+  listingData: ListingInterface[] | null;
 }
 
-const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => {
+const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, listingData}) => {
   return (
     <>
       <div
@@ -174,6 +183,67 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
           </div>
         </div>
       </div>
+      {/* home page listings */}
+
+      <div id="home-page-listings" className="flex flex-col gap-5 p-5 h-auto min-h-[750px] justify-center">
+        <div id="home-page-listings-header" className="flex justify-between items-center gap-10 px-40 flex-wrap">
+          <h2 className="font-bold text-2xl">Featured Properties</h2>
+          <Link to="/Listing">
+            <h2 className="font-bold text-2xl text-orange-400 hover:underline">Explore All <FaArrowRight className="inline relative bottom-[2px]" /></h2>
+          </Link>
+        </div>
+        <div id="featured-listings-container" className="flex flex-wrap justify-center items-center">
+          {listingData ? [...listingData].slice(0,4).map((el)=>{
+            return(
+              <div
+            key={el.id}
+            className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white"
+          >
+            <img
+              className="h-1/2 rounded-t-xl"
+              src={el.image_url}
+              alt={`${el.address} picture`}
+            />
+            <div className="flex flex-col px-10 gap-4 ">
+              <p className="font-bold text-[18px]">
+                <IoIosPin className="inline relative top-[-2px] left-[-3px] text-xl" />
+                {`${el.address},${el.city},${el.state} ${el.zip}`}
+              </p>
+              <div className="flex justify-between text-gray-400">
+                <p className="flex gap-1">
+                  <FaBed className="relative top-[4px] inline" />
+                  {`${el.bedrooms} Bed Room`}
+                </p>
+                <p className="flex gap-1">
+                  <FaShower className="relative top-[4px] inline" />
+                  {`${el.bathrooms} Bath`}
+                </p>
+              </div>
+              <div className="flex justify-between text-gray-400">
+                <p className="flex gap-1">
+                  <PiCirclesFourFill className="relative top-[4px] inline" />
+                  {`${el.square_footage} sqft`}
+                </p>
+                <p className="flex gap-1">
+                  <FaHome className="relative top-[4px] inline" />
+                  {`${el.apt_type}`}
+                </p>
+              </div>
+              <div className="flex gap-10 ">
+                <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
+                  View Details
+                </button>
+                <p className="font-bold text-2xl">{`$${String(el.price).slice(
+                  0,
+                  3
+                )},${String(el.price).slice(3)}`}</p>
+              </div>
+            </div>
+          </div>
+            );
+          }): 'No Data Found'}
+        </div>
+      </div>
 
       {/* page 4 */}
       <div id="home-page-four" className="flex flex-wrap p-5 justify-center items-center min-h-screen h-auto bg-orange-50">
@@ -198,7 +268,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy}) => 
         </div>
       </div>
 {/* page 5 */}
-      <div id="home-page-five" className="flex gap-10 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto pb-10">
+      <div id="home-page-five" className="flex gap-10 flex-row-reverse flex-wrap p-5 justify-center items-center min-h-screen h-auto pb-20">
   <div className="text-page-5 w-full lg:w-[45vw] flex flex-col gap-5 justify-center">
     <h2 className="text-4xl font-bold">Top rated online realty service</h2>
     <p>

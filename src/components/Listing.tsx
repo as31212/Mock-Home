@@ -38,7 +38,7 @@ const Listing: React.FC<ListingProps> = ({
   // this will determine how listing data will be sorted, I will then pass the sorted listing data to the listing template
 
   
-
+  
   useEffect(()=>{
     let sortedData = listingData;
     switch (sort) {
@@ -80,7 +80,7 @@ const Listing: React.FC<ListingProps> = ({
       return (
         <div
           key={el.id}
-          className="flex flex-col w-96  pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white"
+          className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white"
         >
           <img
             className="h-1/2 rounded-t-xl"
