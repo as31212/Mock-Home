@@ -1,26 +1,22 @@
 import Footer from "./Footer";
 import { ListingInterface } from "../interfaces/ListingsInterface";
-import { FaShower } from "react-icons/fa";
-import { FaBed } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
+import { FaShower, FaBed, FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
 import { useEffect } from "react";
 
-// make sure to create an interface for props and make sure that if the data mutates in type, then you must accommodate for that by adding the other possible types
-// I ran into a long ts error due to the fact that i didn't add "| null" to my listingData annotation within the prop interface
-
 interface ListingProps {
-  changeSearchAddress: (e:React.ChangeEvent<HTMLInputElement>)=> void;
+  changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchAddress: string;
   increasePage: () => void;
   decreasePage: () => void;
   page: number;
   numberPageSet: (page: number) => void;
-  listingData: ListingInterface[] | null;
-  changeSort: (e:React.ChangeEvent<HTMLOptionElement>)=> void;
+  sortedData: ListingInterface[] | null;
+  changeSort: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   sort: string;
-  setListingData : (data: ListingInterface[] | null)=> void;
+  setSortedData: (data: ListingInterface[] | null) => void;
+  searchListings: (data : ListingInterface[] | null) => void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -28,55 +24,51 @@ const Listing: React.FC<ListingProps> = ({
   changeSearchAddress,
   page,
   numberPageSet,
-  listingData,
+  sortedData,
   increasePage,
   decreasePage,
   sort,
   changeSort,
-  setListingData
+  setSortedData,
+  searchListings
 }) => {
-  // this will determine how listing data will be sorted, I will then pass the sorted listing data to the listing template
-
-  
-  
-  useEffect(()=>{
-    let sortedData = listingData;
-    switch (sort) {
-      case 'price-asc':
-        sortedData = [...listingData].sort((a, b) => a.price - b.price);
-        break;
-      case 'price-desc':
-        sortedData = [...listingData].sort((a, b) => b.price - a.price);
-        break;
-      case 'bedrooms-asc':
-        sortedData = [...listingData].sort((a, b) => a.bedrooms - b.bedrooms);
-        break;
-      case 'bedrooms-desc':
-        sortedData = [...listingData].sort((a, b) => b.bedrooms - a.bedrooms);
-        break;
-      case 'bathrooms-asc':
-        sortedData = [...listingData].sort((a, b) => a.bathrooms - b.bathrooms);
-        break;
-      case 'bathrooms-desc':
-        sortedData = [...listingData].sort((a, b) => b.bathrooms - a.bathrooms);
-        break;
-      case 'sqft-asc':
-        sortedData = [...listingData].sort((a, b) => a.square_footage - b.square_footage);
-        break;
-      case 'sqft-desc':
-        sortedData = [...listingData].sort((a, b) => b.square_footage - a.square_footage);
-        break;
-      default:
-        sortedData = listingData;
+  useEffect(() => {
+    if (sortedData) {
+      let sorting = [...sortedData]; // Create a copy of the data
+      switch (sort) {
+        case "price-asc":
+          sorting.sort((a, b) => a.price - b.price);
+          break;
+        case "price-desc":
+          sorting.sort((a, b) => b.price - a.price);
+          break;
+        case "bedrooms-asc":
+          sorting.sort((a, b) => a.bedrooms - b.bedrooms);
+          break;
+        case "bedrooms-desc":
+          sorting.sort((a, b) => b.bedrooms - a.bedrooms);
+          break;
+        case "bathrooms-asc":
+          sorting.sort((a, b) => a.bathrooms - b.bathrooms);
+          break;
+        case "bathrooms-desc":
+          sorting.sort((a, b) => b.bathrooms - a.bathrooms);
+          break;
+        case "sqft-asc":
+          sorting.sort((a, b) => a.square_footage - b.square_footage);
+          break;
+        case "sqft-desc":
+          sorting.sort((a, b) => b.square_footage - a.square_footage);
+          break;
+        default:
+          sorting = sortedData;
+      }
+      setSortedData(sorting);
     }
-    setListingData(sortedData);
-  },[sort])
+  }, [sort, sortedData, setSortedData]);
 
-  
-  // look up
-
-  const listingTemplate = listingData ? (
-    [...listingData].slice(page * 8 - 8, page * 8).map((el) => {
+  const listingTemplate = sortedData ? (
+    sortedData.slice(page * 8 - 8, page * 8).map((el) => {
       return (
         <div
           key={el.id}
@@ -126,20 +118,13 @@ const Listing: React.FC<ListingProps> = ({
     <div>no data</div>
   );
 
-  // page number buttons
-  /* functions as pseudo compression, making an array with seven blank elements.
-  you then map the elements. the underscore denotes that the element will no be used
-  within the callback function.the i is index. you use the index + 1 ,due to indexes
-  starting at 0, to get the page number for each button
-  */
-  const numberButtons = listingData ? (
-    [...Array(Math.floor(Number([...listingData]?.length) / 8))].map((_, i) => (
-      <a href="#nav">
+  const numberButtons = sortedData ? (
+    [...Array(Math.ceil(sortedData.length / 8))].map((_, i) => (
+      <a href="#nav" key={i}>
         <button
-          key={i + 1}
           className={`px-4 py-2 shadow-lg rounded-lg border-2 hover:border-gray-500
           ${page === i + 1 ? "border-gray-500" : "border-gray-100"} 
-          ${i + 1 >= page - 2 && i + 1 <= page + 2 ? '' : 'hidden'}`}
+          ${i + 1 >= page - 2 && i + 1 <= page + 2 ? "" : "hidden"}`}
           onClick={() => numberPageSet(i + 1)}
           value={i + 1}
         >
@@ -157,7 +142,7 @@ const Listing: React.FC<ListingProps> = ({
         <div id="search" className="flex flex-wrap justify-center gap-5">
           <input
             value={searchAddress}
-            onChange={()=>changeSearchAddress(event)}
+            onChange={(event) => changeSearchAddress(event)}
             className="py-3 pl-2 pr-8 border-2 text-xl rounded-xl"
             type="text"
             placeholder="State/City/Street"
@@ -167,7 +152,9 @@ const Listing: React.FC<ListingProps> = ({
             <option value="Rent">Rent</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="price-range">Price Range</option>
+            <option disabled selected value="price-range">
+              Price Range
+            </option>
             <option value="0-100,000">less-$100,000</option>
             <option value="100,000-200,000">$100,000-$200,000</option>
             <option value="200,000-300,000">$200,000-$300,000</option>
@@ -181,13 +168,17 @@ const Listing: React.FC<ListingProps> = ({
             <option value="1,000,000-more">$1,000,000+</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
-          <option disabled selected value="type">type</option>
+            <option disabled selected value="type">
+              type
+            </option>
             <option value="family">family</option>
             <option value="single-family">single family</option>
             <option value="apartment">apartment</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
-          <option disabled selected value="type">bedrooms</option>
+            <option disabled selected value="type">
+              bedrooms
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -195,7 +186,9 @@ const Listing: React.FC<ListingProps> = ({
             <option value="5">5</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
-          <option disabled selected value="type">bathrooms</option>
+            <option disabled selected value="type">
+              bathrooms
+            </option>
             <option value="any">any</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -204,7 +197,9 @@ const Listing: React.FC<ListingProps> = ({
             <option value="5">5</option>
           </select>
           <select className="py-3 px-2 border-2 text-xl rounded-xl">
-          <option disabled selected value="type">sqft</option>
+            <option disabled selected value="type">
+              sqft
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -212,7 +207,7 @@ const Listing: React.FC<ListingProps> = ({
             <option value="5">5</option>
           </select>
           <select
-            onChange={()=>changeSort(event)}
+            onChange={changeSort}
             className="py-3 px-2 border-2 text-xl rounded-xl"
           >
             <option disabled selected value="">
@@ -227,7 +222,8 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-asc">Square Footage: Low to High</option>
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
-          <button className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out">
+          <button onClick={sortedData ? ()=> searchListings([...sortedData]): ()=>{console.log('no data');
+          }} className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out">
             Search
           </button>
         </div>
@@ -238,7 +234,7 @@ const Listing: React.FC<ListingProps> = ({
           <a href="#nav">
             <button
               className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
-              onClick={() => decreasePage()}
+              onClick={decreasePage}
             >
               {"<<"}
             </button>
@@ -247,10 +243,12 @@ const Listing: React.FC<ListingProps> = ({
           <a href="#nav">
             <button
               className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
-              onClick={() => increasePage()}
-            >{">>"}</button>
+              onClick={increasePage}
+            >
+              {">>"}
+            </button>
           </a>
-          <button>{listingData ? Math.floor(listingData.length / 8) : ''}</button>
+          <button>{sortedData ? Math.ceil(sortedData.length / 8) : ""}</button>
         </div>
       </div>
       <Footer />

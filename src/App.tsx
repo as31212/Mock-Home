@@ -102,13 +102,45 @@ function App() {
   ): void => {
     setSearchAddress(e.target.value);
   };
-  useEffect(() => console.log(searchAddress), [searchAddress]);
+  const searchListings = async (data: ListingInterface[] | null): Promise<void> => {
+    
+    if (searchAddress === '') {
+      await fetchSortedListings();
+      return;
+    }
+    if (data) {
+      await fetchSortedListings();
+      setSortedData(data.filter(el => {
+        return (
+          el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
+          el.city.toLowerCase().includes(searchAddress.toLowerCase()) ||
+          el.state.toLowerCase().includes(searchAddress.toLowerCase()) ||
+          el.zip.toLowerCase().includes(searchAddress.toLowerCase())
+        );
+      }));
+    }
+  }
+  
+  // debug search algo
+  useEffect(()=>console.log(searchAddress),[searchAddress]
+  )
+ 
 
-// sorting
-const [sort,setSort] = useState<string>('');
-const changeSort = (e:React.ChangeEvent<HTMLOptionElement>) : void =>{
-  setSort(e.target.value);
-} 
+  // sorting
+  const [sort, setSort] = useState<string>("");
+  const changeSort = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setSort(e.target.value);
+  };
+  // declare sortedData variable and fetch data
+  const [sortedData, setSortedData] = useState<ListingInterface[] | null>(null);
+  const fetchSortedListings = async () => {
+    if (listingData) {
+      setSortedData([...listingData]);
+    }
+  };
+  useEffect(() => {
+    fetchSortedListings();
+  }, [listingData]);
 
   return (
     <>
@@ -140,10 +172,11 @@ const changeSort = (e:React.ChangeEvent<HTMLOptionElement>) : void =>{
                 increasePage={increasePage}
                 page={page}
                 numberPageSet={numberPageSet}
-                listingData={listingData}
+                sortedData={sortedData}
                 changeSort={changeSort}
                 sort={sort}
-                setListingData={setListingData}
+                setSortedData={setSortedData}
+                searchListings={searchListings}
               />
             }
           />

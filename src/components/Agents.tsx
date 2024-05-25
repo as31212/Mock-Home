@@ -48,7 +48,7 @@ const Agents: React.FC<AgentProps> = ({ agentData }) => {
             <option value="2">2 stars</option>
             <option value="1">1 star</option>
           </select>
-          <button className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out inline">
+          <button className="bg-white py-2 px-4 border-2 rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out inline">
             Search
           </button>
         </div>
