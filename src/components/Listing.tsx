@@ -116,10 +116,7 @@ const Listing: React.FC<ListingProps> = ({
               <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
                 View Details
               </button>
-              <p className="font-bold text-2xl">{`$${String(el.price).slice(
-                0,
-                3
-              )},${String(el.price).slice(3)}`}</p>
+              <p className="font-bold text-2xl">{`$${el.price}`}</p>
             </div>
           </div>
         </div>
@@ -156,7 +153,7 @@ const Listing: React.FC<ListingProps> = ({
 
   return (
     <>
-      <div className="p-10 bg-orange-50">
+      <div className="p-10 bg-[#FFFAF7]">
         <div id="search" className="flex flex-wrap justify-center gap-5">
           <input
             value={searchAddress}

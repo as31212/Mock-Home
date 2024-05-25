@@ -11,6 +11,7 @@ export interface AvailabilitySubInterface {
 export interface AgentInterface {
   id: number;
   name: string;
+  img: string;
   rating: number;
   state: string;
   availability: AvailabilitySubInterface;

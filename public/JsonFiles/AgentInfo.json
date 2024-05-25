@@ -2,6 +2,7 @@
     {
       "id": 1,
       "name": "John Smith",
+      "img": "https://corporateheadshots.com/wp-content/uploads/2019/03/i-QbSwWMG-X3.jpg",
       "rating": 4.8,
       "state": "CA",
       "availability": {
@@ -17,6 +18,7 @@
     {
       "id": 2,
       "name": "Jane Doe",
+      "img": "https://images.squarespace-cdn.com/content/v1/6204821bfe06b76898b431c5/1660858625934-ZVWEMZYZHLWTVCXC19E3/Brandon+Andre+-+Headshot+Los+Angeles+na4-3.jpg",
       "rating": 4.5,
       "state": "NY",
       "availability": {
@@ -32,6 +34,7 @@
     {
       "id": 3,
       "name": "Michael Brown",
+      "img": "https://sharpfocusphoto.com/wp-content/uploads/2020/08/DSC_0177.jpg",
       "rating": 4.7,
       "state": "TX",
       "availability": {
@@ -47,6 +50,7 @@
     {
       "id": 4,
       "name": "Emily Davis",
+      "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2022/05/pretty-black-female-business-headshot.jpg",
       "rating": 4.9,
       "state": "FL",
       "availability": {
@@ -62,6 +66,7 @@
     {
       "id": 5,
       "name": "David Wilson",
+      "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/DuqueLaw-3-998x1024.jpg",
       "rating": 4.6,
       "state": "IL",
       "availability": {
@@ -77,6 +82,7 @@
     {
       "id": 6,
       "name": "Sarah Johnson",
+      "img": "https://image4.photobiz.com/8911/25_20220728232424_10002749_large.jpg",
       "rating": 4.8,
       "state": "NV",
       "availability": {
@@ -92,6 +98,7 @@
     {
       "id": 7,
       "name": "Chris Lee",
+      "img": "https://via.placeholder.com/150",
       "rating": 4.4,
       "state": "WA",
       "availability": {
@@ -107,6 +114,7 @@
     {
       "id": 8,
       "name": "Jessica Martinez",
+      "img": "https://images.squarespace-cdn.com/content/v1/5cb618a4755be255f4b4d181/850140af-4248-4139-abfc-6f06b6631fa7/actor+headshot+photographers+oak+bay+victoria+bc+langford+westshore+colwood+royal+bay+saanich+oak+bay_0334.jpg",
       "rating": 4.9,
       "state": "AZ",
       "availability": {
@@ -122,6 +130,7 @@
     {
       "id": 9,
       "name": "Robert Miller",
+      "img": "https://via.placeholder.com/150",
       "rating": 4.5,
       "state": "CO",
       "availability": {
@@ -137,6 +146,7 @@
     {
       "id": 10,
       "name": "Laura Garcia",
+      "img": "https://alimondphotography.com/wp-content/uploads/2021/05/K5C0060_PRINT-scaled.jpg",
       "rating": 4.7,
       "state": "OR",
       "availability": {
@@ -152,6 +162,7 @@
       {
         "id": 11,
         "name": "Paul Anderson",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.6,
         "state": "AL",
         "availability": {
@@ -167,6 +178,7 @@
       {
         "id": 12,
         "name": "Karen Thomas",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.7,
         "state": "AK",
         "availability": {
@@ -182,6 +194,7 @@
       {
         "id": 13,
         "name": "Lisa Jackson",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.8,
         "state": "AR",
         "availability": {
@@ -197,6 +210,7 @@
       {
         "id": 14,
         "name": "James White",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.9,
         "state": "CT",
         "availability": {
@@ -212,7 +226,8 @@
       {
         "id": 15,
         "name": "Patricia Harris",
-        "rating": 4.5,
+        "img": "https://via.placeholder.com/150",
+        "rating": 3.8,
         "state": "DE",
         "availability": {
           "Monday": "9 AM - 5 PM",
@@ -227,6 +242,7 @@
       {
         "id": 16,
         "name": "George Martinez",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.7,
         "state": "GA",
         "availability": {
@@ -242,6 +258,7 @@
       {
         "id": 17,
         "name": "Susan Clark",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.6,
         "state": "HI",
         "availability": {
@@ -257,6 +274,7 @@
       {
         "id": 18,
         "name": "Steven Rodriguez",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.8,
         "state": "ID",
         "availability": {
@@ -272,6 +290,7 @@
       {
         "id": 19,
         "name": "Dorothy Lewis",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.9,
         "state": "IN",
         "availability": {
@@ -287,6 +306,7 @@
       {
         "id": 20,
         "name": "Daniel Young",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.4,
         "state": "IA",
         "availability": {
@@ -302,6 +322,7 @@
       {
         "id": 21,
         "name": "Nancy Hall",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.6,
         "state": "KS",
         "availability": {
@@ -317,6 +338,7 @@
       {
         "id": 22,
         "name": "Kevin Walker",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.7,
         "state": "KY",
         "availability": {
@@ -332,7 +354,8 @@
       {
         "id": 23,
         "name": "Jennifer King",
-        "rating": 4.8,
+        "img": "https://via.placeholder.com/150",
+        "rating": 3.9,
         "state": "LA",
         "availability": {
           "Monday": "10 AM - 6 PM",
@@ -347,6 +370,7 @@
       {
         "id": 24,
         "name": "Brian Scott",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.5,
         "state": "ME",
         "availability": {
@@ -362,6 +386,7 @@
       {
         "id": 25,
         "name": "Betty Green",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.9,
         "state": "MD",
         "availability": {
@@ -377,6 +402,7 @@
       {
         "id": 26,
         "name": "William Adams",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.8,
         "state": "MN",
         "availability": {
@@ -392,6 +418,7 @@
       {
         "id": 27,
         "name": "Linda Nelson",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.7,
         "state": "MS",
         "availability": {
@@ -407,6 +434,7 @@
       {
         "id": 28,
         "name": "Barbara Baker",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.6,
         "state": "MO",
         "availability": {
@@ -422,6 +450,7 @@
       {
         "id": 29,
         "name": "Richard Perez",
+        "img": "https://via.placeholder.com/150",
         "rating": 4.9,
         "state": "MT",
         "availability": {
@@ -437,7 +466,8 @@
       {
         "id": 30,
         "name": "Joseph Roberts",
-        "rating": 4.4,
+        "img": "https://via.placeholder.com/150",
+        "rating": 3.9,
         "state": "NE",
         "availability": {
           "Monday": "9 AM - 5 PM",

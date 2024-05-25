@@ -30,7 +30,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
     <>
       <div
         id="home-page-one"
-        className="h-auto min-h-screen flex flex-col lg:flex-row justify-center items-center bg-orange-50"
+        className="h-auto min-h-screen flex flex-col lg:flex-row justify-center items-center bg-[#FFFAF7]"
       >
         <div className="w-full lg:w-1/2">
           <img
@@ -92,6 +92,8 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
           </div>
         </div>
       </div>
+
+      {/* page 2 */}
       <div
         id="home-page-two"
         className="py-20 flex justify-center items-center p-5 gap-5"
@@ -185,7 +187,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
       </div>
       {/* home page listings */}
 
-      <div id="home-page-listings" className="flex flex-col gap-5 p-5 h-auto min-h-[750px] justify-center">
+      <div id="home-page-listings" className="flex flex-col gap-20 mt-20 p-5 h-auto min-h-[750px] justify-center">
         <div id="home-page-listings-header" className="flex justify-between items-center gap-10 px-40 flex-wrap">
           <h2 className="font-bold text-2xl">Featured Properties</h2>
           <Link to="/Listing">
