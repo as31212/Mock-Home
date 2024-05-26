@@ -235,10 +235,7 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
                 <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
                   View Details
                 </button>
-                <p className="font-bold text-2xl">{`$${String(el.price).slice(
-                  0,
-                  3
-                )},${String(el.price).slice(3)}`}</p>
+                <p className="font-bold text-2xl">{`$${el.price}`}</p>
               </div>
             </div>
           </div>

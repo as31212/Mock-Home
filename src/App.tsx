@@ -142,6 +142,22 @@ function App() {
     fetchSortedListings();
   }, [listingData]);
 
+  // review agent sort logic 
+  const [review,setReview] = useState<string>('');
+  const changeReview = (e:React.ChangeEvent<HTMLSelectElement>)=>{
+    setReview(e.target.value);
+  }
+  useEffect(()=>{
+    console.log(review);
+  },[review])
+  // here I am creating the state variable to house the filtered state
+const [filteredAgentData,setFilteredAgentData] = useState<AgentInterface[] | null>(null);
+const filteredDataTransfer = ()=>{
+  setFilteredAgentData(agentData);
+}
+useEffect(()=>{
+  filteredDataTransfer();
+},[agentData])
   return (
     <>
       <Router>
@@ -161,7 +177,7 @@ function App() {
           />
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
           <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
-          <Route path="/Agents" element={<Agents agentData={agentData} />} />
+          <Route path="/Agents" element={<Agents agentData={agentData} review={review} changeReview={changeReview} filteredAgentData={filteredAgentData} setFilteredAgentData={setFilteredAgentData}  />}  />
           <Route
             path="/Listing"
             element={

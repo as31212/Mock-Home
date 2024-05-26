@@ -19,7 +19,7 @@
       "id": 2,
       "name": "Jane Doe",
       "img": "https://images.squarespace-cdn.com/content/v1/6204821bfe06b76898b431c5/1660858625934-ZVWEMZYZHLWTVCXC19E3/Brandon+Andre+-+Headshot+Los+Angeles+na4-3.jpg",
-      "rating": 4.5,
+      "rating": 5,
       "state": "NY",
       "availability": {
         "Monday": "10 AM - 6 PM",
@@ -67,7 +67,7 @@
       "id": 5,
       "name": "David Wilson",
       "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/DuqueLaw-3-998x1024.jpg",
-      "rating": 4.6,
+      "rating": 5,
       "state": "IL",
       "availability": {
         "Monday": "9 AM - 5 PM",

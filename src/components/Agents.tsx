@@ -3,17 +3,55 @@ import { AgentInterface } from "../interfaces/AgentInterface";
 import { MdOutlineStarBorderPurple500 } from "react-icons/md";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import StarRatings from "./StarRatings";
+import { useEffect } from "react";
 
 interface AgentProps {
   agentData: AgentInterface[] | null;
+  changeReview: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  review: string;
+  filteredAgentData: AgentInterface[] | null;
+  setFilteredAgentData:(data: AgentInterface[] | null) => void;
 }
 
-const Agents: React.FC<AgentProps> = ({ agentData }) => {
-  const agentTemplate = agentData
-    ? [...agentData].map((el) => {
+const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filteredAgentData ,setFilteredAgentData }) => {
+  const sortReview = () => {
+    let filter : AgentInterface[] = [] ;
+    switch (review) {
+      case "5":
+        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating == 5) : "";
+        break;
+      case "4":
+        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 4) : "";
+        break;
+      case "3":
+        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 3) : "";
+        break;
+      case "2":
+        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 2) : "";
+        break;
+      case "1":
+        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 1) : "";
+        break;
+    }
+    setFilteredAgentData(filter);
+  };
+  const resetData =()=>{
+    setFilteredAgentData(agentData);
+  }
+  useEffect(()=>{
+    resetData();
+    sortReview();
+  },[review])
+
+  const agentTemplate = filteredAgentData
+    ? [...filteredAgentData].map((el) => {
         return (
           <div className="bg-white h-[450px] w-[300px] rounded-xl " key={el.id}>
-            <img className=" h-2/3 rounded-t-lg w-full" src={el.img} alt={`${el.name} image`} />
+            <img
+              className=" h-2/3 rounded-t-lg w-full"
+              src={el.img}
+              alt={`${el.name} image`}
+            />
             <div className="p-4 flex-col flex gap-3">
               <p className="text-lg font-bold text-center">{el.name}</p>
               <div className="flex flex-row-reverse justify-center gap-2">
@@ -23,7 +61,9 @@ const Agents: React.FC<AgentProps> = ({ agentData }) => {
                   goodStarAmt={Math.floor(el.rating)}
                 />
               </div>
-              <button className=" font-bold border-2 w-full p-2 rounded-lg hover:bg-black hover:text-white duration-200">View Profile</button>
+              <button className=" font-bold border-2 w-full p-2 rounded-lg hover:bg-black hover:text-white duration-200">
+                View Profile
+              </button>
             </div>
           </div>
         );
@@ -40,7 +80,10 @@ const Agents: React.FC<AgentProps> = ({ agentData }) => {
             type="text"
             placeholder="Enter your address"
           />
-          <select className="p-2 rounded-lg border-2">
+          <select
+            onChange={(event) => changeReview(event)}
+            className="p-2 rounded-lg border-2"
+          >
             <option value="">Review</option>
             <option value="5">5 stars</option>
             <option value="4">4 stars</option>
