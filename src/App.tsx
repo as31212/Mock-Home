@@ -96,28 +96,29 @@ function App() {
   };
 
   // search algo logic
+  // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local varible
+  // then when i would attempt to reset the state, it would not reset because the arg had already been passed and was no longer a part of the state
   const [searchAddress, setSearchAddress] = useState<string>("");
   const changeSearchAddress = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
     setSearchAddress(e.target.value);
   };
-  const searchListings = async (data: ListingInterface[] | null): Promise<void> => {
-    
+  const searchListings = (): void => {
+    setSortedData(listingData);
     if (searchAddress === '') {
-      await fetchSortedListings();
       return;
     }
-    if (data) {
-      await fetchSortedListings();
-      setSortedData(data.filter(el => {
+    if (listingData) {
+     const filteredData = [...listingData].filter(el => {
         return (
           el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
           el.city.toLowerCase().includes(searchAddress.toLowerCase()) ||
           el.state.toLowerCase().includes(searchAddress.toLowerCase()) ||
           el.zip.toLowerCase().includes(searchAddress.toLowerCase())
         );
-      }));
+      });
+      setSortedData(filteredData)
     }
   }
   
@@ -133,7 +134,7 @@ function App() {
   };
   // declare sortedData variable and fetch data
   const [sortedData, setSortedData] = useState<ListingInterface[] | null>(null);
-  const fetchSortedListings = async () => {
+  const fetchSortedListings = () => {
     if (listingData) {
       setSortedData([...listingData]);
     }
@@ -150,14 +151,18 @@ function App() {
   useEffect(()=>{
     console.log(review);
   },[review])
-  // here I am creating the state variable to house the filtered state
+  // here I am creating the state variable to house the filtered agent data state
 const [filteredAgentData,setFilteredAgentData] = useState<AgentInterface[] | null>(null);
 const filteredDataTransfer = ()=>{
-  setFilteredAgentData(agentData);
+  if(agentData){
+    setFilteredAgentData([...agentData]);
+  }
 }
 useEffect(()=>{
   filteredDataTransfer();
 },[agentData])
+
+
   return (
     <>
       <Router>

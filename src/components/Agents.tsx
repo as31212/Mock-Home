@@ -1,7 +1,5 @@
 import Footer from "./Footer";
 import { AgentInterface } from "../interfaces/AgentInterface";
-import { MdOutlineStarBorderPurple500 } from "react-icons/md";
-import { MdOutlineStarPurple500 } from "react-icons/md";
 import StarRatings from "./StarRatings";
 import { useEffect } from "react";
 
@@ -14,32 +12,37 @@ interface AgentProps {
 }
 
 const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filteredAgentData ,setFilteredAgentData }) => {
+  
   const sortReview = () => {
-    let filter : AgentInterface[] = [] ;
-    switch (review) {
-      case "5":
-        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating == 5) : "";
-        break;
-      case "4":
-        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 4) : "";
-        break;
-      case "3":
-        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 3) : "";
-        break;
-      case "2":
-        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 2) : "";
-        break;
-      case "1":
-        filteredAgentData ? filter = filteredAgentData.filter((el) => el.rating >= 1) : "";
-        break;
-    }
-    setFilteredAgentData(filter);
-  };
-  const resetData =()=>{
+    // Reset to initial data
     setFilteredAgentData(agentData);
-  }
+
+    if (review === "") {
+      return;
+    }
+
+    if (agentData) {
+      let filteredData = agentData.filter((el) => {
+        switch (review) {
+          case "5":
+            return el.rating == 5;
+          case "4":
+            return el.rating >= 4;
+          case "3":
+            return el.rating >= 3;
+          case "2":
+            return el.rating >= 2;
+          case "1":
+            return el.rating >= 1;
+          default:
+            return true;
+        }
+      });
+      setFilteredAgentData(filteredData);
+    }
+  };
+  
   useEffect(()=>{
-    resetData();
     sortReview();
   },[review])
 
