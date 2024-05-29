@@ -18,6 +18,8 @@ import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
 import ScrollToTop from "./ScrollToTop";
 
+
+
 function App() {
   // fetch listings
 
@@ -95,8 +97,8 @@ function App() {
     setRentBuy(true);
   };
 
-  // search algo logic
-  // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local varible
+  // search algo logic for listings
+  // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local variable making it not update
   // then when i would attempt to reset the state, it would not reset because the arg had already been passed and was no longer a part of the state
   const [searchAddress, setSearchAddress] = useState<string>("");
   const changeSearchAddress = (
@@ -104,7 +106,14 @@ function App() {
   ): void => {
     setSearchAddress(e.target.value);
   };
+
+  // search function
   const searchListings = (): void => {
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false);
+    }, 1000);
+    setPage(1);
     setSortedData(listingData);
     if (searchAddress === '') {
       return;
@@ -163,6 +172,9 @@ useEffect(()=>{
 },[agentData])
 
 
+// loading
+const [loading,setLoading] = useState<boolean>(false);
+
   return (
     <>
       <Router>
@@ -198,6 +210,7 @@ useEffect(()=>{
                 sort={sort}
                 setSortedData={setSortedData}
                 searchListings={searchListings}
+                loading={loading}
               />
             }
           />

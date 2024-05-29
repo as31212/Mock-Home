@@ -4,6 +4,8 @@ import { FaShower, FaBed, FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
 import { useEffect } from "react";
+import { RiLoader3Fill } from "react-icons/ri";
+import { FiLoader } from "react-icons/fi";
 
 interface ListingProps {
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -17,6 +19,7 @@ interface ListingProps {
   sort: string;
   setSortedData: (data: ListingInterface[] | null) => void;
   searchListings: (data : ListingInterface[] | null) => void;
+  loading: boolean;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -30,7 +33,8 @@ const Listing: React.FC<ListingProps> = ({
   sort,
   changeSort,
   setSortedData,
-  searchListings
+  searchListings,
+  loading
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -122,7 +126,7 @@ const Listing: React.FC<ListingProps> = ({
     [...Array(Math.ceil(sortedData.length / 8))].map((_, i) => (
       <a href="#nav" key={i}>
         <button
-          className={`px-4 py-2 shadow-lg rounded-lg border-2 hover:border-gray-500
+          className={`px-4 py-2 mx-1 shadow-lg rounded-lg border-2 hover:border-gray-500
           ${page === i + 1 ? "border-gray-500" : "border-gray-100"} 
           ${i + 1 >= page - 2 && i + 1 <= page + 2 ? "" : "hidden"}`}
           onClick={() => numberPageSet(i + 1)}
@@ -138,7 +142,7 @@ const Listing: React.FC<ListingProps> = ({
 
   return (
     <>
-      <div className="p-10 bg-[#FFFAF7]">
+      <div className="p-10 bg-[#FFFAF7] min-h-screen">
         <div id="search" className="flex flex-wrap justify-center gap-5">
           <input
             value={searchAddress}
@@ -227,10 +231,11 @@ const Listing: React.FC<ListingProps> = ({
             Search
           </button>
         </div>
-        <div id="listing-container" className="flex flex-wrap justify-center ">
+        <FiLoader className={`m-10 text-5xl mx-auto ${loading ? 'spin' : 'hidden'}`} />
+        <div id="listing-container" className={`flex flex-wrap justify-center ${loading ? 'hidden' : ''}`}>
           {listingTemplate}
         </div>
-        <div className="flex gap-1 justify-center" id="page-buttons">
+        <div className={`flex justify-center ${loading ? 'hidden' : ''}`} id="page-buttons">
           <a href="#nav">
             <button
               className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
@@ -240,6 +245,8 @@ const Listing: React.FC<ListingProps> = ({
             </button>
           </a>
           {numberButtons}
+          <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">...</button>
+          <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">{sortedData ? Math.ceil(sortedData.length / 8) : ""}</button>
           <a href="#nav">
             <button
               className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
@@ -248,7 +255,6 @@ const Listing: React.FC<ListingProps> = ({
               {">>"}
             </button>
           </a>
-          <button>{sortedData ? Math.ceil(sortedData.length / 8) : ""}</button>
         </div>
       </div>
       <Footer />
