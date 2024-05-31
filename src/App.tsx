@@ -17,6 +17,7 @@ import Home from "./components/Home";
 import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
 import ScrollToTop from "./ScrollToTop";
+import { FilterInterface } from "./interfaces/FilterInterface";
 
 
 
@@ -174,6 +175,19 @@ useEffect(()=>{
 
 // loading
 const [loading,setLoading] = useState<boolean>(false);
+
+
+// filtering use state object
+const [filter,setFilter] = useState<FilterInterface>(
+  {'buySell': '',
+'priceRange': [0,0],
+'type':'',
+'bedrooms' : 0,
+'bathrooms' : 0,
+'sqft' : [0,0]});
+
+
+
 
   return (
     <>
