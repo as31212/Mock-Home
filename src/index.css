@@ -31,6 +31,15 @@
     #home-page-three{
         flex-wrap: wrap;
     }
+    #listing-page{
+      flex-direction: column;
+    }
+    #search{
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+    }
+
     
 }
 @media (max-width: 700px) {
@@ -62,6 +71,13 @@
     #home-page-listings-header{
       padding: 0;
       justify-content: center;
+    }
+    #agent-search{
+      flex-wrap: wrap;
+      padding: 0;
+    }
+    .agent-searches{
+      width: 100%;
     }
 }
 @media (min-width: 700px) {

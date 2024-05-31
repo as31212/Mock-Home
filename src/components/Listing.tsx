@@ -142,8 +142,8 @@ const Listing: React.FC<ListingProps> = ({
 
   return (
     <>
-      <div className="p-10 bg-[#FFFAF7] min-h-screen">
-        <div id="search" className="flex flex-wrap justify-center gap-5">
+      <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex min-h-screen ${sortedData < 1 && sortedData ? 'flex-col' : ''}`}>
+        <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} ${sortedData < 1 && sortedData ? '' : 'h-40 w-72'}`}>
           <input
             value={searchAddress}
             onChange={(event) => changeSearchAddress(event)}
@@ -232,10 +232,11 @@ const Listing: React.FC<ListingProps> = ({
           </button>
         </div>
         <FiLoader className={`m-10 text-5xl mx-auto ${loading ? 'spin' : 'hidden'}`} />
-        <div id="listing-container" className={`flex flex-wrap justify-center ${loading ? 'hidden' : ''}`}>
-          {listingTemplate}
-        </div>
-        <div className={`flex justify-center ${loading ? 'hidden' : ''}`} id="page-buttons">
+        <div id="buttons-listings">
+          <div id="listing-container" className={`flex min-h-screen flex-wrap justify-center ${loading ? 'hidden' : ''}`}>
+            {sortedData?.length > 1 && sortedData?.length ? listingTemplate :<img className="mx-auto mt-20 h-[80%]" src="noResultsOrange.png" alt="man looking for something" />}
+          </div>
+          <div className={`flex justify-center ${loading ? 'hidden' : ''} ${sortedData?.length > 1 && sortedData? '' : 'hidden'}`} id="page-buttons">
           <a href="#nav">
             <button
               className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
@@ -256,6 +257,8 @@ const Listing: React.FC<ListingProps> = ({
             </button>
           </a>
         </div>
+        </div>
+        
       </div>
       <Footer />
     </>
