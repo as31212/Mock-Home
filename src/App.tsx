@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ReactHTMLElement, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -186,6 +186,31 @@ const [filter,setFilter] = useState<FilterInterface>(
 'bathrooms' : 0,
 'sqft' : [0,0]});
 
+// filter toggles
+const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
+  const [priceFilter, setPriceFilter] = useState<boolean>(false);
+  const [buyFilter, setBuyFilter] = useState<boolean>(false);
+  const [moreFilter, setMoreFilter] = useState<boolean>(false);
+
+  // Toggle functions
+  const toggleBedBath = () => {
+    setBedBathFilter(!bedBathFilter);
+  };
+
+  const togglePrice = () => {
+    setPriceFilter(!priceFilter);
+  };
+
+  const toggleBuy = () => {
+    setBuyFilter(!buyFilter);
+  };
+
+  const toggleMore = () => {
+    setMoreFilter(!moreFilter);
+  };
+
+// filtering update functions
+
 
 
 
@@ -225,6 +250,14 @@ const [filter,setFilter] = useState<FilterInterface>(
                 setSortedData={setSortedData}
                 searchListings={searchListings}
                 loading={loading}
+                priceFilter={priceFilter}
+                buyFilter={buyFilter}
+                bedBathFilter={bedBathFilter}
+                moreFilter={moreFilter}
+                togglePrice={togglePrice}
+                toggleBedBath={toggleBedBath}
+                toggleMore={toggleMore}
+                toggleBuy={toggleBuy}
               />
             }
           />

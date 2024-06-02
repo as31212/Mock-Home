@@ -6,6 +6,7 @@ import { IoIosPin } from "react-icons/io";
 import { useEffect } from "react";
 import { RiLoader3Fill } from "react-icons/ri";
 import { FiLoader } from "react-icons/fi";
+import ListingPageButtons from "./ListingPageButtons";
 
 interface ListingProps {
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,6 +21,14 @@ interface ListingProps {
   setSortedData: (data: ListingInterface[] | null) => void;
   searchListings: (data : ListingInterface[] | null) => void;
   loading: boolean;
+  priceFilter: boolean;
+  togglePrice: ()=> void;
+  bedBathFilter: boolean;
+  toggleBedBath: ()=> void;
+  buyFilter: boolean;
+  toggleBuy: ()=> void;
+  moreFilter: boolean;
+  toggleMore: ()=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -34,7 +43,15 @@ const Listing: React.FC<ListingProps> = ({
   changeSort,
   setSortedData,
   searchListings,
-  loading
+  loading,
+  priceFilter,
+  togglePrice,
+  bedBathFilter,
+  toggleBedBath,
+  buyFilter,
+  toggleBuy,
+  moreFilter,
+  toggleMore
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -76,10 +93,10 @@ const Listing: React.FC<ListingProps> = ({
       return (
         <div
           key={el.id}
-          className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white"
+          className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white overflow-hidden"
         >
           <img
-            className="h-1/2 rounded-t-xl"
+            className="h-1/2 rounded-t-xl  hover:scale-105 hover:brightness-75 duration-200"
             src={el.image_url}
             alt={`${el.address} picture`}
           />
@@ -126,8 +143,8 @@ const Listing: React.FC<ListingProps> = ({
     [...Array(Math.ceil(sortedData.length / 8))].map((_, i) => (
       <a href="#nav" key={i}>
         <button
-          className={`px-4 py-2 mx-1 shadow-lg rounded-lg border-2 hover:border-gray-500
-          ${page === i + 1 ? "border-gray-500" : "border-gray-100"} 
+          className={`px-4 py-2 mx-1 shadow-lg rounded-lg border-2 hover:border-orange-400
+          ${page === i + 1 ? "border-orange-400" : "border-gray-100"} 
           ${i + 1 >= page - 2 && i + 1 <= page + 2 ? "" : "hidden"}`}
           onClick={() => numberPageSet(i + 1)}
           value={i + 1}
@@ -142,77 +159,42 @@ const Listing: React.FC<ListingProps> = ({
 
   return (
     <>
-      <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex min-h-screen ${sortedData < 1 && sortedData ? 'flex-col' : ''}`}>
-        <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} ${sortedData < 1 && sortedData ? '' : 'h-40 w-72'}`}>
+      <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${sortedData < 1 && sortedData ? '' : ''}`}>
+        <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} `}>
           <input
             value={searchAddress}
             onChange={(event) => changeSearchAddress(event)}
-            className="py-3 pl-2 pr-8 border-2 text-xl rounded-xl"
+            className="py-3 pl-2 pr-32 border-2 text-xl rounded-md"
             type="text"
             placeholder="State/City/Street"
           />
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option value="Buy">Buy</option>
-            <option value="Rent">Rent</option>
-          </select>
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="price-range">
-              Price Range
-            </option>
-            <option value="0-100,000">less-$100,000</option>
-            <option value="100,000-200,000">$100,000-$200,000</option>
-            <option value="200,000-300,000">$200,000-$300,000</option>
-            <option value="300,000-400,000">$300,000-$400,000</option>
-            <option value="400,000-500,000">$400,000-$500,000</option>
-            <option value="500,000-600,000">$500,000-$600,000</option>
-            <option value="600,000-700,000">$600,000-$700,000</option>
-            <option value="700,000-800,000">$700,000-$800,000</option>
-            <option value="800,000-900,000">$800,000-$900,000</option>
-            <option value="900,000-1,000,000">$900,000-$1,000,000</option>
-            <option value="1,000,000-more">$1,000,000+</option>
-          </select>
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="type">
-              type
-            </option>
-            <option value="family">family</option>
-            <option value="single-family">single family</option>
-            <option value="apartment">apartment</option>
-          </select>
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="type">
-              bedrooms
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="type">
-              bathrooms
-            </option>
-            <option value="any">any</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <select className="py-3 px-2 border-2 text-xl rounded-xl">
-            <option disabled selected value="type">
-              sqft
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <div>
+            <div onClick={()=>toggleBuy()}>
+              <ListingPageButtons text="Buy" />
+            </div>
+            <div className={` bg-black w-72 h-52 absolute mt-1 z-10 rounded-md  ${buyFilter ? '' : 'hidden'}`}>Hello</div>
+          </div>
+          <div>
+            <div onClick={()=>toggleBedBath()}>
+              <ListingPageButtons text="Bed & Baths" />
+            </div>
+            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${bedBathFilter ? '' : 'hidden'}`}></div>
+          </div>
+          <div>
+            <div onClick={()=>togglePrice()}>
+              <ListingPageButtons text="Price" />
+            </div>
+            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${priceFilter ? '' : 'hidden'}`}></div>
+          </div>
+          <div>
+            <div onClick={()=>toggleMore()}>
+              <ListingPageButtons text="More" />
+            </div>
+            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${moreFilter ? '' : 'hidden'}`}></div>
+          </div>
           <select
             onChange={changeSort}
-            className="py-3 px-2 border-2 text-xl rounded-xl"
+            className="py-3 px-2 border-2 text-xl rounded-md"
           >
             <option disabled selected value="">
               Sort
@@ -227,19 +209,19 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
           <button onClick={sortedData ? ()=> searchListings([...sortedData]): ()=>{console.log('no data');
-          }} className="bg-white py-3 px-4 border-2 text-xl rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out">
+          }} className="bg-white font-bold py-3 px-14 border-2 text-xl rounded-md hover:bg-orange-300 hover:text-white duration-150 ease-in-out">
             Search
           </button>
         </div>
         <FiLoader className={`m-10 text-5xl mx-auto ${loading ? 'spin' : 'hidden'}`} />
         <div id="buttons-listings">
-          <div id="listing-container" className={`flex min-h-screen flex-wrap justify-center ${loading ? 'hidden' : ''}`}>
+          <div id="listing-container" className={`flex min-h-screen flex-wrap justify-center my-10 ${loading ? 'hidden' : ''}`}>
             {sortedData?.length > 1 && sortedData?.length ? listingTemplate :<img className="mx-auto mt-20 h-[80%]" src="noResultsOrange.png" alt="man looking for something" />}
           </div>
           <div className={`flex justify-center ${loading ? 'hidden' : ''} ${sortedData?.length > 1 && sortedData? '' : 'hidden'}`} id="page-buttons">
           <a href="#nav">
             <button
-              className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
+              className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
               onClick={decreasePage}
             >
               {"<<"}
@@ -250,7 +232,7 @@ const Listing: React.FC<ListingProps> = ({
           <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">{sortedData ? Math.ceil(sortedData.length / 8) : ""}</button>
           <a href="#nav">
             <button
-              className="px-4 py-2 shadow-lg rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out"
+              className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
               onClick={increasePage}
             >
               {">>"}
