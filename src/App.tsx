@@ -209,8 +209,11 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
     setMoreFilter(!moreFilter);
   };
 
-// filtering update functions
+// bedrooms filter state
+const [bedrooms,setBedrooms] = useState<string>('Any');
 
+// bathrooms filter state
+const [bathrooms,setBathrooms] = useState<string>('Any');
 
 
 
@@ -261,6 +264,11 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
                 rentBuy={rentBuy}
                 trueRentBuy={trueRentBuy}
                 falseRentBuy={falseRentBuy}
+                listingData={listingData}
+                bedrooms={bedrooms}
+                setBedrooms={setBedrooms}
+                bathrooms={bathrooms}
+                setBathrooms={setBathrooms}
               />
             }
           />

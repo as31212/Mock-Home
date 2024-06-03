@@ -34,6 +34,11 @@ interface ListingProps {
   rentBuy: boolean;
   trueRentBuy: ()=> void;
   falseRentBuy: ()=> void;
+  listingData: ListingInterface[] | null;
+  bedrooms: string;
+  bathrooms: string;
+  setBathrooms: (bathrooms: string)=> void;
+  setBedrooms: (bedrooms: string)=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -59,7 +64,12 @@ const Listing: React.FC<ListingProps> = ({
   toggleMore,
   rentBuy,
   trueRentBuy,
-  falseRentBuy
+  falseRentBuy,
+  listingData,
+  bathrooms,
+  setBathrooms,
+  bedrooms,
+  setBedrooms
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -95,6 +105,22 @@ const Listing: React.FC<ListingProps> = ({
       setSortedData(sorting);
     }
   }, [sort, sortedData, setSortedData]);
+
+  // renting or buying updates
+  useEffect(()=>{
+    if(listingData){
+    const rentBuyListings = rentBuy ? [...listingData].filter((el)=> el.buy_or_rent === 'Buy') : [...listingData].filter((el)=> el.buy_or_rent === 'rent');
+    setSortedData(rentBuyListings);
+  }},[rentBuy,sortedData])
+
+  // bedrooms and bathroom updates
+  useEffect(()=>{
+
+    if(listingData && sortedData){
+      const bathroomListings = isNaN(Number(bathrooms)) ? [...listingData] : [...listingData].filter((el)=> el.bathrooms >= Number(bathrooms));
+      setSortedData(bathroomListings);
+    }
+  },[bathrooms,sortedData])
 
   const listingTemplate = sortedData ? (
     sortedData.slice(page * 8 - 8, page * 8).map((el) => {
@@ -137,7 +163,7 @@ const Listing: React.FC<ListingProps> = ({
               <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
                 View Details
               </button>
-              <p className="font-bold mb-2 text-2xl">{`$${el.price}`}</p>
+              <p className="font-bold mb-2 text-2xl">{`$${el.buy_or_rent === 'Buy' ? el.price : `${el.price}/Month`}`}</p>
             </div>
           </div>
         </div>
@@ -229,24 +255,24 @@ const Listing: React.FC<ListingProps> = ({
                 <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bedrooms</p></div>
                 <div className="px-7 py-4">
                   <p className="font-bold text-gray-700">Bedrooms</p>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">Any</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">1+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">2+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">3+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">4+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">5+</button>
+                  <button onClick={()=>setBedrooms('Any')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === 'Any' ? 'bg-orange-300' : '' }`}>Any</button>
+                  <button onClick={()=>setBedrooms('1')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '1' ? 'bg-orange-300' : ''}`}>1+</button>
+                  <button onClick={()=>setBedrooms('2')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '2' ? 'bg-orange-300' : ''}`}>2+</button>
+                  <button onClick={()=>setBedrooms('3')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '3' ? 'bg-orange-300' : ''}`}>3+</button>
+                  <button onClick={()=>setBedrooms('4')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '4' ? 'bg-orange-300' : ''}`}>4+</button>
+                  <button onClick={()=>setBedrooms('5')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '5' ? 'bg-orange-300' : ''}`}>5+</button>
                 </div>
               </div>
               <div id="bathroom-filter-section">
               <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bathrooms</p></div>
                 <div className="px-7 py-4">
                   <p className="font-bold text-gray-700">Bathrooms</p>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">Any</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">1+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">2+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">3+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">4+</button>
-                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">5+</button>
+                  <button onClick={()=>setBathrooms('Any')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === 'Any' ? 'bg-orange-300' : ''}`}>Any</button>
+                  <button onClick={()=>setBathrooms('1')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '1' ? 'bg-orange-300' : ''}`}>1+</button>
+                  <button onClick={()=>setBathrooms('2')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '2' ? 'bg-orange-300' : ''}`}>2+</button>
+                  <button onClick={()=>setBathrooms('3')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '3' ? 'bg-orange-300' : ''}`}>3+</button>
+                  <button onClick={()=>setBathrooms('4')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '4' ? 'bg-orange-300' : ''}`}>4+</button>
+                  <button onClick={()=>setBathrooms('5')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '5' ? 'bg-orange-300' : ''}`}>5+</button>
                 </div>
               </div>
               <div className="p-5"><button onClick={()=>toggleBedBath()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
@@ -258,9 +284,9 @@ const Listing: React.FC<ListingProps> = ({
             <div onClick={()=>toggleMore()}>
             <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${moreFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>More <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? '' : 'hidden'}`} /></button>
             </div>
-            <div className={`bg-[#FFFAF7] w-[600px] h-52 absolute mt-1 z-10 rounded-md shadow-2xl ${moreFilter ? '' : 'hidden'}`}>
-              <div className="bg-gray-300 text-gray-700 font-bold w-full"><p className="ml-4">MORE FILTERS</p></div>
-              <div id="extra-filters">
+            <div className={`bg-[#FFFAF7] w-[600px] h-[300px] absolute mt-1 z-10 rounded-md shadow-2xl ${moreFilter ? '' : 'hidden'}`}>
+              <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">More Filters</p></div>
+              <div className="flex flex-col gap-5" id="extra-filters">
                 <div id="sqft-filter">
                   <p className="font-bold text-gray-700 px-5">Square Feet</p>
                   <div className="flex gap-10 justify-between px-5" id="sqft-min-max">
@@ -274,7 +300,11 @@ const Listing: React.FC<ListingProps> = ({
                 </div>
                 <div id="home-type">
                   <p className="font-bold text-gray-700 px-5">Home-Type</p>
-                  
+                  <div className="px-5 flex flex-col gap-5" id="home-type-checks">
+                    <label className="text-lg" htmlFor="apt-check"><input className="mr-3 scale-150" type="checkbox" id="apt-check" />Apartment</label>
+                    <label className="text-lg" htmlFor="family-check"><input className="mr-3 scale-150" type="checkbox" id="family-check" />Family</label>
+                    <label className="text-lg" htmlFor="single-family-check"><input className="mr-3 scale-150" type="checkbox" id="single-family-check" />Single Family</label>
+                  </div>
                 </div>
               </div>
             </div>

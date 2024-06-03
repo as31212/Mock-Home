@@ -13,4 +13,5 @@ export interface ListingInterface {
   description: string;
   apt_type: string;
   agent_name: string;
+  buy_or_rent: string;
 }
