@@ -139,4 +139,36 @@
     display: block;
   }
   
+ /* Style the checked state */
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  width: 0.75em; /* Reduced to half the original size */
+  height: 0.75em; /* Reduced to half the original size */
+  border-radius: 50%;
+  border: 2px solid gray;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-radio:checked {
+  background-color: #f97316; /* Tailwind orange-300 */
+  border-color: #f97316; /* Tailwind orange-300 */
+}
+
+.custom-radio:checked::after {
+  content: '';
+  display: block;
+  width: 0.375em; /* Reduced to half the original size */
+  height: 0.375em; /* Reduced to half the original size */
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
   

@@ -54,10 +54,10 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
             id="search-home"
           >
             <div className="flex flex-wrap gap-4 justify-center" id="buttons">
-              <button onClick={()=>falseRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${rentBuy ? 'bg-gray-300' : 'bg-black text-white'}`}>
+              <button onClick={()=>trueRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${!rentBuy ? 'bg-gray-300' : 'bg-black text-white'}`}>
                 Buy
               </button>
-              <button onClick={()=>trueRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${rentBuy ? 'bg-black text-white' : 'bg-gray-300'}`}>
+              <button onClick={()=>falseRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${!rentBuy ? 'bg-black text-white' : 'bg-gray-300'}`}>
                 Rent
               </button>
             </div>

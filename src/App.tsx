@@ -90,7 +90,7 @@ function App() {
   }, [page]);
 
   //Buy and rent toggle on home page false === buy && true === rent
-  const [rentBuy, setRentBuy] = useState<boolean>(false);
+  const [rentBuy, setRentBuy] = useState<boolean>(true);
   const falseRentBuy = (): void => {
     setRentBuy(false);
   };
@@ -258,6 +258,9 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
                 toggleBedBath={toggleBedBath}
                 toggleMore={toggleMore}
                 toggleBuy={toggleBuy}
+                rentBuy={rentBuy}
+                trueRentBuy={trueRentBuy}
+                falseRentBuy={falseRentBuy}
               />
             }
           />

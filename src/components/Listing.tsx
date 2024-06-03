@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { RiLoader3Fill } from "react-icons/ri";
 import { FiLoader } from "react-icons/fi";
 import ListingPageButtons from "./ListingPageButtons";
+import { FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 
 interface ListingProps {
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -29,6 +31,9 @@ interface ListingProps {
   toggleBuy: ()=> void;
   moreFilter: boolean;
   toggleMore: ()=> void;
+  rentBuy: boolean;
+  trueRentBuy: ()=> void;
+  falseRentBuy: ()=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -51,7 +56,10 @@ const Listing: React.FC<ListingProps> = ({
   buyFilter,
   toggleBuy,
   moreFilter,
-  toggleMore
+  toggleMore,
+  rentBuy,
+  trueRentBuy,
+  falseRentBuy
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -101,7 +109,7 @@ const Listing: React.FC<ListingProps> = ({
             alt={`${el.address} picture`}
           />
           <div className="flex flex-col px-10 gap-4 ">
-            <p className="font-bold text-[18px]">
+            <p className="font-bold mb-2 text-[18px]">
               <IoIosPin className="inline relative top-[-2px] left-[-3px] text-xl" />
               {`${el.address},${el.city},${el.state} ${el.zip}`}
             </p>
@@ -129,7 +137,7 @@ const Listing: React.FC<ListingProps> = ({
               <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
                 View Details
               </button>
-              <p className="font-bold text-2xl">{`$${el.price}`}</p>
+              <p className="font-bold mb-2 text-2xl">{`$${el.price}`}</p>
             </div>
           </div>
         </div>
@@ -168,30 +176,111 @@ const Listing: React.FC<ListingProps> = ({
             type="text"
             placeholder="State/City/Street"
           />
+
+          {/* Buy Sell Filter button */}
           <div>
             <div onClick={()=>toggleBuy()}>
-              <ListingPageButtons text="Buy" />
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${buyFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{rentBuy ? 'Buy' : 'Rent'} <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? '' : 'hidden'}`} /></button>
             </div>
-            <div className={` bg-black w-72 h-52 absolute mt-1 z-10 rounded-md  ${buyFilter ? '' : 'hidden'}`}>Hello</div>
-          </div>
-          <div>
-            <div onClick={()=>toggleBedBath()}>
-              <ListingPageButtons text="Bed & Baths" />
+            <div className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl  ${buyFilter ? '' : 'hidden'}`}>
+              <div className="p-6 flex flex-col gap-8">
+              <label onClick={()=>trueRentBuy()} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="buyCheckBox">
+  <input className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" defaultChecked={rentBuy} id="buyCheckBox" value='Buy' />Buy
+</label>
+
+<label onClick={()=>falseRentBuy()} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="rentCheckBox">
+  <input defaultChecked={!rentBuy} className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" id="rentCheckBox" value='Buy' />Rent
+</label>
+
+              </div>
+              <div className="p-5"><button onClick={()=>toggleBuy()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
             </div>
-            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${bedBathFilter ? '' : 'hidden'}`}></div>
           </div>
+
+        {/* Price filter button */}
           <div>
             <div onClick={()=>togglePrice()}>
-              <ListingPageButtons text="Price" />
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${priceFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>Price <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? '' : 'hidden'}`} /></button>
             </div>
-            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${priceFilter ? '' : 'hidden'}`}></div>
+            <div className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl ${priceFilter ? '' : 'hidden'}`}>
+              <div className="w-full bg-gray-300 text-gray-500 font-bold"><p className="ml-2">Price Range</p></div>
+              <div className="flex justify-center gap-8 p-5" id="min-max-filter">
+                <div id="min">
+                  <p className="font-bold mb-2">Minimum</p>
+                  <input className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Min" />
+                </div>
+                <p className="relative top-[40px] text-2xl">-</p>
+                <div id="max">
+                  <p className="font-bold mb-2">Maximum</p>
+                  <input className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Max" />
+                </div>
+              </div>
+              <div className="p-5"><button onClick={()=>togglePrice()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
+            </div>
           </div>
+
+        {/* Bed Bath Filter button */}
+          <div>
+            <div onClick={()=>toggleBedBath()}>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${bedBathFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>Bed & Bath <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? '' : 'hidden'}`} /></button>
+            </div>
+            <div className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl ${bedBathFilter ? '' : 'hidden'}`}>
+              <div id="bedroom-filter-section">
+                <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bedrooms</p></div>
+                <div className="px-7 py-4">
+                  <p className="font-bold text-gray-700">Bedrooms</p>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">Any</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">1+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">2+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">3+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">4+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">5+</button>
+                </div>
+              </div>
+              <div id="bathroom-filter-section">
+              <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bathrooms</p></div>
+                <div className="px-7 py-4">
+                  <p className="font-bold text-gray-700">Bathrooms</p>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">Any</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">1+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">2+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">3+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">4+</button>
+                  <button className=" w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200">5+</button>
+                </div>
+              </div>
+              <div className="p-5"><button onClick={()=>toggleBedBath()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
+            </div>
+          </div>
+         
+         {/* More Filter button */}
           <div>
             <div onClick={()=>toggleMore()}>
-              <ListingPageButtons text="More" />
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${moreFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>More <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? '' : 'hidden'}`} /></button>
             </div>
-            <div className={`bg-black w-72 h-52 absolute mt-1 z-10 rounded-md ${moreFilter ? '' : 'hidden'}`}></div>
+            <div className={`bg-[#FFFAF7] w-[600px] h-52 absolute mt-1 z-10 rounded-md shadow-2xl ${moreFilter ? '' : 'hidden'}`}>
+              <div className="bg-gray-300 text-gray-700 font-bold w-full"><p className="ml-4">MORE FILTERS</p></div>
+              <div id="extra-filters">
+                <div id="sqft-filter">
+                  <p className="font-bold text-gray-700 px-5">Square Feet</p>
+                  <div className="flex gap-10 justify-between px-5" id="sqft-min-max">
+                    <select className="text-gray-700 w-2/3 text-lg py-2 border-[1px]" name="" id="">
+                      <option value="No-Min">No Min</option>
+                    </select>
+                    <select className="text-gray-700 w-2/3 text-lg py-2 border-[1px]" name="" id="">
+                      <option value="No-Max">No Max</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="home-type">
+                  <p className="font-bold text-gray-700 px-5">Home-Type</p>
+                  
+                </div>
+              </div>
+            </div>
           </div>
+
+
           <select
             onChange={changeSort}
             className="py-3 px-2 border-2 text-xl rounded-md"
@@ -209,7 +298,7 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
           <button onClick={sortedData ? ()=> searchListings([...sortedData]): ()=>{console.log('no data');
-          }} className="bg-white font-bold py-3 px-14 border-2 text-xl rounded-md hover:bg-orange-300 hover:text-white duration-150 ease-in-out">
+          }} className="bg-orange-300 text-white font-bold py-3 px-14 border-2 text-xl rounded-md hover:bg-white hover:text-black duration-200 ease-in-out">
             Search
           </button>
         </div>
