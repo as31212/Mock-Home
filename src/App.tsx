@@ -84,19 +84,7 @@ function App() {
     }
     setPage(page - 1);
   };
-  // debug
-  useEffect(() => {
-    console.log(page);
-  }, [page]);
 
-  //Buy and rent toggle on home page false === buy && true === rent
-  const [rentBuy, setRentBuy] = useState<boolean>(true);
-  const falseRentBuy = (): void => {
-    setRentBuy(false);
-  };
-  const trueRentBuy = (): void => {
-    setRentBuy(true);
-  };
 
   // search algo logic for listings
   // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local variable making it not update
@@ -179,12 +167,24 @@ const [loading,setLoading] = useState<boolean>(false);
 
 // filtering use state object
 const [filter,setFilter] = useState<FilterInterface>(
-  {'buySell': '',
+  {'buySell': 'Buy',
 'priceRange': [0,0],
 'type':'',
 'bedrooms' : 0,
 'bathrooms' : 0,
 'sqft' : [0,0]});
+
+const updateFilter = (newProperty: Partial<FilterInterface>) => {
+  // prev filter is just the previous state of the object
+  setFilter((prevFilter) => ({
+    // here you are creating a copy of the object using the ... operator
+    // you then add the new property to the object
+    // but because the property already exist within the object
+    // it will just be overwritten
+    ...prevFilter,
+    ...newProperty,
+  }));
+};
 
 // filter toggles
 const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
@@ -209,11 +209,10 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
     setMoreFilter(!moreFilter);
   };
 
-// bedrooms filter state
-const [bedrooms,setBedrooms] = useState<string>('Any');
 
-// bathrooms filter state
-const [bathrooms,setBathrooms] = useState<string>('Any');
+
+
+
 
 
 
@@ -227,9 +226,8 @@ const [bathrooms,setBathrooms] = useState<string>('Any');
             path="/Home"
             element={
               <Home
-                rentBuy={rentBuy}
-                falseRentBuy={falseRentBuy}
-                trueRentBuy={trueRentBuy}
+                filter={filter}
+                updateFilter={updateFilter}
                 listingData={listingData}
               />
             }
@@ -261,14 +259,9 @@ const [bathrooms,setBathrooms] = useState<string>('Any');
                 toggleBedBath={toggleBedBath}
                 toggleMore={toggleMore}
                 toggleBuy={toggleBuy}
-                rentBuy={rentBuy}
-                trueRentBuy={trueRentBuy}
-                falseRentBuy={falseRentBuy}
                 listingData={listingData}
-                bedrooms={bedrooms}
-                setBedrooms={setBedrooms}
-                bathrooms={bathrooms}
-                setBathrooms={setBathrooms}
+                filter={filter}
+                updateFilter={updateFilter}
               />
             }
           />

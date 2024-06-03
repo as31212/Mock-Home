@@ -49,9 +49,9 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
   const agentTemplate = filteredAgentData
     ? [...filteredAgentData].map((el) => {
         return (
-          <div className="bg-white h-[450px] w-[300px] rounded-xl " key={el.id}>
+          <div className="bg-white h-[450px] w-[300px] rounded-xl overflow-hidden " key={el.id}>
             <img
-              className=" h-2/3 rounded-t-lg w-full"
+              className=" h-2/3 rounded-t-lg w-full hover:scale-105 hover:brightness-75 duration-200"
               src={el.img}
               alt={`${el.name} image`}
             />
@@ -75,7 +75,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
 
   return (
     <>
-      <div className="h-auto min-h-screen bg-[#FFFAF7] p-5 flex flex-col justify-center items-center gap-5">
+      <div className="h-auto min-h-screen bg-[#FFFAF7] p-5 flex flex-col justify-start items-center gap-5">
         <h2 className="text-xl font-bold">Agents Near You</h2>
         <div id="agent-search" className="flex w-full items-center px-28 gap-2">
           <input

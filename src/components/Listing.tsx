@@ -4,11 +4,10 @@ import { FaShower, FaBed, FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
 import { useEffect } from "react";
-import { RiLoader3Fill } from "react-icons/ri";
 import { FiLoader } from "react-icons/fi";
-import ListingPageButtons from "./ListingPageButtons";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
+import { FilterInterface } from "../interfaces/FilterInterface";
 
 interface ListingProps {
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -31,14 +30,9 @@ interface ListingProps {
   toggleBuy: ()=> void;
   moreFilter: boolean;
   toggleMore: ()=> void;
-  rentBuy: boolean;
-  trueRentBuy: ()=> void;
-  falseRentBuy: ()=> void;
   listingData: ListingInterface[] | null;
-  bedrooms: string;
-  bathrooms: string;
-  setBathrooms: (bathrooms: string)=> void;
-  setBedrooms: (bedrooms: string)=> void;
+  filter: FilterInterface;
+  updateFilter: (property : Partial<FilterInterface>) => void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -62,14 +56,9 @@ const Listing: React.FC<ListingProps> = ({
   toggleBuy,
   moreFilter,
   toggleMore,
-  rentBuy,
-  trueRentBuy,
-  falseRentBuy,
   listingData,
-  bathrooms,
-  setBathrooms,
-  bedrooms,
-  setBedrooms
+  filter,
+  updateFilter
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -106,22 +95,24 @@ const Listing: React.FC<ListingProps> = ({
     }
   }, [sort, sortedData, setSortedData]);
 
-  // renting or buying updates
+
+  // filter
+
   useEffect(()=>{
     if(listingData){
-    const rentBuyListings = rentBuy ? [...listingData].filter((el)=> el.buy_or_rent === 'Buy') : [...listingData].filter((el)=> el.buy_or_rent === 'rent');
-    setSortedData(rentBuyListings);
-  }},[rentBuy,sortedData])
-
-  // bedrooms and bathroom updates
-  useEffect(()=>{
-
-    if(listingData && sortedData){
-      const bathroomListings = isNaN(Number(bathrooms)) ? [...listingData] : [...listingData].filter((el)=> el.bathrooms >= Number(bathrooms));
-      setSortedData(bathroomListings);
+      const filtered = [...listingData].filter(el=>{
+        return(
+          el.bedrooms >= filter.bedrooms &&
+          el.bathrooms >= filter.bathrooms &&
+          el.buy_or_rent === filter.buySell
+          // finish the rest
+        );
+      })
+    setSortedData(filtered);
     }
-  },[bathrooms,sortedData])
-
+  },[filter,sortedData])
+ 
+// listing cards
   const listingTemplate = sortedData ? (
     sortedData.slice(page * 8 - 8, page * 8).map((el) => {
       return (
@@ -135,7 +126,7 @@ const Listing: React.FC<ListingProps> = ({
             alt={`${el.address} picture`}
           />
           <div className="flex flex-col px-10 gap-4 ">
-            <p className="font-bold mb-2 text-[18px]">
+            <p className="font-bold mb-2 text-[18px] h-[50px]">
               <IoIosPin className="inline relative top-[-2px] left-[-3px] text-xl" />
               {`${el.address},${el.city},${el.state} ${el.zip}`}
             </p>
@@ -163,7 +154,7 @@ const Listing: React.FC<ListingProps> = ({
               <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
                 View Details
               </button>
-              <p className="font-bold mb-2 text-2xl">{`$${el.buy_or_rent === 'Buy' ? el.price : `${el.price}/Month`}`}</p>
+              <p className={`font-bold mb-2 ${el.buy_or_rent === 'Buy' ? 'text-2xl' : 'text-xl mt-2'}`}>{`$${el.buy_or_rent === 'Buy' ? el.price : `${el.price}/mo`}`}</p>
             </div>
           </div>
         </div>
@@ -193,7 +184,7 @@ const Listing: React.FC<ListingProps> = ({
 
   return (
     <>
-      <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${sortedData < 1 && sortedData ? '' : ''}`}>
+      <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${sortedData && sortedData.length < 1  ? '' : ''}`}>
         <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} `}>
           <input
             value={searchAddress}
@@ -206,16 +197,16 @@ const Listing: React.FC<ListingProps> = ({
           {/* Buy Sell Filter button */}
           <div>
             <div onClick={()=>toggleBuy()}>
-            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${buyFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{rentBuy ? 'Buy' : 'Rent'} <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? '' : 'hidden'}`} /></button>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${buyFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{filter.buySell === 'Buy' ? 'Buy' : 'Rent'} <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl  ${buyFilter ? '' : 'hidden'}`}>
               <div className="p-6 flex flex-col gap-8">
-              <label onClick={()=>trueRentBuy()} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="buyCheckBox">
-  <input className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" defaultChecked={rentBuy} id="buyCheckBox" value='Buy' />Buy
+              <label onClick={()=>updateFilter({buySell:'Buy'})} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="buyCheckBox">
+  <input className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" defaultChecked={filter.buySell === 'Buy'} id="buyCheckBox" value='Buy' />Buy
 </label>
 
-<label onClick={()=>falseRentBuy()} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="rentCheckBox">
-  <input defaultChecked={!rentBuy} className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" id="rentCheckBox" value='Buy' />Rent
+<label onClick={()=>updateFilter({buySell:'rent'})} className="text-xl text-gray-600 hover:text-orange-300" htmlFor="rentCheckBox">
+  <input defaultChecked={filter.buySell === 'rent'} className="mr-7 scale-150 custom-radio" type="radio" name="buy-sell-radio" id="rentCheckBox" value='Buy' />Rent
 </label>
 
               </div>
@@ -255,24 +246,24 @@ const Listing: React.FC<ListingProps> = ({
                 <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bedrooms</p></div>
                 <div className="px-7 py-4">
                   <p className="font-bold text-gray-700">Bedrooms</p>
-                  <button onClick={()=>setBedrooms('Any')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === 'Any' ? 'bg-orange-300' : '' }`}>Any</button>
-                  <button onClick={()=>setBedrooms('1')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '1' ? 'bg-orange-300' : ''}`}>1+</button>
-                  <button onClick={()=>setBedrooms('2')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '2' ? 'bg-orange-300' : ''}`}>2+</button>
-                  <button onClick={()=>setBedrooms('3')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '3' ? 'bg-orange-300' : ''}`}>3+</button>
-                  <button onClick={()=>setBedrooms('4')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '4' ? 'bg-orange-300' : ''}`}>4+</button>
-                  <button onClick={()=>setBedrooms('5')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bedrooms === '5' ? 'bg-orange-300' : ''}`}>5+</button>
+                  <button onClick={()=>updateFilter({bedrooms:0})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 0 ? 'bg-orange-300' : '' }`}>Any</button>
+                  <button onClick={()=>updateFilter({bedrooms:1})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 1 ? 'bg-orange-300' : ''}`}>1+</button>
+                  <button onClick={()=>updateFilter({bedrooms:2})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 2 ? 'bg-orange-300' : ''}`}>2+</button>
+                  <button onClick={()=>updateFilter({bedrooms:3})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 3 ? 'bg-orange-300' : ''}`}>3+</button>
+                  <button onClick={()=>updateFilter({bedrooms:4})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 4 ? 'bg-orange-300' : ''}`}>4+</button>
+                  <button onClick={()=>updateFilter({bedrooms:5})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bedrooms === 5 ? 'bg-orange-300' : ''}`}>5+</button>
                 </div>
               </div>
               <div id="bathroom-filter-section">
               <div className="bg-gray-300 text-gray-500 font-bold w-full"><p className="ml-4">Number of Bathrooms</p></div>
                 <div className="px-7 py-4">
                   <p className="font-bold text-gray-700">Bathrooms</p>
-                  <button onClick={()=>setBathrooms('Any')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === 'Any' ? 'bg-orange-300' : ''}`}>Any</button>
-                  <button onClick={()=>setBathrooms('1')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '1' ? 'bg-orange-300' : ''}`}>1+</button>
-                  <button onClick={()=>setBathrooms('2')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '2' ? 'bg-orange-300' : ''}`}>2+</button>
-                  <button onClick={()=>setBathrooms('3')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '3' ? 'bg-orange-300' : ''}`}>3+</button>
-                  <button onClick={()=>setBathrooms('4')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '4' ? 'bg-orange-300' : ''}`}>4+</button>
-                  <button onClick={()=>setBathrooms('5')} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${bathrooms === '5' ? 'bg-orange-300' : ''}`}>5+</button>
+                  <button onClick={()=>updateFilter({bathrooms:0})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 0 ? 'bg-orange-300' : ''}`}>Any</button>
+                  <button onClick={()=>updateFilter({bathrooms:1})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 1 ? 'bg-orange-300' : ''}`}>1+</button>
+                  <button onClick={()=>updateFilter({bathrooms:2})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 2 ? 'bg-orange-300' : ''}`}>2+</button>
+                  <button onClick={()=>updateFilter({bathrooms:3})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 3 ? 'bg-orange-300' : ''}`}>3+</button>
+                  <button onClick={()=>updateFilter({bathrooms:4})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 4 ? 'bg-orange-300' : ''}`}>4+</button>
+                  <button onClick={()=>updateFilter({bathrooms:5})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 5 ? 'bg-orange-300' : ''}`}>5+</button>
                 </div>
               </div>
               <div className="p-5"><button onClick={()=>toggleBedBath()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
@@ -335,9 +326,9 @@ const Listing: React.FC<ListingProps> = ({
         <FiLoader className={`m-10 text-5xl mx-auto ${loading ? 'spin' : 'hidden'}`} />
         <div id="buttons-listings">
           <div id="listing-container" className={`flex min-h-screen flex-wrap justify-center my-10 ${loading ? 'hidden' : ''}`}>
-            {sortedData?.length > 1 && sortedData?.length ? listingTemplate :<img className="mx-auto mt-20 h-[80%]" src="noResultsOrange.png" alt="man looking for something" />}
+            {sortedData?.length && sortedData?.length > 1 ? listingTemplate :<img className="mx-auto mt-20 h-[80%]" src="noResultsOrange.png" alt="man looking for something" />}
           </div>
-          <div className={`flex justify-center ${loading ? 'hidden' : ''} ${sortedData?.length > 1 && sortedData? '' : 'hidden'}`} id="page-buttons">
+          <div className={`flex justify-center ${loading ? 'hidden' : ''} ${sortedData?.length && sortedData?.length > 1 ? '' : 'hidden'}`} id="page-buttons">
           <a href="#nav">
             <button
               className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"

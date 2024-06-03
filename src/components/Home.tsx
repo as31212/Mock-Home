@@ -10,7 +10,7 @@ import { FaFireAlt } from "react-icons/fa";
 import { LuSmilePlus } from "react-icons/lu";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { ListingInterface } from "../interfaces/ListingsInterface";
-import Listing from "./Listing";
+import { FilterInterface } from "../interfaces/FilterInterface";
 import { FaShower } from "react-icons/fa";
 import { FaBed } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
@@ -19,13 +19,12 @@ import { IoIosPin } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
 interface HomeInterface{
-  rentBuy: boolean;
-  falseRentBuy: ()=> void;
-  trueRentBuy: ()=> void;
+  filter: FilterInterface;
+  updateFilter: (property: Partial<FilterInterface>)=> void;
   listingData: ListingInterface[] | null;
 }
 
-const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, listingData}) => {
+const Home: React.FC<HomeInterface> = ({updateFilter,filter, listingData}) => {
   return (
     <>
       <div
@@ -54,10 +53,10 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
             id="search-home"
           >
             <div className="flex flex-wrap gap-4 justify-center" id="buttons">
-              <button onClick={()=>trueRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${!rentBuy ? 'bg-gray-300' : 'bg-black text-white'}`}>
+              <button onClick={()=>updateFilter({buySell:'Buy'})} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${filter.buySell === 'Buy' ? 'bg-black text-white' :'bg-gray-300' }`}>
                 Buy
               </button>
-              <button onClick={()=>falseRentBuy()} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${!rentBuy ? 'bg-black text-white' : 'bg-gray-300'}`}>
+              <button onClick={()=>updateFilter({buySell: 'rent'})} className={`w-5/12 shadow font-semibold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${filter.buySell === 'rent' ? 'bg-black text-white' :'bg-gray-300'}`}>
                 Rent
               </button>
             </div>
@@ -199,15 +198,15 @@ const Home: React.FC<HomeInterface> = ({rentBuy, falseRentBuy, trueRentBuy, list
             return(
               <div
             key={el.id}
-            className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white"
+            className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white overflow-hidden"
           >
             <img
-              className="h-1/2 rounded-t-xl"
+              className="h-1/2 rounded-t-xl hover:scale-105 hover:brightness-75 duration-200"
               src={el.image_url}
               alt={`${el.address} picture`}
             />
             <div className="flex flex-col px-10 gap-4 ">
-              <p className="font-bold text-[18px]">
+              <p className="font-bold text-[18px] h-[50px]">
                 <IoIosPin className="inline relative top-[-2px] left-[-3px] text-xl" />
                 {`${el.address},${el.city},${el.state} ${el.zip}`}
               </p>
