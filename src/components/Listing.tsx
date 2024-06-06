@@ -8,6 +8,7 @@ import { FiLoader } from "react-icons/fi";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 import { FilterInterface } from "../interfaces/FilterInterface";
+import { TiDelete } from "react-icons/ti";
 
 interface ListingProps {
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -203,7 +204,8 @@ const Listing: React.FC<ListingProps> = ({
             type="text"
             placeholder="State/City/Street"
           />
-          <div onClick={()=>setSavedSearchAddress('')} className={`${savedSearchAddress !== '' ? '' : 'hidden'}`}>{savedSearchAddress}</div>
+          {/* search filter toggle */}
+          <div onClick={()=>setSavedSearchAddress('')} className={` flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto relative right-[150px] top-3 bg-gray-200 font-bold text-center ${savedSearchAddress !== '' ? '' : 'hidden'}`}>{savedSearchAddress}<TiDelete className="text-xl relative top-[2px]" /></div>
 
           {/* Buy Sell Filter button */}
           <div>
