@@ -33,6 +33,9 @@ interface ListingProps {
   listingData: ListingInterface[] | null;
   filter: FilterInterface;
   updateFilter: (property : Partial<FilterInterface>) => void;
+  savedSearchAddress: string;
+  setSavedSearchAddress: (searchAddress: string) => void;
+  setSearchAddress: (searchAddress: string) => void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -58,7 +61,10 @@ const Listing: React.FC<ListingProps> = ({
   toggleMore,
   listingData,
   filter,
-  updateFilter
+  updateFilter,
+  savedSearchAddress,
+  setSavedSearchAddress,
+  setSearchAddress
 }) => {
   useEffect(() => {
     if (sortedData) {
@@ -104,13 +110,17 @@ const Listing: React.FC<ListingProps> = ({
         return(
           el.bedrooms >= filter.bedrooms &&
           el.bathrooms >= filter.bathrooms &&
-          el.buy_or_rent === filter.buySell
+          el.buy_or_rent === filter.buySell &&
+          (savedSearchAddress !== '' ? el.address.toLowerCase().includes(savedSearchAddress.toLowerCase()) ||
+          el.city.toLowerCase().includes(savedSearchAddress.toLowerCase()) ||
+          el.state.toLowerCase().includes(savedSearchAddress.toLowerCase()) ||
+          el.zip.toLowerCase().includes(savedSearchAddress.toLowerCase()) : true )
           // finish the rest
         );
       })
     setSortedData(filtered);
     }
-  },[filter,sortedData])
+  },[filter,savedSearchAddress])
  
 // listing cards
   const listingTemplate = sortedData ? (
@@ -193,6 +203,7 @@ const Listing: React.FC<ListingProps> = ({
             type="text"
             placeholder="State/City/Street"
           />
+          <div onClick={()=>setSavedSearchAddress('')} className={`${savedSearchAddress !== '' ? '' : 'hidden'}`}>{savedSearchAddress}</div>
 
           {/* Buy Sell Filter button */}
           <div>
@@ -318,7 +329,9 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-asc">Square Footage: Low to High</option>
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
-          <button onClick={sortedData ? ()=> searchListings([...sortedData]): ()=>{console.log('no data');
+          <button onClick={sortedData ? ()=> {setSavedSearchAddress(searchAddress); searchListings([...sortedData]);
+          setSearchAddress('');
+           }: ()=>{console.log('no data');
           }} className="bg-orange-300 text-white font-bold py-3 px-14 border-2 text-xl rounded-md hover:bg-white hover:text-black duration-200 ease-in-out">
             Search
           </button>

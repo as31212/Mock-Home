@@ -90,6 +90,7 @@ function App() {
   // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local variable making it not update
   // then when i would attempt to reset the state, it would not reset because the arg had already been passed and was no longer a part of the state
   const [searchAddress, setSearchAddress] = useState<string>("");
+  const [savedSearchAddress,setSavedSearchAddress] = useState<string>('');
   const changeSearchAddress = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -98,22 +99,28 @@ function App() {
 
   // search function
   const searchListings = (): void => {
+    if (searchAddress === '') {
+      alert('Please Input Data')
+      return;
+    }
     setLoading(true);
     setTimeout(()=>{
       setLoading(false);
     }, 1000);
     setPage(1);
     setSortedData(listingData);
-    if (searchAddress === '') {
-      return;
-    }
     if (listingData) {
      const filteredData = [...listingData].filter(el => {
         return (
-          el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
+          // search functions
+          (el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
           el.city.toLowerCase().includes(searchAddress.toLowerCase()) ||
           el.state.toLowerCase().includes(searchAddress.toLowerCase()) ||
-          el.zip.toLowerCase().includes(searchAddress.toLowerCase())
+          el.zip.toLowerCase().includes(searchAddress.toLowerCase())) &&
+          // filter functions
+          el.bedrooms >= filter.bedrooms &&
+          el.bathrooms >= filter.bathrooms &&
+          el.buy_or_rent === filter.buySell 
         );
       });
       setSortedData(filteredData)
@@ -262,6 +269,9 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
                 listingData={listingData}
                 filter={filter}
                 updateFilter={updateFilter}
+                savedSearchAddress={savedSearchAddress}
+                setSavedSearchAddress={setSavedSearchAddress}
+                setSearchAddress={setSearchAddress}
               />
             }
           />
