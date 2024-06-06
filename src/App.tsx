@@ -18,6 +18,7 @@ import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
 import ScrollToTop from "./ScrollToTop";
 import { FilterInterface } from "./interfaces/FilterInterface";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -216,8 +217,62 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
     setMoreFilter(!moreFilter);
   };
 
+// toggle active filter
+const [activeFilter,setActiveFilter] = useState<number>(0);
+// focus logic
+const checkFocus = ()=>{
+  switch(activeFilter){
+    case 0:
+    setBedBathFilter(false);
+    setPriceFilter(false);
+    setBuyFilter(false);
+    setMoreFilter(false);
+    break;
+    case 1:
+      setBedBathFilter(false);
+      setPriceFilter(false);
+      setMoreFilter(false);
+      
+      break;
+    case 2:
+      setBedBathFilter(false);
+      
+      setBuyFilter(false);
+      setMoreFilter(false);
+      break;
+    case 3:
+      setMoreFilter(false)
+      setPriceFilter(false);
+      setBuyFilter(false);
+      
+      break;
+    case 4:
+      setBedBathFilter(false);
+      setPriceFilter(false);
+      setBuyFilter(false);
+      
+      break;
+    case 5:
+      setBedBathFilter(false);
+      setPriceFilter(false);
+      setBuyFilter(false);
+      setMoreFilter(false);
+      break;
+    case 6:
+      setBedBathFilter(false);
+      setPriceFilter(false);
+      setBuyFilter(false);
+      setMoreFilter(false);
+      break;
+  }
+}
+useEffect(()=>{
+  checkFocus()
+},[activeFilter])
 
-
+// max and min toggle
+const [maxToggle,setMaxToggle] = useState<boolean>(false);
+const [minToggle,setMinToggle] = useState<boolean>(false);
 
 
 
@@ -272,6 +327,13 @@ const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
                 savedSearchAddress={savedSearchAddress}
                 setSavedSearchAddress={setSavedSearchAddress}
                 setSearchAddress={setSearchAddress}
+                activeFilter={activeFilter}
+                setActiveFilter={setActiveFilter}
+                checkFocus={checkFocus}
+                maxToggle={maxToggle}
+                setMaxToggle={setMaxToggle}
+                minToggle={minToggle}
+                setMinToggle={setMinToggle}
               />
             }
           />

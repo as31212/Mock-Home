@@ -37,6 +37,14 @@ interface ListingProps {
   savedSearchAddress: string;
   setSavedSearchAddress: (searchAddress: string) => void;
   setSearchAddress: (searchAddress: string) => void;
+  activeFilter: number;
+  setActiveFilter: (num: number)=> void;
+  checkFocus: ()=> void;
+  minToggle: boolean;
+  setMinToggle: (toggle: boolean)=> void;
+  maxToggle: boolean;
+  setMaxToggle: (toggle: boolean)=> void;
+
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -65,8 +73,40 @@ const Listing: React.FC<ListingProps> = ({
   updateFilter,
   savedSearchAddress,
   setSavedSearchAddress,
-  setSearchAddress
+  setSearchAddress,
+  setActiveFilter,
+  activeFilter,
+  checkFocus,
+  setMaxToggle,
+  setMinToggle,
+  minToggle,
+  maxToggle,
 }) => {
+  // price range list
+  const minNumber = [
+    '0', '50,000', '100,000', '150,000', '200,000', '250,000', '300,000', '350,000', '400,000', '450,000',
+    '500,000', '550,000', '600,000', '650,000', '700,000', '750,000', '800,000', '850,000', '900,000', '950,000',
+    '1M', '1.25M', '1.5M', '1.75M', '2M', '2.25M', '2.5M', '2.75M', '3M', '3.25M',
+    '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
+    '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M'
+  ].map((el,index)=>{
+    return(<li className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
+  });
+
+  const maxNumber =  [
+    '0', '50,000', '100,000', '150,000', '200,000', '250,000', '300,000', '350,000', '400,000', '450,000',
+    '500,000', '550,000', '600,000', '650,000', '700,000', '750,000', '800,000', '850,000', '900,000', '950,000',
+    '1M', '1.25M', '1.5M', '1.75M', '2M', '2.25M', '2.5M', '2.75M', '3M', '3.25M',
+    '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
+    '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M','Any Number'
+  ].map((el,index)=>{
+    return(<li className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
+  });
+
+
+
+
+// sort
   useEffect(() => {
     if (sortedData) {
       let sorting = [...sortedData]; // Create a copy of the data
@@ -198,6 +238,7 @@ const Listing: React.FC<ListingProps> = ({
       <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${sortedData && sortedData.length < 1  ? '' : ''}`}>
         <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} `}>
           <input
+          onFocus={()=>setActiveFilter(0)}
             value={searchAddress}
             onChange={(event) => changeSearchAddress(event)}
             className="py-3 pl-2 pr-32 border-2 text-xl rounded-md"
@@ -207,10 +248,12 @@ const Listing: React.FC<ListingProps> = ({
           {/* search filter toggle */}
           <div onClick={()=>setSavedSearchAddress('')} className={` flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto relative right-[150px] top-3 bg-gray-200 font-bold text-center ${savedSearchAddress !== '' ? '' : 'hidden'}`}>{savedSearchAddress}<TiDelete className="text-xl relative top-[2px]" /></div>
 
-          {/* Buy Sell Filter button */}
+          {/* Buy Sell Filter button  1*/}
           <div>
-            <div onClick={()=>toggleBuy()}>
-            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${buyFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{filter.buySell === 'Buy' ? 'Buy' : 'Rent'} <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? '' : 'hidden'}`} /></button>
+            <div onClick={()=>{toggleBuy();
+              setActiveFilter(1);
+            }}>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${buyFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{filter.buySell === 'Buy' ? 'Buy' : 'Rent'} <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? 'hidden' : ''} `} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${buyFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl  ${buyFilter ? '' : 'hidden'}`}>
               <div className="p-6 flex flex-col gap-8">
@@ -223,35 +266,49 @@ const Listing: React.FC<ListingProps> = ({
 </label>
 
               </div>
-              <div className="p-5"><button onClick={()=>toggleBuy()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
+              <div className="p-5"><button onClick={()=>{toggleBuy();
+                setActiveFilter(0);
+              }} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
             </div>
           </div>
 
-        {/* Price filter button */}
+        {/* Price filter button 2*/}
           <div>
-            <div onClick={()=>togglePrice()}>
-            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${priceFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>Price <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? '' : 'hidden'}`} /></button>
+            <div onClick={()=>{togglePrice()
+              setActiveFilter(2)
+            }}>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${priceFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{'Price'}<FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl ${priceFilter ? '' : 'hidden'}`}>
               <div className="w-full bg-gray-300 text-gray-500 font-bold"><p className="ml-2">Price Range</p></div>
               <div className="flex justify-center gap-8 p-5" id="min-max-filter">
                 <div id="min">
                   <p className="font-bold mb-2">Minimum</p>
-                  <input className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Min" />
+                  <input onBlur={()=>setMinToggle(false)} onFocus={()=>setMinToggle(true)} className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Min" />
+                  <ul className={`overflow-y-scroll h-[200px] bg-white rounded-lg shadow-xl absolute z-20 w-40 ${minToggle ? '' : 'hidden'}`}>
+                    {minNumber}
+                  </ul>
                 </div>
                 <p className="relative top-[40px] text-2xl">-</p>
                 <div id="max">
                   <p className="font-bold mb-2">Maximum</p>
-                  <input className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Max" />
+                  <input onBlur={()=>setMaxToggle(false)} onFocus={()=>setMaxToggle(true)} className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px]`} type="text" placeholder="No Max" />
+                  <ul className={`overflow-y-scroll h-[200px] bg-white rounded-lg shadow-xl absolute z-20 w-40 ${maxToggle ? '' : 'hidden'}`}>
+                    {maxNumber}
+                  </ul>
                 </div>
               </div>
-              <div className="p-5"><button onClick={()=>togglePrice()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
+              <div className="p-5"><button onClick={()=>{togglePrice()
+                setActiveFilter(0)
+              }} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
             </div>
           </div>
 
-        {/* Bed Bath Filter button */}
+        {/* Bed Bath Filter button 3*/}
           <div>
-            <div onClick={()=>toggleBedBath()}>
+            <div onClick={()=>{toggleBedBath();
+              setActiveFilter(3)
+            }}>
             <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${bedBathFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>Bed & Bath <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl ${bedBathFilter ? '' : 'hidden'}`}>
@@ -279,13 +336,17 @@ const Listing: React.FC<ListingProps> = ({
                   <button onClick={()=>updateFilter({bathrooms:5})} className={`w-14 py-2 font-bold text-gray-700 border-2 border-gray-400 rounded-sm hover:bg-gray-200 ${filter.bathrooms === 5 ? 'bg-orange-300' : ''}`}>5+</button>
                 </div>
               </div>
-              <div className="p-5"><button onClick={()=>toggleBedBath()} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
+              <div className="p-5"><button onClick={()=>{toggleBedBath();
+                setActiveFilter(0)
+              }} className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out">Apply</button></div>
             </div>
           </div>
          
-         {/* More Filter button */}
+         {/* More Filter button 4*/}
           <div>
-            <div onClick={()=>toggleMore()}>
+            <div onClick={()=>{toggleMore();
+              setActiveFilter(4);
+            }}>
             <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${moreFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>More <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${moreFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] w-[600px] h-[300px] absolute mt-1 z-10 rounded-md shadow-2xl ${moreFilter ? '' : 'hidden'}`}>
@@ -318,6 +379,7 @@ const Listing: React.FC<ListingProps> = ({
           <select
             onChange={changeSort}
             className="py-3 px-2 border-2 text-xl rounded-md"
+            onClick={()=>setActiveFilter(6)}
           >
             <option disabled selected value="">
               Sort
