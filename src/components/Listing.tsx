@@ -255,7 +255,7 @@ const priceTitle = ()=>{
     return `Price`;
   }
   else if(filter.priceRange[0] === 0 && filter.priceRange[1] !== 0){
-    return `Up to $${filter.priceRange[0]}`
+    return `Up to $${filter.priceRange[1]}`
   }
   else if(filter.priceRange[0] !== 0 && filter.priceRange[1] === 0){
     return `$${filter.priceRange[0]}+`
