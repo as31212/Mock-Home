@@ -3,7 +3,7 @@ import { ListingInterface } from "../interfaces/ListingsInterface";
 import { FaShower, FaBed, FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
-import { useEffect } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { FiLoader } from "react-icons/fi";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
@@ -44,10 +44,25 @@ interface ListingProps {
   setMinToggle: (toggle: boolean)=> void;
   maxToggle: boolean;
   setMaxToggle: (toggle: boolean)=> void;
+  // min max input states
+  minValue: string;
+  changeMinByBtn: (e:React.MouseEvent<HTMLLIElement>)=> void;
+  changeMaxByBtn: (e:React.MouseEvent<HTMLLIElement>)=> void;
+  maxValue: string;
+  changeMinByInput: (e:ChangeEvent<HTMLInputElement>)=>void;
+  changeMaxByInput: (e:ChangeEvent<HTMLInputElement>)=> void;
+
+
 
 }
 
 const Listing: React.FC<ListingProps> = ({
+  minValue,
+  changeMinByBtn,
+  changeMaxByBtn,
+  maxValue,
+  changeMinByInput,
+  changeMaxByInput,
   searchAddress,
   changeSearchAddress,
   page,
@@ -90,7 +105,7 @@ const Listing: React.FC<ListingProps> = ({
     '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
     '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M'
   ].map((el,index)=>{
-    return(<li className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
+    return(<li onClick={(event)=>changeMinByBtn(event)} className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
   });
 
   const maxNumber =  [
@@ -100,7 +115,7 @@ const Listing: React.FC<ListingProps> = ({
     '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
     '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M','Any Number'
   ].map((el,index)=>{
-    return(<li className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
+    return(<li onClick={(event)=>changeMaxByBtn(event)} className="text-lg hover:bg-orange-200 p-3" key={index}>{`$${el}`}</li>);
   });
 
 
@@ -233,20 +248,46 @@ const Listing: React.FC<ListingProps> = ({
     <div></div>
   );
 
+
+// price name logic
+const priceTitle = ()=>{
+  if(filter.priceRange[0] === 0 && filter.priceRange[1] === 0){
+    return `Price`;
+  }
+  else if(filter.priceRange[0] === 0 && filter.priceRange[1] !== 0){
+    return `Up to $${filter.priceRange[0]}`
+  }
+  else if(filter.priceRange[0] !== 0 && filter.priceRange[1] === 0){
+    return `$${filter.priceRange[0]}+`
+  }
+  else{
+    return `$${filter.priceRange[0]}-$${filter.priceRange[1]}`
+  }
+}
+
   return (
     <>
       <div id="listing-page" className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${sortedData && sortedData.length < 1  ? '' : ''}`}>
         <div id="search" className={`flex flex-wrap justify-center gap-5  ${loading ? 'hidden' : ''} `}>
-          <input
-          onFocus={()=>setActiveFilter(0)}
-            value={searchAddress}
-            onChange={(event) => changeSearchAddress(event)}
-            className="py-3 pl-2 pr-32 border-2 text-xl rounded-md"
-            type="text"
-            placeholder="State/City/Street"
-          />
-          {/* search filter toggle */}
-          <div onClick={()=>setSavedSearchAddress('')} className={` flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto relative right-[150px] top-3 bg-gray-200 font-bold text-center ${savedSearchAddress !== '' ? '' : 'hidden'}`}>{savedSearchAddress}<TiDelete className="text-xl relative top-[2px]" /></div>
+          
+        <div className="relative w-full max-w-md">
+  <div className="relative flex items-center">
+    <input
+      onFocus={() => setActiveFilter(0)}
+      value={searchAddress}
+      onChange={(event) => changeSearchAddress(event)}
+      className="py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full"
+      type="text"
+      placeholder="State/City/Street"
+    />
+    <div className={`absolute flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto bg-gray-200 font-bold text-center top-2 left-[440px] transform -translate-x-full ${savedSearchAddress !== '' ? '' : 'hidden'}`}>
+      {savedSearchAddress}
+      <TiDelete onClick={() => setSavedSearchAddress('')} className="text-xl relative top-[2px]" />
+    </div>
+  </div>
+</div>
+
+          
 
           {/* Buy Sell Filter button  1*/}
           <div>
@@ -277,22 +318,38 @@ const Listing: React.FC<ListingProps> = ({
             <div onClick={()=>{togglePrice()
               setActiveFilter(2)
             }}>
-            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${priceFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{'Price'}<FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? '' : 'hidden'}`} /></button>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${priceFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{priceTitle()}<FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? 'hidden' : ''}`} /><FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${priceFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl ${priceFilter ? '' : 'hidden'}`}>
               <div className="w-full bg-gray-300 text-gray-500 font-bold"><p className="ml-2">Price Range</p></div>
               <div className="flex justify-center gap-8 p-5" id="min-max-filter">
                 <div id="min">
                   <p className="font-bold mb-2">Minimum</p>
-                  <input onBlur={()=>setMinToggle(false)} onFocus={()=>setMinToggle(true)} className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] " type="text" placeholder="No Min" />
-                  <ul className={`overflow-y-scroll h-[200px] bg-white rounded-lg shadow-xl absolute z-20 w-40 ${minToggle ? '' : 'hidden'}`}>
-                    {minNumber}
-                  </ul>
+                  <input
+  value={minValue}
+  onChange={(event) => changeMinByInput(event)}
+  onBlur={() => {
+    setMinToggle(false);
+    const parsedMinValue = minValue.includes('M') ? Number(minValue.replace('M', '')) * 1000000 : Number(minValue);
+    updateFilter({ priceRange: [parsedMinValue, filter.priceRange[1]] });
+  }}
+  onFocus={() => setMinToggle(true)}
+  className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:border-[5px] focus:outline-none"
+  type="text"
+  placeholder="No Min"
+/>
+<ul className={`overflow-y-scroll h-[200px] bg-white rounded-lg shadow-xl absolute z-20 w-40 ${minToggle ? '' : 'hidden'}`}>
+  {minNumber}
+</ul>
                 </div>
                 <p className="relative top-[40px] text-2xl">-</p>
                 <div id="max">
                   <p className="font-bold mb-2">Maximum</p>
-                  <input onBlur={()=>setMaxToggle(false)} onFocus={()=>setMaxToggle(true)} className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px]`} type="text" placeholder="No Max" />
+                  <input value={maxValue} onChange={(event)=>changeMaxByInput(event)} onBlur={() => {
+    setMaxToggle(false);
+    const parsedMaxValue = maxValue.includes('M') ? Number(maxValue.replace('M', '')) * 1000000 : Number(maxValue);
+    updateFilter({ priceRange: [filter.priceRange[0], parsedMaxValue] });
+  }} onFocus={()=>setMaxToggle(true)} className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:border-[5px] focus:border-orange-300 focus:outline-none`} type="text" placeholder="No Max" />
                   <ul className={`overflow-y-scroll h-[200px] bg-white rounded-lg shadow-xl absolute z-20 w-40 ${maxToggle ? '' : 'hidden'}`}>
                     {maxNumber}
                   </ul>
@@ -309,7 +366,7 @@ const Listing: React.FC<ListingProps> = ({
             <div onClick={()=>{toggleBedBath();
               setActiveFilter(3)
             }}>
-            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${bedBathFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>Bed & Bath <FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? '' : 'hidden'}`} /></button>
+            <button className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${bedBathFilter ? 'bg-orange-200 border-orange-300 ' : ''}`}>{`${filter.bathrooms > 0 || filter.bedrooms > 0 ? `bd+${filter.bedrooms}, ba+${filter.bathrooms} ` : 'Beds & Baths'}`}<FaChevronDown className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? 'hidden' : ''}`} /> <FaChevronUp className={`inline relative bottom-[2px] left-2 text-lg ${bedBathFilter ? '' : 'hidden'}`} /></button>
             </div>
             <div className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl ${bedBathFilter ? '' : 'hidden'}`}>
               <div id="bedroom-filter-section">
@@ -393,7 +450,7 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-asc">Square Footage: Low to High</option>
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
-          <button onClick={sortedData ? ()=> {setSavedSearchAddress(searchAddress); searchListings([...sortedData]);
+          <button onClick={sortedData ? ()=> {if(searchAddress !== ''){setSavedSearchAddress(searchAddress);} searchListings([...sortedData]);
           setSearchAddress('');
            }: ()=>{console.log('no data');
           }} className="bg-orange-300 text-white font-bold py-3 px-14 border-2 text-xl rounded-md hover:bg-white hover:text-black duration-200 ease-in-out">

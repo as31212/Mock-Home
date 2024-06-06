@@ -1,4 +1,4 @@
-import { ReactHTMLElement, useEffect, useState } from "react";
+import { ChangeEvent, ReactHTMLElement, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -274,8 +274,30 @@ useEffect(()=>{
 const [maxToggle,setMaxToggle] = useState<boolean>(false);
 const [minToggle,setMinToggle] = useState<boolean>(false);
 
+// max and min data use input retrieval variables
 
+const [minValue,setMinValue] = useState<string>('');
+const [maxValue,setMaxValue] = useState<string>('');
 
+// how to retrieve data from a li element 
+const changeMinByBtn = (e: React.MouseEvent<HTMLLIElement>) => {
+  setMinValue(e.currentTarget.textContent || '');
+};
+
+const changeMaxByBtn = (e: React.MouseEvent<HTMLLIElement>) => {
+  setMaxValue(e.currentTarget.textContent || '');
+};
+
+useEffect(()=>console.log(minValue,maxValue),[minValue,maxValue,filter]
+)
+
+// input min max user input 
+const changeMinByInput = (e: ChangeEvent<HTMLInputElement>)=>{
+  setMinValue(e.target.value);
+}
+const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
+  setMaxValue(e.target.value);
+}
 
 
   return (
@@ -301,6 +323,12 @@ const [minToggle,setMinToggle] = useState<boolean>(false);
             path="/Listing"
             element={
               <Listing
+              changeMaxByInput={changeMaxByInput}
+              changeMinByInput={changeMinByInput}
+              changeMaxByBtn={changeMaxByBtn}
+              maxValue={maxValue}
+              changeMinByBtn={changeMinByBtn}
+              minValue={minValue}
                 changeSearchAddress={changeSearchAddress}
                 searchAddress={searchAddress}
                 decreasePage={decreasePage}
