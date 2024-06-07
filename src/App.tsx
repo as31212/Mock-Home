@@ -274,22 +274,43 @@ useEffect(()=>{
 const [maxToggle,setMaxToggle] = useState<boolean>(false);
 const [minToggle,setMinToggle] = useState<boolean>(false);
 
+// maxNums minNums array 
+
+const minNumbers = [
+  '0', '50,000', '100,000', '150,000', '200,000', '250,000', '300,000', '350,000', '400,000', '450,000',
+  '500,000', '550,000', '600,000', '650,000', '700,000', '750,000', '800,000', '850,000', '900,000', '950,000',
+  '1M', '1.25M', '1.5M', '1.75M', '2M', '2.25M', '2.5M', '2.75M', '3M', '3.25M',
+  '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
+  '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M'
+]
+
+const maxNumbers =  [
+  '0', '50,000', '100,000', '150,000', '200,000', '250,000', '300,000', '350,000', '400,000', '450,000',
+  '500,000', '550,000', '600,000', '650,000', '700,000', '750,000', '800,000', '850,000', '900,000', '950,000',
+  '1M', '1.25M', '1.5M', '1.75M', '2M', '2.25M', '2.5M', '2.75M', '3M', '3.25M',
+  '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
+  '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M','Any Number'
+]
 // max and min data use input retrieval variables
 
 const [minValue,setMinValue] = useState<string>('');
 const [maxValue,setMaxValue] = useState<string>('');
 
 // how to retrieve data from a li element 
-const changeMinByBtn = (e: React.MouseEvent<HTMLLIElement>) => {
-  setMinValue(e.currentTarget.textContent || '');
+const changeMinByBtn = (key: number) => {
+  setMinValue(minNumbers[key])
 };
 
-const changeMaxByBtn = (e: React.MouseEvent<HTMLLIElement>) => {
-  setMaxValue(e.currentTarget.textContent || '');
-};
-
-useEffect(()=>console.log(minValue,maxValue),[minValue,maxValue,filter]
+useEffect(()=>console.log(minValue,maxValue),[minValue,maxValue]
 )
+
+
+const changeMaxByBtn = (key: number) => {
+  setMaxValue(maxNumbers[key]);
+};
+
+
+
 
 // input min max user input 
 const changeMinByInput = (e: ChangeEvent<HTMLInputElement>)=>{
@@ -323,6 +344,8 @@ const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
             path="/Listing"
             element={
               <Listing
+              minNumbers={minNumbers}
+              maxNumbers={maxNumbers}
               changeMaxByInput={changeMaxByInput}
               changeMinByInput={changeMinByInput}
               changeMaxByBtn={changeMaxByBtn}

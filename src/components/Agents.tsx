@@ -51,7 +51,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
         return (
           <div className="bg-white h-[450px] w-[300px] rounded-xl overflow-hidden " key={el.id}>
             <img
-              className=" h-2/3 rounded-t-lg w-full hover:scale-105 hover:brightness-75 duration-200"
+              className=" h-2/3 rounded-t-lg w-full hover:scale-105 hover:brightness-75 duration-200 object-cover object-center"
               src={el.img}
               alt={`${el.name} image`}
             />

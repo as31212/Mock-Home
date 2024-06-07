@@ -18,7 +18,7 @@
     {
       "id": 2,
       "name": "Jane Doe",
-      "img": "https://images.squarespace-cdn.com/content/v1/6204821bfe06b76898b431c5/1660858625934-ZVWEMZYZHLWTVCXC19E3/Brandon+Andre+-+Headshot+Los+Angeles+na4-3.jpg",
+      "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_Professional_Headshots_and_Corporate_Portraits__374d8824-9a34-4e1b-8d9b-bd0d2d5dd432-copy.webp",
       "rating": 5,
       "state": "NY",
       "availability": {
@@ -34,7 +34,7 @@
     {
       "id": 3,
       "name": "Michael Brown",
-      "img": "https://sharpfocusphoto.com/wp-content/uploads/2020/08/DSC_0177.jpg",
+      "img": "https://www.neilsonreeves.co.uk/wp-content/uploads/corporate-headshot-neutral-grey-bg.jpg",
       "rating": 4.7,
       "state": "TX",
       "availability": {
@@ -98,7 +98,7 @@
     {
       "id": 7,
       "name": "Chris Lee",
-      "img": "https://via.placeholder.com/150",
+      "img": "https://image10.photobiz.com/4411/6_20200320132451_17431620_xlarge.jpg",
       "rating": 4.4,
       "state": "WA",
       "availability": {
@@ -130,7 +130,7 @@
     {
       "id": 9,
       "name": "Robert Miller",
-      "img": "https://via.placeholder.com/150",
+      "img": "https://image4.photobiz.com/8053/6_20200320132509_17431638_xlarge.jpg",
       "rating": 4.5,
       "state": "CO",
       "availability": {
@@ -162,7 +162,7 @@
       {
         "id": 11,
         "name": "Paul Anderson",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://paloaltoheadshots.com/wp-content/uploads/2020/11/formal-business-headshot.jpg",
         "rating": 4.6,
         "state": "AL",
         "availability": {
@@ -178,7 +178,7 @@
       {
         "id": 12,
         "name": "Karen Thomas",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://image13.photobiz.com/10309/25_20220728213011_10002739_large.jpg",
         "rating": 4.7,
         "state": "AK",
         "availability": {
@@ -194,7 +194,7 @@
       {
         "id": 13,
         "name": "Lisa Jackson",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://images.squarespace-cdn.com/content/v1/54ee6b54e4b094722873774d/1661193481466-5KGJY88ZD0IWGF2HTD6X/304.jpg?format=2500w",
         "rating": 4.8,
         "state": "AR",
         "availability": {
@@ -210,7 +210,7 @@
       {
         "id": 14,
         "name": "James White",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://images.squarespace-cdn.com/content/v1/5a5f81d812abd9f0929541c8/1517777313099-EA1WR174E4GWVO7O5IFL/DSC_8257-reduced.jpg",
         "rating": 4.9,
         "state": "CT",
         "availability": {
@@ -226,7 +226,7 @@
       {
         "id": 15,
         "name": "Patricia Harris",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://peakcityheadshots.com/wp-content/uploads/slider/cache/0dba6cab5ce3e7d6c65484f0902d491a/business-headshots-nakeshaHarding-Boyce01089-275px-Tall-v3.jpg",
         "rating": 3.8,
         "state": "DE",
         "availability": {
@@ -242,7 +242,7 @@
       {
         "id": 16,
         "name": "George Martinez",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://i0.wp.com/www.davd.photo/wp-content/uploads/2013/03/jay-professional-headshots-3.jpg?ssl=1",
         "rating": 4.7,
         "state": "GA",
         "availability": {
@@ -258,7 +258,7 @@
       {
         "id": 17,
         "name": "Susan Clark",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://erikrenninger.com/images/bagallery/gallery-19/thumbnail/category-1/corporateheadshotphotography-7.jpg?1691783711",
         "rating": 4.6,
         "state": "HI",
         "availability": {
@@ -274,7 +274,7 @@
       {
         "id": 18,
         "name": "Steven Rodriguez",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_a_male_business_headshots_shot_outdoors_in_offi_9a228509-0f9a-438c-aeab-ab8dce7f414b.webp",
         "rating": 4.8,
         "state": "ID",
         "availability": {
@@ -290,7 +290,7 @@
       {
         "id": 19,
         "name": "Dorothy Lewis",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://ginaloganphotography.com/wp-content/uploads/2021/08/26-51468-pp_gallery/FAVGinaLoganPhotographyGL3_3921.jpg",
         "rating": 4.9,
         "state": "IN",
         "availability": {
@@ -306,7 +306,7 @@
       {
         "id": 20,
         "name": "Daniel Young",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2020/02/Jonathan-Business-Headshot.jpg",
         "rating": 4.4,
         "state": "IA",
         "availability": {
@@ -322,7 +322,7 @@
       {
         "id": 21,
         "name": "Nancy Hall",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://image13.photobiz.com/10309/17_20230130104534_10100447_large.jpg",
         "rating": 4.6,
         "state": "KS",
         "availability": {
@@ -338,7 +338,7 @@
       {
         "id": 22,
         "name": "Kevin Walker",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://pwglens.com/wp-content/uploads/2023/11/IBM-Headshots-014-Edit.jpg",
         "rating": 4.7,
         "state": "KY",
         "availability": {
@@ -354,7 +354,7 @@
       {
         "id": 23,
         "name": "Jennifer King",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://catieronquillo.com/wp-content/uploads/2022/11/Web-Designer-Brand-Photos_06.jpg",
         "rating": 3.9,
         "state": "LA",
         "availability": {
@@ -370,7 +370,7 @@
       {
         "id": 24,
         "name": "Brian Scott",
-        "img": "https://via.placeholder.com/150",
+        "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/FelipeSoriano-124.jpeg",
         "rating": 4.5,
         "state": "ME",
         "availability": {
