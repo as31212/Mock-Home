@@ -2,7 +2,7 @@
 export interface FilterInterface{
     'buySell': string,
     'priceRange': [number,number],
-    'type':string,
+    'type':boolean[],
     'bedrooms' : number,
     'bathrooms' : number,
     'sqft' : [number,number]

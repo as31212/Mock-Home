@@ -53,9 +53,14 @@ interface ListingProps {
   changeMaxByInput: (e: ChangeEvent<HTMLInputElement>) => void;
   minNumbers: string[];
   maxNumbers: string[];
+  setMinValue: (value:string)=> void;
+  setMaxValue: (value:string)=> void;
+  setLoading: (load:boolean)=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
+  setMaxValue,
+  setMinValue,
   minValue,
   changeMinByBtn,
   changeMaxByBtn,
@@ -97,6 +102,7 @@ const Listing: React.FC<ListingProps> = ({
   maxToggle,
   minNumbers,
   maxNumbers,
+  setLoading
 }) => {
   const minNumber = [...minNumbers].map((el, index) => {
     return (
@@ -111,7 +117,7 @@ const Listing: React.FC<ListingProps> = ({
   const maxNumber = [...maxNumbers].map((el, index) => {
     return (
       <li
-        onClick={()=>changeMaxByBtn(index)}
+        onClick={() => changeMaxByBtn(index)}
         className="text-lg hover:bg-orange-200 p-3"
         key={index}
       >{`$${el}`}</li>
@@ -120,20 +126,27 @@ const Listing: React.FC<ListingProps> = ({
 
   // parsing logic for max and min
   const parseListNumbers = (str: string): number => {
-    if(str === 'Any Number'){
+    if (str === "Any Number") {
       return 0;
     }
-    if (str.includes('M')) {
-        str = str.replace('M', '');
-        const parts = str.split('.');
-        if (parts.length === 2) {
-            return Number(parts[0]) * 1000000 + Number(parts[1]) * 100000;
-        } else {
-            return Number(parts[0]) * 1000000;
-        }
+    if (str.includes("M")) {
+      str = str.replace("M", "");
+      const parts = str.split(".");
+      if (parts.length === 2) {
+        return Number(parts[0]) * 1000000 + Number(parts[1]) * 100000;
+      } else {
+        return Number(parts[0]) * 1000000;
+      }
     }
-    return Number(str.replace(/,/g, ''));
-}
+    return Number(str.replace(/,/g, ""));
+  };
+
+  // load when sorted data mutates
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>setLoading(false),500)
+  },[sortedData])
 
   // sort
   useEffect(() => {
@@ -169,7 +182,7 @@ const Listing: React.FC<ListingProps> = ({
       }
       setSortedData(sorting);
     }
-  }, [sort, sortedData, setSortedData]);
+  }, [sort, sortedData]); //BUG ASSOCTED WITH SORTED DATA INTERFERING WITH THE OTHER USE EFFECT THAT USE SORTED DATA DEPENDECY
 
   // filter
 
@@ -177,10 +190,28 @@ const Listing: React.FC<ListingProps> = ({
     if (listingData) {
       const filtered = [...listingData].filter((el) => {
         return (
+
+          // bedrooms && bathrooms
           el.bedrooms >= filter.bedrooms &&
           el.bathrooms >= filter.bathrooms &&
           el.buy_or_rent === filter.buySell &&
-          (filter.priceRange[0] === 0 ? true : el.price >= filter.priceRange[0]) && (filter.priceRange[1] === 0 ? true : el.price <= filter.priceRange[1]) &&
+
+          // price range
+          (filter.priceRange[0] === 0
+            ? true
+            : el.price >= filter.priceRange[0]) &&
+          (filter.priceRange[1] === 0
+            ? true
+            : el.price <= filter.priceRange[1]) &&
+
+            // Home type
+        (
+          (filter.type[0] && el.apt_type === 'apartment') ||
+          (filter.type[1] && el.apt_type === 'family') ||
+          (filter.type[2] && el.apt_type === 'single family')
+        ) &&
+
+            // search
           (savedSearchAddress !== ""
             ? el.address
                 .toLowerCase()
@@ -278,17 +309,32 @@ const Listing: React.FC<ListingProps> = ({
 
   // price name logic
   const priceTitle = () => {
-    if(minValue.length <= 1 && maxValue.length <= 1 || maxValue === 'Any Number'){ // if they are '' or 0
-      return 'Price';
+    if (
+      (minValue.length <= 1 && maxValue.length <= 1) ||
+      maxValue === "Any Number"
+    ) {
+      // if they are '' or 0
+      return "Price";
     }
-    if(minValue.length > 1 && maxValue.length <= 1 || maxValue === 'Any Number'){// if min is something and max is nothing
-      return `$${minValue.includes('M') ? minValue : minValue.replace(',000','K')}+`
-    } 
-    if(minValue.length <= 1 && maxValue.length > 1){// if min is nothing and max is something
-      return `up to $${maxValue.includes('M') ? maxValue : maxValue.replace(',000','K')}`
-    } 
-    if(minValue.length > 1 && maxValue.length > 1){
-      return `$${minValue.includes('M') ? minValue : minValue.replace(',000','K')}-$${maxValue.includes('M') ? maxValue : maxValue.replace(',000','K')}`
+    if (
+      (minValue.length > 1 && maxValue.length <= 1) ||
+      maxValue === "Any Number"
+    ) {
+      // if min is something and max is nothing
+      return `$${
+        minValue.includes("M") ? minValue : minValue.replace(",000", "K")
+      }+`;
+    }
+    if (minValue.length <= 1 && maxValue.length > 1) {
+      // if min is nothing and max is something
+      return `up to $${
+        maxValue.includes("M") ? maxValue : maxValue.replace(",000", "K")
+      }`;
+    }
+    if (minValue.length > 1 && maxValue.length > 1) {
+      return `$${
+        minValue.includes("M") ? minValue : minValue.replace(",000", "K")
+      }-$${maxValue.includes("M") ? maxValue : maxValue.replace(",000", "K")}`;
     }
   };
 
@@ -302,9 +348,7 @@ const Listing: React.FC<ListingProps> = ({
       >
         <div
           id="search"
-          className={`flex flex-wrap justify-center gap-5  ${
-            loading ? "hidden" : ""
-          } `}
+          className={`flex flex-wrap justify-center gap-5  `}
         >
           <div className="relative w-full max-w-md">
             <div className="relative flex items-center">
@@ -374,6 +418,7 @@ const Listing: React.FC<ListingProps> = ({
                     defaultChecked={filter.buySell === "Buy"}
                     id="buyCheckBox"
                     value="Buy"
+                    checked={filter.buySell === "Buy"}
                   />
                   Buy
                 </label>
@@ -390,6 +435,7 @@ const Listing: React.FC<ListingProps> = ({
                     name="buy-sell-radio"
                     id="rentCheckBox"
                     value="Buy"
+                    checked={filter.buySell === "rent"}
                   />
                   Rent
                 </label>
@@ -454,10 +500,6 @@ const Listing: React.FC<ListingProps> = ({
                     onBlur={() => {
                       setTimeout(() => {
                         setMinToggle(false);
-                        const parsedMinValue = parseListNumbers(minValue)
-                        updateFilter({
-                          priceRange: [parsedMinValue, filter.priceRange[1]],
-                        });
                       }, 100);
                     }}
                     onFocus={() => setMinToggle(true)}
@@ -482,11 +524,7 @@ const Listing: React.FC<ListingProps> = ({
                     onBlur={() => {
                       setTimeout(() => {
                         setMaxToggle(false);
-                        const parsedMaxValue = parseListNumbers(maxValue)
-                        updateFilter({
-                          priceRange: [filter.priceRange[0], parsedMaxValue],
-                        });
-                      }, 100); // Delay of 1 second
+                      }, 100);
                     }}
                     onFocus={() => setMaxToggle(true)}
                     className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:border-[5px] focus:border-orange-300 focus:outline-none`}
@@ -507,6 +545,12 @@ const Listing: React.FC<ListingProps> = ({
                   onClick={() => {
                     togglePrice();
                     setActiveFilter(0);
+                    updateFilter({
+                      priceRange: [
+                        parseListNumbers(minValue),
+                        parseListNumbers(maxValue),
+                      ],
+                    });
                   }}
                   className="border-2 w-full bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out"
                 >
@@ -704,7 +748,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[600px] h-[300px] absolute mt-1 z-10 rounded-md shadow-2xl ${
+              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl px- ${
                 moreFilter ? "" : "hidden"
               }`}
             >
@@ -745,6 +789,8 @@ const Listing: React.FC<ListingProps> = ({
                         className="mr-3 scale-150"
                         type="checkbox"
                         id="apt-check"
+                        checked={filter.type[0] ? true : false}
+                        onChange={()=>updateFilter({type : [!filter.type[0],filter.type[1],filter.type[2]]})}
                       />
                       Apartment
                     </label>
@@ -753,6 +799,8 @@ const Listing: React.FC<ListingProps> = ({
                         className="mr-3 scale-150"
                         type="checkbox"
                         id="family-check"
+                        checked={filter.type[1] ? true : false}
+                        onChange={()=>updateFilter({type : [filter.type[0],!filter.type[1],filter.type[2]]})}
                       />
                       Family
                     </label>
@@ -761,11 +809,42 @@ const Listing: React.FC<ListingProps> = ({
                         className="mr-3 scale-150"
                         type="checkbox"
                         id="single-family-check"
+                        checked={filter.type[2] ? true : false}
+                        onChange={()=>updateFilter({type : [filter.type[0],filter.type[1],!filter.type[2]]})}
                       />
                       Single Family
                     </label>
                   </div>
                 </div>
+              </div>
+              <div id="more-filter-buttons" className="px-5 mt-8">
+                <button
+                  onClick={() => {
+                    updateFilter({
+                      buySell: "Buy",
+                      priceRange: [0, 0],
+                      type: [true,true,true],
+                      bedrooms: 0,
+                      bathrooms: 0,
+                      sqft: [0, 0],
+                    });
+                    setMaxValue('');
+                    setMinValue('');
+                  }}
+                  className=" w-1/2  text-orange-400 font-bold rounded-md py-2 hover:underline duration-200 ease-in-out"
+                >
+                  Reset Filters
+                </button>
+                <button
+                  onClick={() => {
+                    toggleMore();
+                    setActiveFilter(0);
+                    
+                  }}
+                  className="border-2 w-1/2 bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out"
+                >
+                  Apply
+                </button>
               </div>
             </div>
           </div>

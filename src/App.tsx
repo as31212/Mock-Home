@@ -177,7 +177,7 @@ const [loading,setLoading] = useState<boolean>(false);
 const [filter,setFilter] = useState<FilterInterface>(
   {'buySell': 'Buy',
 'priceRange': [0,0],
-'type':'',
+'type':[true,true,true],
 'bedrooms' : 0,
 'bathrooms' : 0,
 'sqft' : [0,0]});
@@ -193,6 +193,7 @@ const updateFilter = (newProperty: Partial<FilterInterface>) => {
     ...newProperty,
   }));
 };
+
 
 // filter toggles
 const [bedBathFilter, setBedBathFilter] = useState<boolean>(false);
@@ -304,6 +305,9 @@ const changeMinByBtn = (key: number) => {
 useEffect(()=>console.log(minValue,maxValue),[minValue,maxValue]
 )
 
+useEffect(()=>console.log(filter.priceRange),[filter]
+)
+
 
 const changeMaxByBtn = (key: number) => {
   setMaxValue(maxNumbers[key]);
@@ -344,6 +348,9 @@ const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
             path="/Listing"
             element={
               <Listing
+              setLoading={setLoading}
+              setMinValue={setMinValue}
+              setMaxValue={setMaxValue}
               minNumbers={minNumbers}
               maxNumbers={maxNumbers}
               changeMaxByInput={changeMaxByInput}
