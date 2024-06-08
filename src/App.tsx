@@ -292,6 +292,30 @@ const maxNumbers =  [
   '3.5M', '3.75M', '4M', '4.25M', '4.5M', '4.75M', '5M', '5.25M', '5.5M', '5.75M',
   '6M', '7M', '8M', '9M', '10M', '11M', '12M', '13M', '14M', '15M', '16M', '17M', '18M','Any Number'
 ]
+
+useEffect(()=>console.log(filter.sqft),[filter]
+)
+
+// Sqft min and max lists for select options
+
+const sqftOptions = [
+  "500",
+  "750",
+  "1,000",
+  "1,250",
+  "1,500",
+  "1,750",
+  "2,000",
+  "2,250",
+  "2,500",
+  "2,750",
+  "3,000",
+  "3,500",
+  "4,000",
+  "5,000",
+  "7,500"
+];
+
 // max and min data use input retrieval variables
 
 const [minValue,setMinValue] = useState<string>('');
@@ -325,6 +349,17 @@ const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
 }
 
 
+// min and max sqft state and retireve use input function
+
+const [minSqft,setMinSqft] = useState<string>('0');
+const [maxSqft,setMaxSqft] = useState<string>('0');
+const changeMaxSqft = (e:ChangeEvent<HTMLSelectElement>)=>{
+  setMaxSqft(e.target.value);
+}
+const changeMinSqft = (e:ChangeEvent<HTMLSelectElement>)=>{
+  setMinSqft(e.target.value);
+}
+
   return (
     <>
       <Router>
@@ -348,6 +383,12 @@ const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
             path="/Listing"
             element={
               <Listing
+              setMaxSqft={setMaxSqft}
+              setMinSqft={setMinSqft}
+              changeMinSqft={changeMinSqft}
+              changeMaxSqft={changeMaxSqft}
+              minSqft={minSqft}
+              maxSqft={maxSqft}
               setLoading={setLoading}
               setMinValue={setMinValue}
               setMaxValue={setMaxValue}
@@ -392,6 +433,7 @@ const changeMaxByInput = (e:ChangeEvent<HTMLInputElement>)=>{
                 setMaxToggle={setMaxToggle}
                 minToggle={minToggle}
                 setMinToggle={setMinToggle}
+                sqftOptions={sqftOptions}
               />
             }
           />

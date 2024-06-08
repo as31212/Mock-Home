@@ -56,6 +56,13 @@ interface ListingProps {
   setMinValue: (value:string)=> void;
   setMaxValue: (value:string)=> void;
   setLoading: (load:boolean)=> void;
+  sqftOptions: string[] ;
+  maxSqft: string;
+  minSqft: string;
+  changeMaxSqft: (e:ChangeEvent<HTMLSelectElement>)=> void;
+  changeMinSqft: (e:ChangeEvent<HTMLSelectElement>)=> void;
+  setMaxSqft: (sqft:string)=> void;
+  setMinSqft: (sqft:string)=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -102,7 +109,14 @@ const Listing: React.FC<ListingProps> = ({
   maxToggle,
   minNumbers,
   maxNumbers,
-  setLoading
+  setLoading,
+  sqftOptions,
+  changeMaxSqft,
+  changeMinSqft,
+  maxSqft,
+  minSqft,
+  setMaxSqft,
+  setMinSqft
 }) => {
   const minNumber = [...minNumbers].map((el, index) => {
     return (
@@ -205,11 +219,17 @@ const Listing: React.FC<ListingProps> = ({
             : el.price <= filter.priceRange[1]) &&
 
             // Home type
+            el.square_footage >= filter.sqft[0] &&
+            (filter.sqft[1] !== 0 ? el.square_footage <= filter.sqft[1] : true) &&
+
         (
           (filter.type[0] && el.apt_type === 'apartment') ||
           (filter.type[1] && el.apt_type === 'family') ||
           (filter.type[2] && el.apt_type === 'single family')
         ) &&
+
+        // SQFT
+
 
             // search
           (savedSearchAddress !== ""
@@ -337,6 +357,26 @@ const Listing: React.FC<ListingProps> = ({
       }-$${maxValue.includes("M") ? maxValue : maxValue.replace(",000", "K")}`;
     }
   };
+
+
+  // sqft mapped options
+
+  const sqftMinMapped = sqftOptions.map((el,index)=>{
+      return(
+        <option key={index} value={el}>{el}</option>
+      );
+    })
+  
+
+
+
+  const sqftMaxMapped =
+    [...sqftOptions].map((el,index)=>{
+      return(
+        <option key={index} value={el}>{el}</option>
+      );
+    })
+
 
   return (
     <>
@@ -764,17 +804,21 @@ const Listing: React.FC<ListingProps> = ({
                   >
                     <select
                       className="text-gray-700 w-2/3 text-lg py-2 border-[1px]"
+                      onChange={(event)=>changeMinSqft(event)}
                       name=""
                       id=""
                     >
-                      <option value="No-Min">No Min</option>
+                      <option selected={minSqft === '0' ? true : false} value="0">No Min</option>
+                      {sqftMinMapped}
                     </select>
                     <select
                       className="text-gray-700 w-2/3 text-lg py-2 border-[1px]"
+                      onChange={(event)=>changeMaxSqft(event)}
                       name=""
                       id=""
                     >
-                      <option value="No-Max">No Max</option>
+                      {sqftMaxMapped}
+                      <option selected={maxSqft === '0' ? true : false} value="0">No Max</option>
                     </select>
                   </div>
                 </div>
@@ -830,6 +874,8 @@ const Listing: React.FC<ListingProps> = ({
                     });
                     setMaxValue('');
                     setMinValue('');
+                    setMaxSqft('0');
+                    setMinSqft('0');
                   }}
                   className=" w-1/2  text-orange-400 font-bold rounded-md py-2 hover:underline duration-200 ease-in-out"
                 >
@@ -839,7 +885,7 @@ const Listing: React.FC<ListingProps> = ({
                   onClick={() => {
                     toggleMore();
                     setActiveFilter(0);
-                    
+                    updateFilter({sqft: [Number(minSqft.replace(',','')),Number(maxSqft.replace(',',''))]})
                   }}
                   className="border-2 w-1/2 bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out"
                 >
