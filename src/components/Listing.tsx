@@ -291,7 +291,7 @@ const Listing: React.FC<ListingProps> = ({
             </div>
             <div className="flex gap-10 ">
               <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
-                View Details
+                Details
               </button>
               <p
                 className={`font-bold mb-2 ${
@@ -393,6 +393,7 @@ const Listing: React.FC<ListingProps> = ({
           <div className="relative w-full max-w-md">
             <div className="relative flex items-center">
               <input
+                id="listing-input-box"
                 onFocus={() => setActiveFilter(0)}
                 value={searchAddress}
                 onChange={(event) => changeSearchAddress(event)}
@@ -441,7 +442,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl  ${
+              className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl filters  ${
                 buyFilter ? "" : "hidden"
               }`}
             >
@@ -521,7 +522,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl ${
+              className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl filters ${
                 priceFilter ? "" : "hidden"
               }`}
             >
@@ -631,7 +632,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl ${
+              className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl filters ${
                 bedBathFilter ? "" : "hidden"
               }`}
             >
@@ -788,7 +789,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl px- ${
+              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl filters ${
                 moreFilter ? "" : "hidden"
               }`}
             >
@@ -912,7 +913,7 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-asc">Square Footage: Low to High</option>
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
-          <button
+          <button id="listing-search-btn"
             onClick={
               sortedData
                 ? () => {

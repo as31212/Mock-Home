@@ -104,6 +104,8 @@ function App() {
       alert('Please Input Data')
       return;
     }
+    setSavedSearchAddress(searchAddress);
+    setSearchAddress('')
     setLoading(true);
     setTimeout(()=>{
       setLoading(false);
@@ -373,6 +375,9 @@ const changeMinSqft = (e:ChangeEvent<HTMLSelectElement>)=>{
                 filter={filter}
                 updateFilter={updateFilter}
                 listingData={listingData}
+                searchListings={searchListings}
+                searchAddress={searchAddress}
+                changeSearchAddress={changeSearchAddress}
               />
             }
           />

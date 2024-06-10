@@ -79,6 +79,16 @@
     .agent-searches{
       width: 100%;
     }
+  #listing-search-btn{
+    width: 100%;
+  }
+  .filters{
+    width: 100vw;
+    height: 130vh;
+    margin: auto;
+    position: relative;
+    bottom: 318px;
+  }
 }
 @media (min-width: 700px) {
     #hamburger-nav{
