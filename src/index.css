@@ -22,6 +22,9 @@
     #home-page-two{
         flex-wrap: wrap;
     }
+    #about-page-two{
+      flex-wrap: wrap;
+    }
     .home-2-box{
         width: 100%;
     }
@@ -82,12 +85,41 @@
   #listing-search-btn{
     width: 100%;
   }
-  .filters{
+  /* modal for filters */
+  .filters-buy{
     width: 100vw;
     height: 130vh;
     margin: auto;
     position: relative;
-    bottom: 318px;
+    bottom: 250px;
+  }
+  .filters-price{
+    width: 100vw;
+    height: 130vh;
+    margin: auto;
+    position: relative;
+    bottom: 252px;
+  }
+  .filters-bath{
+    width: 100vw;
+    height: 130vh;
+    margin: auto;
+    position: relative;
+    bottom: 250px;
+  }
+  .filters-more{
+    width: 100vw;
+    height: 130vh;
+    margin: auto;
+    position: relative;
+    bottom: 250px;
+  }
+  .short-page{
+    height: 10px;
+    overflow: hidden;
+  }
+  .no-footer{
+    display: none;
   }
 }
 @media (min-width: 700px) {

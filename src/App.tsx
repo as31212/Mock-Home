@@ -14,6 +14,7 @@ import About from "./components/About";
 import PropertyDetails from "./components/PropertyDetails";
 import AgentsDetails from "./components/AgentDetails";
 import Home from "./components/Home";
+import Footer from "./components/Footer";
 import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
 import ScrollToTop from "./ScrollToTop";
@@ -365,7 +366,7 @@ const changeMinSqft = (e:ChangeEvent<HTMLSelectElement>)=>{
   return (
     <>
       <Router>
-        <Nav menu={menu} toggleMenu={toggleMenu} />
+        <Nav menu={menu} activeFilter={activeFilter}  toggleMenu={toggleMenu} />
         <ScrollToTop />
         <Routes>
           <Route
@@ -445,6 +446,7 @@ const changeMinSqft = (e:ChangeEvent<HTMLSelectElement>)=>{
           <Route path="/About" element={<About />} />
           Listing
         </Routes>
+        <Footer activeFilter={activeFilter} />
       </Router>
     </>
   );

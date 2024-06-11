@@ -18,6 +18,7 @@ import { PiCirclesFourFill } from "react-icons/pi";
 import { IoIosPin } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 import { ChangeEvent } from "react";
+import { CiSearch } from "react-icons/ci";
 
 interface HomeInterface {
   filter: FilterInterface;
@@ -85,14 +86,15 @@ const Home: React.FC<HomeInterface> = ({
                 Rent
               </button>
             </div>
-            <div className="flex flex-col gap-4" id="inputs">
+            <div className="" id="inputs">
               <input
                 onChange={(event) => changeSearchAddress(event)}
                 value={searchAddress}
                 type="text"
                 placeholder="State/City/Street"
-                className="border-2 border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500"
+                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500"
               />
+              <CiSearch className=" relative top-[-42px] left-[435px] text-2xl font-bold" />
             </div>
             <Link className="shadow font-semibold px-20 py-3 rounded-lg bg-black text-white hover:bg-gray-800 duration-300 text-center" to="/Listing">
               <button
@@ -339,9 +341,9 @@ const Home: React.FC<HomeInterface> = ({
             <FaRegCheckCircle className=" relative top-[2px] inline text-xl" />{" "}
             Secure payment system{" "}
           </p>
-          <Link to="/Agents">
+          <Link to="/About">
             <button className="get-started-btn mt-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
-              Get Started
+              Learn More
             </button>
           </Link>
         </div>
@@ -358,7 +360,7 @@ const Home: React.FC<HomeInterface> = ({
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 };

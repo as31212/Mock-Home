@@ -5,16 +5,17 @@ import { Link, useLocation } from "react-router-dom";
 interface NavInterface {
   menu: boolean;
   toggleMenu: () => void;
+  activeFilter: number;
 }
 
-const Nav: React.FC<NavInterface> = ({ menu, toggleMenu }) => {
+const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
   const location = useLocation();
 
   return (
     <>
       <nav
         id="nav"
-        className="flex justify-around p-2 h-auto min-h-16 text-2xl"
+        className={`flex justify-around p-2 h-auto min-h-16 text-2xl ${activeFilter !== 0 ? 'no-footer' : ''}`}
       >
         <div className="" id="logo">
           <Link to="/Home">

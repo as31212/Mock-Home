@@ -106,7 +106,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
           {agentTemplate}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };

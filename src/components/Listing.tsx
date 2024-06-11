@@ -228,7 +228,6 @@ const Listing: React.FC<ListingProps> = ({
           (filter.type[2] && el.apt_type === 'single family')
         ) &&
 
-        // SQFT
 
 
             // search
@@ -383,7 +382,7 @@ const Listing: React.FC<ListingProps> = ({
       <div
         id="listing-page"
         className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${
-          sortedData && sortedData.length < 1 ? "" : ""
+          activeFilter !== 0 ? "short-page" : ""
         }`}
       >
         <div
@@ -442,7 +441,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl filters  ${
+              className={`bg-[#FFFAF7] border-2 w-72 h-52 absolute mt-1 z-10 rounded-md flex flex-col justify-center shadow-2xl filters-buy  ${
                 buyFilter ? "" : "hidden"
               }`}
             >
@@ -522,7 +521,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl filters ${
+              className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl filters-price ${
                 priceFilter ? "" : "hidden"
               }`}
             >
@@ -632,7 +631,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl filters ${
+              className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl filters-bath ${
                 bedBathFilter ? "" : "hidden"
               }`}
             >
@@ -789,7 +788,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl filters ${
+              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl filters-more ${
                 moreFilter ? "" : "hidden"
               }`}
             >
@@ -984,7 +983,7 @@ const Listing: React.FC<ListingProps> = ({
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };
