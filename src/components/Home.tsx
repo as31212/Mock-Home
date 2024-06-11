@@ -51,61 +51,57 @@ const Home: React.FC<HomeInterface> = ({
           />
         </div>
         <div
-          className="h-fit w-full lg:w-1/3 p-10 flex flex-col gap-10"
-          id="home-text-box"
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold text-center lg:text-left">
-            Find the perfect property you love
-          </h2>
-          <p className="text-black text-center lg:text-left">
-            We help people find homes they want at an affordable price
-          </p>
-          <div
-            className="bg-white h-auto p-10 rounded-lg shadow-lg flex flex-col gap-8"
-            id="search-home"
-          >
-            <div className="flex gap-6 justify-center w-full" id="buttons">
-              <button
-                onClick={() => updateFilter({ buySell: "Buy" })}
-                className={`w-6/12 shadow font-bold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${
-                  filter.buySell === "Buy"
-                    ? "bg-black text-white "
-                    : "bg-gray-300"
-                }`}
-              >
-                Buy
-              </button>
-              <button
-                onClick={() => updateFilter({ buySell: "rent" })}
-                className={`w-6/12 shadow font-bold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${
-                  filter.buySell === "rent"
-                    ? "bg-black text-white"
-                    : "bg-gray-300"
-                }`}
-              >
-                Rent
-              </button>
-            </div>
-            <div className="" id="inputs">
-              <input
-                onChange={(event) => changeSearchAddress(event)}
-                value={searchAddress}
-                type="text"
-                placeholder="State/City/Street"
-                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500"
-              />
-              <CiSearch className=" relative top-[-42px] left-[435px] text-2xl font-bold" />
-            </div>
-            <Link className="shadow font-semibold px-20 py-3 rounded-lg bg-black text-white hover:bg-gray-800 duration-300 text-center" to="/Listing">
-              <button
-                onClick={() => searchListings()}
-                className=""
-              >
-                Search
-              </button>
-            </Link>
-          </div>
-        </div>
+  className="h-fit w-full lg:w-1/3 p-10 flex flex-col gap-10"
+  id="home-text-box"
+>
+  <h2 className="text-4xl lg:text-5xl font-bold text-center lg:text-left">
+    Find the perfect property you love
+  </h2>
+  <p className="text-black text-center lg:text-left">
+    We help people find homes they want at an affordable price
+  </p>
+  <div
+    className="bg-white h-auto p-10 rounded-lg shadow-lg flex flex-col gap-8"
+    id="search-home"
+  >
+    <div className="flex gap-6 justify-center w-full" id="buttons">
+      <button
+        onClick={() => updateFilter({ buySell: "Buy" })}
+        className={`w-6/12 shadow font-bold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${
+          filter.buySell === "Buy" ? "bg-black text-white " : "bg-gray-300"
+        }`}
+      >
+        Buy
+      </button>
+      <button
+        onClick={() => updateFilter({ buySell: "rent" })}
+        className={`w-6/12 shadow font-bold px-5 py-3 rounded-lg hover:bg-black hover:text-white duration-150 ${
+          filter.buySell === "rent" ? "bg-black text-white" : "bg-gray-300"
+        }`}
+      >
+        Rent
+      </button>
+    </div>
+    <div className="relative" id="inputs">
+      <input
+        onChange={(event) => changeSearchAddress(event)}
+        value={searchAddress}
+        type="text"
+        placeholder="State/City/Street"
+        className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500 pr-10"
+      />
+      <CiSearch id="search-before-wrap" className="absolute top-1/2 transform -translate-y-1/2 right-3 text-2xl font-bold" />
+    </div>
+    <Link
+      onClick={() => searchListings()}
+      className="shadow font-semibold px-20 py-3 rounded-lg bg-black text-white hover:bg-gray-800 duration-300 text-center"
+      to="/Listing"
+    >
+      <button className="">Search</button>
+    </Link>
+  </div>
+</div>
+
       </div>
 
       {/* page 2 */}

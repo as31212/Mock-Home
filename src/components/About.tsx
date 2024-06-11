@@ -12,9 +12,9 @@ const About : React.FC = ()=>{
 
     return(
         <>
-        <div className="h-auto">
+        <div id="about-us-page" className="h-auto">
             {/* page 1 */}
-            <div id="about-1" className=" min-h-screen p-10 h-auto flex flex-col gap-5 items-center justify-center py-10">
+            <div id="about-1" className=" min-h-screen p-10 h-auto flex flex-col gap-5 items-center justify-center py-20">
                 <h2 className="text-5xl font-bold text-center">Reimagining real estate</h2>
                 <div className="max-w-[600px]">
                     <p className="text-gray-500 text-center mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consectetur veniam excepturi debitis tenetur. Reprehenderit tenetur sequi vel repellat quis. Molestiae qui nihil a blanditiis, commodi ipsum illo magni perspiciatis!</p>
@@ -79,7 +79,7 @@ const About : React.FC = ()=>{
 
       {/* page 3 note from our founder */}
       <div className="min-h-screen h-auto flex flex-col gap-20" id="about-page-three">
-            <div className="flex flex-wrap justify-center py-10 gap-40" id="about-page-three-picture-and-list">
+            <div className="flex flex-wrap justify-center py-20 gap-40" id="about-page-three-picture-and-list">
                 <div id="about-text-img-three" className="flex flex-col gap-10">
             <div id="about-page-three-header" className=" flex flex-col gap-5">
                 <h2 className="font-bold text-4xl">A note from our founders.</h2>
@@ -98,8 +98,18 @@ const About : React.FC = ()=>{
             </div>
 
             
-           <div className="flex flex-wrap justify-center items-center gap-40 bg-[#FFFAF7] py-10">
-            <img className="max-w-[600px] rounded-xl" src="https://images.adsttc.com/media/images/5e66/5e5e/b357/65bd/db00/0025/large_jpg/10.jpg?1583767123" alt="" />
+           <div className="flex flex-wrap justify-center items-center gap-60 bg-[#FFFAF7] min-h-screen h-auto py-20">
+            <div className="relative">
+          <img
+            className="relative top-0 rounded-lg max-w-[900px] min-w-[300px] w-[70%] mx-auto"
+            src="https://images.adsttc.com/media/images/5e66/5e5e/b357/65bd/db00/0025/large_jpg/10.jpg?1583767123"
+            alt="home-page-4"
+          />
+          <div
+            id=""
+            className="bg-orange-400 max-w-[900px] min-w-[300px]  w-[70%] h-[100%]  top-[12%] left-[20%] z-[-1] rounded-lg mx-auto"
+          ></div>
+        </div>
             <div className="w-96 flex flex-col gap-5">
                 <h2 className="text-4xl font-bold">Our vision is simple</h2>
                 <p className="text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum sequi quis iure atque inventore, accusantium incidunt suscipit quod odio quo aperiam veniam quae nesciunt! Doloribus consectetur tempora suscipit odit?</p>
