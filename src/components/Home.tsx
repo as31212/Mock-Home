@@ -20,6 +20,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { ChangeEvent } from "react";
 import { CiSearch } from "react-icons/ci";
 
+
 interface HomeInterface {
   filter: FilterInterface;
   updateFilter: (property: Partial<FilterInterface>) => void;

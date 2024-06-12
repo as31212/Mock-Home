@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "Ahmad Searcy",
+      "job_title": "CEO",
+      "img": "https://media.licdn.com/dms/image/D5603AQEvI-vcnIpKxw/profile-displayphoto-shrink_200_200/0/1712880209740?e=2147483647&v=beta&t=HtxyuVEb1-Ff_uLjMDBmcdH3KE7U26qkJ4_jeIz3dRw"
+    },
+    {
+      "id": 2,
+      "name": "Jerome Bell",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/61d9c838d523942093799ba7/8144b80e-2a13-4288-bfec-aa08268705ce/Allen+S.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Ralph Edwards",
+      "job_title": "Marketing Coordinator",
+      "img": "https://media.licdn.com/dms/image/D5603AQHwsJPRASjJqg/profile-displayphoto-shrink_200_200/0/1712093527095?e=2147483647&v=beta&t=OSse3vIqcUw4Q-L6JIitHVp5cto5ZURcHueEcTzmBYI"
+    },
+    {
+      "id": 4,
+      "name": "Arlene McCoy",
+      "job_title": "Marketing Coordinator",
+      "img": "https://media.licdn.com/dms/image/D5603AQGRvbq6qnkyng/profile-displayphoto-shrink_200_200/0/1665776145448?e=2147483647&v=beta&t=3f8ZLxm-wJXBQ91oNUxKdMWWcj_jBs7Z-KEFwhSfSR0"
+    },
+    {
+      "id": 5,
+      "name": "Devon Lane",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/572e050c4d088ea3a8f0ac9d/1606395599785-R4HY3W6X49YZT6O8ML7R/Headshots-Atlanta-Professional.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Courtney Henry",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/530ce8d1e4b067ea68a9f821/1581449787543-SGM7VQG68H3UOJXLUJTU/los+angeles+business+commercial+headshot.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Bessie Cooper",
+      "job_title": "Marketing Coordinator",
+      "img": "https://garybarragan.com/wp-content/uploads/2022/12/Larissa-Heslop-4738-Business-Headshots-Louisville-Photographer-Gary-Barragan.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Cody Fisher",
+      "job_title": "Marketing Coordinator",
+      "img": "https://cdn-bbhhi.nitrocdn.com/RIRKKkHIXfDYITOrTvxwFXCOhkCTXRKS/assets/static/optimized/rev-6b91be3/wp-content/uploads/2017/03/headshot-without-tie.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Floyd Miles",
+      "job_title": "President of Sales",
+      "img": "https://headshots-inc.com/wp-content/uploads/2023/03/business-headshot-example-2.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Darlene Robertson",
+      "job_title": "Marketing Coordinator",
+      "img": "https://www.wallisphoto.com/IMAGES/2019/Women-Headshots/real-estate-agent-headshot.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Guy Hawkins",
+      "job_title": "Marketing Coordinator",
+      "img": "https://image4.photobiz.com/8053/6_20200320132509_17431638_xlarge.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Taylor Swift",
+      "job_title": "Marketing Coordinator",
+      "img": "https://robincollettephotography.com/wp-content/uploads/sites/7154/2021/04/sacramento_headshot_photographer-1-1.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Jordan Blake",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/6091c3e4f5f6071721c43f77/1673240204056-FUR9PUN9JCE41CG8N7A8/DSC08956-2.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Morgan Lee",
+      "job_title": "Marketing Coordinator",
+      "img": "https://www.josefsamuel.com/media/2020/09/professional-headshots-portraits-south-bend-notre-dame-indiana.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Alex Johnson",
+      "job_title": "Marketing Coordinator",
+      "img": "https://danielmottaphotography.com/blog/wp-content/uploads/2023/06/Importance-Of-Keeping-Your-Headshots-Up-To-Date-scaled.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Casey Green",
+      "job_title": "Marketing Coordinator",
+      "img": "https://assets-global.website-files.com/629d4a078192dabb6682aec6/64f3e17653833484b109e08c_KimFranklin4906web.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Jamie Oliver",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/651998e05a97287d391f2a87/1697207870287-LYLUYLG236G48S3AUSGI/professional-headshots-dating-SanDiego-SanMarcos-karenvaisman-Photography-NorthCounty-Actor-LinkedIn-Photographer-tp--9.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Chris Evans",
+      "job_title": "Marketing Coordinator",
+      "img": "https://images.squarespace-cdn.com/content/v1/5eb44fc09318591c9e1e54a8/47bb662b-06bb-454c-be96-179a783a7233/Professional-Headshots-Dallas-2.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Avery Smith",
+      "job_title": "Marketing Coordinator",
+      "img": "https://image10.photobiz.com/4419/6_20200320132455_17431623_xlarge.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Blake Martin",
+      "job_title": "Marketing Coordinator",
+      "img" : "https://pwglens.com/wp-content/uploads/2023/11/IBM-Headshots-014-Edit.jpg"
+    }
+]
+  
