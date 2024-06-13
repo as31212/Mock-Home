@@ -215,13 +215,13 @@ const About: React.FC = () => {
               </p>
 
               <p className="font-bold">Ahmad Searcy</p>
-              <p className="text-gray-500 relative right-2">- CEO at REAL-IT</p>
+              <p className="text-gray-500 relative right-2">- CEO at Real-IT</p>
             </div>
           </div>
         </div>
         {/* real it team members */}
         <div>
-          <h2 className="font-bold text-4xl text-center m-20">REAL-IT Team Members</h2>
+          <h2 className="font-bold text-4xl text-center m-20">Reak-IT Team Members</h2>
           <div className="flex flex-wrap justify-center gap-10 px-20">{teamDataCards}</div>
         </div>
         {/* real it news */}
@@ -239,8 +239,8 @@ const About: React.FC = () => {
           <div className="w-[80%] h-[300px] flex flex-col gap-8 items-center bg-white opacity-80 rounded-xl mx-auto p-5" id="news-subscription">
         <h2 className="font-bold text-black text-2xl">For Recent Update, News.</h2>
         <p className="text-black font-normal text-center w-[80%]">This helps keep you up to date on all the latest hosuing trends offered within the Real-IT blog</p>
-        <div className="flex gap-2" id="email-input">
-          <input className="font-normal border-[2px] rounded-lg pr-16 pl-2 py-2 bg-opacity-100" placeholder="Enter your Email" type="text" name="" id="" />
+        <div className="flex gap-2 w-full justify-center" id="email-input">
+          <input className="font-normal border-[2px] rounded-lg w-[50%] pr-8 pl-2 py-2 bg-opacity-100" placeholder="Enter your Email" type="text" name="" id="" />
           <button className="bg-black text-white opacity-100 py-2 px-4 rounded-lg font-semibold">Subscribe</button>
         </div>
         </div>

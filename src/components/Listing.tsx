@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import { ListingInterface } from "../interfaces/ListingsInterface";
 import { FaShower, FaBed, FaHome } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
@@ -63,9 +64,13 @@ interface ListingProps {
   changeMinSqft: (e:ChangeEvent<HTMLSelectElement>)=> void;
   setMaxSqft: (sqft:string)=> void;
   setMinSqft: (sqft:string)=> void;
+  currListing: number;
+  changeCurrListing: (elId:number)=> void;
 }
 
 const Listing: React.FC<ListingProps> = ({
+  currListing,
+  changeCurrListing,
   setMaxValue,
   setMinValue,
   minValue,
@@ -250,6 +255,13 @@ const Listing: React.FC<ListingProps> = ({
     }
   }, [filter, savedSearchAddress]);
 
+  // debug currlisting
+
+  useEffect(()=>{
+    console.log(currListing);
+    
+  },[currListing])
+
   // listing cards
   const listingTemplate = sortedData ? (
     sortedData.slice(page * 8 - 8, page * 8).map((el) => {
@@ -289,9 +301,11 @@ const Listing: React.FC<ListingProps> = ({
               </p>
             </div>
             <div className="flex gap-10 ">
-              <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
-                Details
-              </button>
+              <Link className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300" to='/PropertyDetails'>
+                <button onClick={()=>changeCurrListing(el.id)} className="">
+                  Details
+                </button>
+              </Link>
               <p
                 className={`font-bold mb-2 ${
                   el.buy_or_rent === "Buy" ? "text-2xl" : "text-xl mt-2"

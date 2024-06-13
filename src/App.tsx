@@ -19,7 +19,6 @@ import { ListingInterface } from "./interfaces/ListingsInterface";
 import { AgentInterface } from "./interfaces/AgentInterface";
 import ScrollToTop from "./ScrollToTop";
 import { FilterInterface } from "./interfaces/FilterInterface";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   // fetch listings
@@ -509,6 +508,12 @@ function App() {
     setMinSqft(e.target.value);
   };
 
+  // current listing index for listing details 
+  const [currListing,setCurrListing] = useState<number>(0);
+  const changeCurrListing = (elId:number): void => {
+    setCurrListing(elId);
+  }
+
   return (
     <>
       <Router>
@@ -529,7 +534,6 @@ function App() {
             }
           />
           <Route path="/AgentsDetails" element={<AgentsDetails />} />
-          <Route path="/PropertyDetailsAbout" element={<PropertyDetails />} />
           <Route
             path="/Agents"
             element={
@@ -546,6 +550,8 @@ function App() {
             path="/Listing"
             element={
               <Listing
+              changeCurrListing={changeCurrListing}
+              currListing={currListing}
                 setMaxSqft={setMaxSqft}
                 setMinSqft={setMinSqft}
                 changeMinSqft={changeMinSqft}
@@ -601,7 +607,7 @@ function App() {
             }
           />
           <Route path="/About" element={<About />} />
-          Listing
+          <Route path="/PropertyDetails" element={<PropertyDetails sortedData={sortedData} currListing={currListing} />} />
         </Routes>
         <Footer activeFilter={activeFilter} />
       </Router>

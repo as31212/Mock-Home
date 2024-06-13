@@ -75,7 +75,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
 
   return (
     <>
-      <div className="h-auto min-h-screen bg-[#FFFAF7] p-5 flex flex-col justify-start items-center gap-5">
+      <div className="h-auto min-h-screen bg-[#FFFAF7] p-5  flex flex-col justify-start items-center gap-5">
         <h2 className="text-xl font-bold">Agents Near You</h2>
         <div id="agent-search" className="flex w-full items-center px-28 gap-2">
           <input
@@ -100,7 +100,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
         </div>
 
         <div
-          className="flex flex-wrap gap-5 justify-center items-center"
+          className="flex flex-wrap gap-10 justify-center items-center w-[80%]"
           id="agent-container"
         >
           {agentTemplate}
