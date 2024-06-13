@@ -38,8 +38,8 @@ const About: React.FC = () => {
           alt={`image of ${el.name}`}
         />
         <div className="">
-          <p className="font-bold">{el.name}</p>
-          <p className="text-gray-500">{el.job_title}</p>
+          <p className="font-bold text-lg">{el.name}</p>
+          <p className="text-gray-500 text-lg">{el.job_title}</p>
         </div>
       </div>
     );
@@ -66,7 +66,7 @@ const About: React.FC = () => {
           </div>
           <img
             className="w-4/5 max-w-[1000px] min-w-[400px]"
-            src="about-collage.png"
+            src="about-collage-fr.png"
             alt="collage of pictures"
           />
         </div>
@@ -213,13 +213,13 @@ const About: React.FC = () => {
               </p>
 
               <p className="font-bold">Ahmad Searcy</p>
-              <p className="text-gray-500 relative right-2">- CEO at Real-IT</p>
+              <p className="text-gray-500 relative right-2">- CEO at REAL-IT</p>
             </div>
           </div>
         </div>
         {/* real it team members */}
         <div>
-          <h2 className="font-bold text-4xl text-center m-20">Real-IT Team Members</h2>
+          <h2 className="font-bold text-4xl text-center m-20">REAL-IT Team Members</h2>
           <div className="flex flex-wrap justify-center gap-10 px-20">{teamDataCards}</div>
         </div>
       </div>

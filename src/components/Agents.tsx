@@ -79,22 +79,22 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
         <h2 className="text-xl font-bold">Agents Near You</h2>
         <div id="agent-search" className="flex w-full items-center px-28 gap-2">
           <input
-            className="flex-grow p-2 rounded-lg border-2 agent-searches"
+            className="flex-grow p-2 py-3 text-lg rounded-lg border-2 agent-searches"
             type="text"
             placeholder="Enter your address"
           />
           <select
             onChange={(event) => changeReview(event)}
-            className="p-2 rounded-lg border-2 agent-searches"
+            className="py-4 px-10 font-bold rounded-lg border-2 agent-searches text-center"
           >
-            <option value="">Review</option>
-            <option value="5">5 stars</option>
-            <option value="4">4 stars</option>
-            <option value="3">3 stars</option>
-            <option value="2">2 stars</option>
-            <option value="1">1 star</option>
+            <option className="font-bold" value="">Review</option>
+            <option className="font-bold" value="5">5 stars</option>
+            <option className="font-bold" value="4">4+ stars</option>
+            <option className="font-bold" value="3">3+ stars</option>
+            <option className="font-bold" value="2">2+ stars</option>
+            <option className="font-bold" value="1">1+ star</option>
           </select>
-          <button className="bg-white py-2 px-4 border-2 rounded-xl hover:bg-black hover:text-white duration-150 ease-in-out inline agent-searches">
+          <button className="bg-white py-4 px-10 border-2 rounded-lg hover:bg-black hover:text-white duration-150 ease-in-out inline font-bold agent-searches">
             Search
           </button>
         </div>

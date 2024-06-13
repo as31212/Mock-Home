@@ -521,7 +521,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-[500px] h-60 absolute mt-1 z-10 rounded-md shadow-2xl filters-price ${
+              className={`bg-[#FFFAF7] border-2 w-[500px] h-64 absolute mt-1 z-10 rounded-md shadow-2xl filters-price ${
                 priceFilter ? "" : "hidden"
               }`}
             >
@@ -622,7 +622,7 @@ const Listing: React.FC<ListingProps> = ({
                   className={`inline relative bottom-[2px] left-2 text-lg ${
                     bedBathFilter ? "hidden" : ""
                   }`}
-                />{" "}
+                />
                 <FaChevronUp
                   className={`inline relative bottom-[2px] left-2 text-lg ${
                     bedBathFilter ? "" : "hidden"
@@ -897,7 +897,7 @@ const Listing: React.FC<ListingProps> = ({
 
           <select
             onChange={changeSort}
-            className="py-3 px-2 border-2 text-xl rounded-md"
+            className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold"
             onClick={() => setActiveFilter(6)}
           >
             <option disabled selected value="">
@@ -957,29 +957,36 @@ const Listing: React.FC<ListingProps> = ({
             }`}
             id="page-buttons"
           >
-            <a href="#nav">
+            {page <= 1 ?  <button
+                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
+              >{"<<"}</button> : <a href="#nav">
               <button
                 className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
                 onClick={decreasePage}
               >
                 {"<<"}
               </button>
-            </a>
+            </a> }
             {numberButtons}
+            
             <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">
               ...
             </button>
             <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">
               {sortedData ? Math.ceil(sortedData.length / 8) : ""}
             </button>
-            <a href="#nav">
+            {sortedData && sortedData?.length / 8 <= page ? <button
+                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
+              >
+                {">>"}
+              </button> : <a href="#nav">
               <button
                 className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
                 onClick={increasePage}
               >
                 {">>"}
               </button>
-            </a>
+              </a>}
           </div>
         </div>
       </div>
