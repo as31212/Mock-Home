@@ -12,6 +12,7 @@ import { FilterInterface } from "../interfaces/FilterInterface";
 import { TiDelete } from "react-icons/ti";
 
 interface ListingProps {
+  addComma: (price:number)=> string;
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchAddress: string;
   increasePage: () => void;
@@ -69,6 +70,7 @@ interface ListingProps {
 }
 
 const Listing: React.FC<ListingProps> = ({
+  addComma,
   currListing,
   changeCurrListing,
   setMaxValue,
@@ -301,8 +303,8 @@ const Listing: React.FC<ListingProps> = ({
               </p>
             </div>
             <div className="flex gap-10 ">
-              <Link className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300" to='/PropertyDetails'>
-                <button onClick={()=>changeCurrListing(el.id)} className="">
+              <Link onClick={()=>changeCurrListing(el.id)} className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300" to='/PropertyDetails'>
+                <button className="">
                   Details
                 </button>
               </Link>
@@ -311,7 +313,7 @@ const Listing: React.FC<ListingProps> = ({
                   el.buy_or_rent === "Buy" ? "text-2xl" : "text-xl mt-2"
                 }`}
               >{`$${
-                el.buy_or_rent === "Buy" ? el.price : `${el.price}/mo`
+                el.buy_or_rent === "Buy" ? addComma(el.price) : `${addComma(el.price)}/mo`
               }`}</p>
             </div>
           </div>

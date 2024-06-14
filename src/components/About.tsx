@@ -221,7 +221,7 @@ const About: React.FC = () => {
         </div>
         {/* real it team members */}
         <div>
-          <h2 className="font-bold text-4xl text-center m-20">Reak-IT Team Members</h2>
+          <h2 className="font-bold text-4xl text-center m-20">Real-IT Team Members</h2>
           <div className="flex flex-wrap justify-center gap-10 px-20">{teamDataCards}</div>
         </div>
         {/* real it news */}

@@ -514,9 +514,23 @@ function App() {
     setCurrListing(elId);
   }
 
+  // algo for adding commas to the price
+  const addComma = (price:number):string=>{
+    const startingNum:string[] = String(price).split('').reverse();
+    let final:string[] = [];
+    for(let i = 0 ; i < startingNum.length ; i++){
+        if(i % 3 === 0 && i !== 0 ){
+            final.push(',')
+        }
+        final.push(startingNum[i]);
+    }
+    return final.reverse().join('');
+}
+
   return (
     <>
       <Router>
+
         <Nav menu={menu} activeFilter={activeFilter} toggleMenu={toggleMenu} />
         <ScrollToTop />
         <Routes>
@@ -550,6 +564,7 @@ function App() {
             path="/Listing"
             element={
               <Listing
+              addComma={addComma}
               changeCurrListing={changeCurrListing}
               currListing={currListing}
                 setMaxSqft={setMaxSqft}
@@ -607,7 +622,7 @@ function App() {
             }
           />
           <Route path="/About" element={<About />} />
-          <Route path="/PropertyDetails" element={<PropertyDetails sortedData={sortedData} currListing={currListing} />} />
+              <Route path="/PropertyDetails" element={<PropertyDetails sortedData={sortedData} currListing={currListing} addComma={addComma}  />} />
         </Routes>
         <Footer activeFilter={activeFilter} />
       </Router>
