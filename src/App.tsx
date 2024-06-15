@@ -544,6 +544,8 @@ function App() {
                 searchListings={searchListings}
                 searchAddress={searchAddress}
                 changeSearchAddress={changeSearchAddress}
+                addComma={addComma}
+                changeCurrListing={changeCurrListing}
               />
             }
           />
@@ -622,7 +624,7 @@ function App() {
             }
           />
           <Route path="/About" element={<About />} />
-              <Route path="/PropertyDetails" element={<PropertyDetails sortedData={sortedData} currListing={currListing} addComma={addComma}  />} />
+              <Route path="/PropertyDetails" element={<PropertyDetails changeCurrListing={changeCurrListing} sortedData={sortedData} currListing={currListing} addComma={addComma} agentData={agentData} listingData={listingData} />} />
         </Routes>
         <Footer activeFilter={activeFilter} />
       </Router>

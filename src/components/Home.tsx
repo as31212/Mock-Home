@@ -28,6 +28,7 @@ interface HomeInterface {
   searchListings: () => void;
   changeSearchAddress: (e: ChangeEvent<HTMLInputElement>) => void;
   searchAddress: string;
+  changeCurrListing: (elId:number)=> void;
 }
 
 const Home: React.FC<HomeInterface> = ({
@@ -37,6 +38,7 @@ const Home: React.FC<HomeInterface> = ({
   searchListings,
   changeSearchAddress,
   searchAddress,
+  changeCurrListing,
 }) => {
   return (
     <>
@@ -257,9 +259,11 @@ const Home: React.FC<HomeInterface> = ({
                         </p>
                       </div>
                       <div className="flex gap-10 ">
-                        <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
-                          View Details
-                        </button>
+                        <Link onClick={()=>changeCurrListing(el.id)} to='/PropertyDetails'>
+                          <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
+                            View Details
+                          </button>
+                        </Link>
                         <p className="font-bold text-2xl">{`$${el.price}`}</p>
                       </div>
                     </div>
