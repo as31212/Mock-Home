@@ -8,6 +8,7 @@ import {
   useActionData,
 } from "react-router-dom";
 import Nav from "./components/Nav";
+import Blog from "./components/Blog";
 import Listing from "./components/Listing";
 import Agents from "./components/Agents";
 import About from "./components/About";
@@ -625,6 +626,7 @@ function App() {
           />
           <Route path="/About" element={<About />} />
               <Route path="/PropertyDetails" element={<PropertyDetails changeCurrListing={changeCurrListing} sortedData={sortedData} currListing={currListing} addComma={addComma} agentData={agentData} listingData={listingData} />} />
+              <Route path="/Blog" element={<Blog />} />
         </Routes>
         <Footer activeFilter={activeFilter} />
       </Router>

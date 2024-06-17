@@ -62,6 +62,18 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
           <li>
             <Link
               className={`border-gray-600 pb-1 ${
+                location.pathname === "/Blog"
+                  ? "border-b-2"
+                  : "hover:border-b-2"
+              }`}
+              to="/Blog"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`border-gray-600 pb-1 ${
                 location.pathname === "/About"
                   ? "border-b-2"
                   : "hover:border-b-2"
@@ -121,6 +133,19 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
               to="/Agents"
             >
               Agents
+            </Link>
+          </li>
+          <li onClick={()=>toggleMenu()}>
+            <Link
+            
+              className={`border-gray-600 pb-1 ${
+                location.pathname === "/Blog"
+                  ? "border-b-2"
+                  : "hover:border-b-2"
+              }`}
+              to="/Blog"
+            >
+              Blog
             </Link>
           </li>
           <li onClick={()=>toggleMenu()}>

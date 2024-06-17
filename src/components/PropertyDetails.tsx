@@ -33,7 +33,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
 }) => {
   const currObj = sortedData?.find((el) => el.id === currListing);
   const randomAgentId = agentData
-    ? Math.floor(Math.random() * agentData.length)
+    ? Math.floor(Math.random() * 30)
     : 1;
   const currAgent = agentData
     ? agentData.find((el) => randomAgentId === el.id)
@@ -79,11 +79,11 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
             <div className="flex gap-5" id="month-and-total-price">
               <div className="border-2 w-52 rounded-lg p-1 flex flex-col gap-2">
                 <p className="font-semibold text-2xl">{`$${
-                  currObj ? addComma(currObj?.price) : ""
+                  currObj.buy_or_rent === 'Buy' ? addComma(currObj?.price) : `${addComma(currObj?.price)}/month`
                 }`}</p>
                 <p className="text-gray-500 text-sm">Online / Cash Payment</p>
               </div>
-              <div className="border-2 w-52 rounded-lg p-1 flex flex-col gap-2">
+              <div className={`border-2 w-52 rounded-lg p-1 flex flex-col gap-2 ${currObj.buy_or_rent === 'Buy' ? '' : 'hidden'}`}>
                 <p className="font-semibold text-2xl">{`$${
                   currObj ? addComma(Math.floor(currObj?.price / 240)) : ""
                 } / month`}</p>
@@ -95,7 +95,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                 currObj?.square_footage
               } Sqft ${
                 currObj?.apt_type.includes("family")
-                  ? `${currObj?.apt_type} Home`
+                  ? `${currObj?.apt_type} Listing`
                   : currObj?.apt_type
               }`}</h2>
               <p>
@@ -184,7 +184,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
               name=""
               id=""
             ></textarea>
-            <button className="p-3 border-2 rounded-lg">Send Request</button>
+            <button className="p-3 border-2 rounded-lg bg-black text-white hover:bg-gray-800 duration-150 ease-in-out">Send Request</button>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
       
       <div
         id="details-page-listings"
-        className="flex flex-col gap-20 mt-20 p-5 h-auto min-h-[750px] justify-center"
+        className="flex flex-col gap-20 mt-10 p-5 h-auto min-h-[750px] justify-center"
       >
         <div
           id="details-page-listings-header"

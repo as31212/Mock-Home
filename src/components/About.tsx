@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 import Article from "./Article";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { MdAddHome } from "react-icons/md";
@@ -56,7 +57,7 @@ const About: React.FC = () => {
           className=" min-h-screen p-10 h-auto flex flex-col gap-5 items-center justify-center py-20"
         >
           <h2 className="text-5xl font-bold text-center">
-            Reimagining real estate
+            Reimagining Real Estate
           </h2>
           <div className="max-w-[600px]">
             <p className="text-gray-500 text-center mx-auto">
@@ -227,11 +228,13 @@ const About: React.FC = () => {
         {/* real it news */}
         <div className="bg-[#1A1A1A] flex flex-col min-h-screen text-white font-bold justify-center px-5 py-10">
           <div className="flex justify-around">
-            <h2 className="text-3xl">News & Consult</h2>
-            <p className=" text-orange-400 hover:underline">Explore All <FaArrowRight className="inline relative bottom-[1px]" /></p>
+            <h2 className="text-3xl">News & Blogs</h2>
+            <Link className=" text-orange-400 text-2xl hover:cursor-pointer hover:underline" to='/Blog'>
+              <p >Explore All <FaArrowRight className="inline relative bottom-[1px]" /></p>
+            </Link>
           </div>
           <div className="flex gap-5 justify-center mt-20" id="article-container">
-        <Article title="9 Easy-to-Ambitous DIY Projects to Imporve Your Home" img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw-lCMSCTF5DK0ImCKQgamQC3Os5JeUriCYw&s" />
+        <Article title="9 Easy-to-Ambitious DIY Projects to Improve Your Home" img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw-lCMSCTF5DK0ImCKQgamQC3Os5JeUriCYw&s" />
         <Article title="What You Can Do to Turn a Rental Into a Home" img="https://static.wixstatic.com/media/bf8702_b09748a16a2540c595aa74c2ead3c4f1~mv2.jpg/v1/fill/w_801,h_553,al_c,q_85,enc_auto/bf8702_b09748a16a2540c595aa74c2ead3c4f1~mv2.jpg" />
         <Article title="Home Hunting 101: Skills You Need to Find the Home For You" img="https://res.akamaized.net/domain/image/fetch/t_web/https://static.domain.com.au/domainblog/uploads/2015/01/02000000/surviving-house-hunting-partner.jpg" />
         
@@ -240,7 +243,7 @@ const About: React.FC = () => {
         <h2 className="font-bold text-black text-2xl">For Recent Update, News.</h2>
         <p className="text-black font-normal text-center w-[80%]">This helps keep you up to date on all the latest hosuing trends offered within the Real-IT blog</p>
         <div className="flex gap-2 w-full justify-center" id="email-input">
-          <input className="font-normal border-[2px] rounded-lg w-[50%] pr-8 pl-2 py-2 bg-opacity-100" placeholder="Enter your Email" type="text" name="" id="" />
+          <input className=" text-black font-normal border-[2px] rounded-lg w-[50%] pr-8 pl-4 py-2 bg-opacity-100" placeholder="Enter your Email" type="text" name="" id="" />
           <button className="bg-black text-white opacity-100 py-2 px-4 rounded-lg font-semibold">Subscribe</button>
         </div>
         </div>

@@ -76,7 +76,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
   return (
     <>
       <div className="h-auto min-h-screen bg-[#FFFAF7] p-5  flex flex-col justify-start items-center gap-5">
-        <h2 className="text-xl font-bold">Agents Near You</h2>
+        <h2 className="text-2xl font-bold">Agents Near You</h2>
         <div id="agent-search" className="flex w-full items-center px-28 gap-2">
           <input
             className="flex-grow p-2 py-3 text-lg rounded-lg border-2 agent-searches"

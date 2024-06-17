@@ -412,7 +412,7 @@ const Listing: React.FC<ListingProps> = ({
                 onFocus={() => setActiveFilter(0)}
                 value={searchAddress}
                 onChange={(event) => changeSearchAddress(event)}
-                className="py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full"
+                className="py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full focus:outline-none focus:ring-2 focus:ring-orange-400"
                 type="text"
                 placeholder="State/City/Street"
               />
@@ -559,7 +559,7 @@ const Listing: React.FC<ListingProps> = ({
                       }, 100);
                     }}
                     onFocus={() => setMinToggle(true)}
-                    className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:border-[5px] focus:outline-none"
+                    className="text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                     type="text"
                     placeholder="No Min"
                   />
@@ -583,7 +583,7 @@ const Listing: React.FC<ListingProps> = ({
                       }, 100);
                     }}
                     onFocus={() => setMaxToggle(true)}
-                    className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:border-[5px] focus:border-orange-300 focus:outline-none`}
+                    className={`text-xl w-40 pl-1 py-3 rounded-md border-[2px] hover:border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-300`}
                     type="text"
                     placeholder="No Max"
                   />
