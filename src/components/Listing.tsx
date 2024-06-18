@@ -402,7 +402,7 @@ const Listing: React.FC<ListingProps> = ({
         }`}
       >
         <div
-          id="search"
+          id="listing-page-search"
           className={`flex flex-wrap justify-center gap-5  `}
         >
           <div className="relative w-full max-w-md">
@@ -971,7 +971,7 @@ const Listing: React.FC<ListingProps> = ({
             className={`flex justify-center ${loading ? "hidden" : ""} ${
               sortedData?.length && sortedData?.length > 1 ? "" : "hidden"
             }`}
-            id="page-buttons"
+            id="listing-page-buttons"
           >
             {page <= 1 ?  <button
                 className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"

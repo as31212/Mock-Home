@@ -219,7 +219,7 @@ const Home: React.FC<HomeInterface> = ({
 
       <div
         id="home-page-listings"
-        className="flex flex-col gap-20 mt-20 p-5 h-auto min-h-[750px] justify-center"
+        className="flex flex-col gap-20 mt-20 h-auto min-h-[750px] justify-center"
       >
         <div
           id="home-page-listings-header"
@@ -280,7 +280,7 @@ const Home: React.FC<HomeInterface> = ({
                           to="/PropertyDetails"
                         >
                           <button className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
-                            View Details
+                            Details
                           </button>
                         </Link>
                         <p className="font-bold text-2xl">{`$${addComma(el.price)}`}</p>

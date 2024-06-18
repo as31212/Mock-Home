@@ -40,7 +40,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
     : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFAF7]">
+    <div className="min-h-screen flex flex-wrap flex-col bg-[#FFFAF7]">
       {/* images collage */}
       <div
         id="listing-detail-images"
@@ -65,7 +65,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
         </div>
       </div>
       {/* content divs */}
-      <div className="flex justify-center gap-5 mt-16">
+      <div id="content-divs" className="flex justify-center gap-5 mt-16">
         <div className=" w-6/12 flex flex-col gap-5" id="left-divs">
           <div
             id="first-left-detail-div"
@@ -149,7 +149,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
         </div>
         <div className="w-2/12" id="right-divs">
           <div className="flex flex-col p-5 gap-5 border-2 rounded-lg bg-white">
-            <h2 className="font-bold text-2xl">Request for Visit</h2>
+            <h2 className="font-bold text-2xl">Request Visit</h2>
             <input
               className="border-2 p-3 rounded-lg"
               placeholder="Full Name"
@@ -251,7 +251,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                         
                           <a href="#nav">
                             <button onClick={()=>changeCurrListing(el.id)} className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300">
-                              View Details
+                              Details
                             </button>
                           </a>
                      
