@@ -6,23 +6,23 @@ const Blog: React.FC = () => {
       <div className="min-h-screen p-10 flex flex-col bg-[#FFFAF7]" id="Blog">
         <h2 className="font-bold text-2xl mb-8 text-center text-gray-800">Real Estate News & Blogs</h2>
         <div className="flex flex-col items-center" id="not-title-blog">
-          <div className="flex gap-4 mb-8 flex-wrap" id="search-blogs">
+          <div className="flex gap-4 mb-8 flex-wrap w-full justify-center" id="search-blogs">
             <input
-              className="py-2 px-4 border-2 pr-10 rounded-lg text-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-1/3 min-w-[300px] py-2 border-2 rounded-lg text-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
               placeholder="Title"
               type="text"
               name=""
               id=""
             />
             <select
-              className="text-lg pr-32 py-2 px-4 rounded-lg text-gray-500 font-bold border-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="text-lg w-1/4 min-w-[300px] py-2 rounded-lg text-gray-500 font-bold border-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
               name=""
               id=""
             >
               <option value="">Category</option>
             </select>
             <select
-              className="text-lg pr-32 py-2 px-4 rounded-lg border-2 text-gray-500 font-bold  focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="text-lg w-1/4 min-w-[300px] py-2 rounded-lg border-2 text-gray-500 font-bold  focus:outline-none focus:ring-2 focus:ring-orange-400"
               name=""
               id=""
             >

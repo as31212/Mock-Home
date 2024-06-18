@@ -178,9 +178,6 @@
   #right-divs{
     width: 100%;
   }
-  #listing-detail-images{
-    
-  }
 
 }
 
@@ -261,4 +258,19 @@
   transform: translate(-50%, -50%);
 }
 
-  
+  /* styling for listing filters */
+@media (max-width:600px) {
+  #listing-page-search{
+    flex-direction: column;
+  }
+  .width-max-out-mq{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem ;
+  }
+  #delete-saved-search{
+    left: 95%;
+  }
+
+}

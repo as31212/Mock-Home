@@ -406,17 +406,17 @@ const Listing: React.FC<ListingProps> = ({
           className={`flex flex-wrap justify-center gap-5  `}
         >
           <div className="relative w-full max-w-md">
-            <div className="relative flex items-center">
+            <div className="relative w-full flex items-center">
               <input
-                id="listing-input-box"
                 onFocus={() => setActiveFilter(0)}
                 value={searchAddress}
                 onChange={(event) => changeSearchAddress(event)}
-                className="py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className=" py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full focus:outline-none focus:ring-2 focus:ring-orange-400"
                 type="text"
                 placeholder="State/City/Street"
               />
               <div
+              id="delete-saved-search"
                 className={`absolute flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto bg-gray-200 font-bold text-center top-2 left-[440px] transform -translate-x-full ${
                   savedSearchAddress !== "" ? "" : "hidden"
                 }`}
@@ -439,7 +439,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   buyFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -519,7 +519,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   priceFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -619,13 +619,14 @@ const Listing: React.FC<ListingProps> = ({
           {/* Bed Bath Filter button 3*/}
           <div>
             <div
+           
               onClick={() => {
                 toggleBedBath();
                 setActiveFilter(3);
               }}
             >
               <button
-                className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] border-gray-400 width-max-out-mq font-bold px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   bedBathFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -786,7 +787,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   moreFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -913,7 +914,7 @@ const Listing: React.FC<ListingProps> = ({
 
           <select
             onChange={changeSort}
-            className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold"
+            className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-orange-400"
             onClick={() => setActiveFilter(6)}
           >
             <option disabled selected value="">

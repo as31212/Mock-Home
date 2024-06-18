@@ -216,8 +216,8 @@ const About: React.FC = () => {
           <div id="team-cards-container" className="flex flex-wrap justify-center gap-10 px-20">{teamDataCards}</div>
         </div>
         {/* real it news */}
-        <div className="bg-[#1A1A1A] flex flex-col min-h-screen text-white font-bold justify-center items-center px-10 py-10">
-          <div className="flex justify-between items-center flex-wrap">
+        <div className="bg-[#1A1A1A] flex flex-col min-h-screen text-white font-bold items-center px-10 py-10">
+          <div className="flex justify-around items-center flex-wrap w-full ">
             <h2 className="text-3xl">News & Blogs</h2>
             <Link className=" text-orange-400 text-2xl hover:cursor-pointer hover:underline" to='/Blog'>
               <p >Explore All <FaArrowRight className="inline relative bottom-[1px]" /></p>
