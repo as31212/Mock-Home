@@ -151,6 +151,9 @@
   .no-footer{
     display: none;
   }
+  .agent-cards{
+    width: 400px;
+  }
 }
 @media (min-width: 700px) {
     #hamburger-nav{

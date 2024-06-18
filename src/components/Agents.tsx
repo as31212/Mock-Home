@@ -49,7 +49,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
   const agentTemplate = filteredAgentData
     ? [...filteredAgentData].map((el) => {
         return (
-          <div className="bg-white h-[450px] w-[300px] rounded-xl overflow-hidden " key={el.id}>
+          <div className="bg-white h-[450px] max-w-[400px] w-[300px] rounded-xl overflow-hidden agent-cards " key={el.id}>
             <img
               className=" h-2/3 rounded-t-lg w-full hover:scale-105 hover:brightness-75 duration-200 object-cover object-center"
               src={el.img}
@@ -100,7 +100,7 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
         </div>
 
         <div
-          className="flex flex-wrap gap-10 justify-center items-center w-[80%]"
+          className="flex flex-wrap gap-10 justify-center items-center"
           id="agent-container"
         >
           {agentTemplate}
