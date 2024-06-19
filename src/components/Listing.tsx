@@ -170,40 +170,7 @@ const Listing: React.FC<ListingProps> = ({
   },[sortedData])
 
   // sort
-  useEffect(() => {
-    if (sortedData) {
-      let sorting = [...sortedData]; // Create a copy of the data
-      switch (sort) {
-        case "price-asc":
-          sorting.sort((a, b) => a.price - b.price);
-          break;
-        case "price-desc":
-          sorting.sort((a, b) => b.price - a.price);
-          break;
-        case "bedrooms-asc":
-          sorting.sort((a, b) => a.bedrooms - b.bedrooms);
-          break;
-        case "bedrooms-desc":
-          sorting.sort((a, b) => b.bedrooms - a.bedrooms);
-          break;
-        case "bathrooms-asc":
-          sorting.sort((a, b) => a.bathrooms - b.bathrooms);
-          break;
-        case "bathrooms-desc":
-          sorting.sort((a, b) => b.bathrooms - a.bathrooms);
-          break;
-        case "sqft-asc":
-          sorting.sort((a, b) => a.square_footage - b.square_footage);
-          break;
-        case "sqft-desc":
-          sorting.sort((a, b) => b.square_footage - a.square_footage);
-          break;
-        default:
-          sorting = sortedData;
-      }
-      setSortedData(sorting);
-    }
-  }, [sort, sortedData]); //BUG ASSOCTED WITH SORTED DATA INTERFERING WITH THE OTHER USE EFFECT THAT USE SORTED DATA DEPENDECY
+ //BUG ASSOCTED WITH SORTED DATA INTERFERING WITH THE OTHER USE EFFECT THAT USE SORTED DATA DEPENDECY
 
   // filter
 
@@ -253,9 +220,43 @@ const Listing: React.FC<ListingProps> = ({
           // finish the rest
         );
       });
-      setSortedData(filtered);
+
+      // sorting bug test
+      if (sortedData) {
+        let sorting = [...filtered]; // Create a copy of the data
+        switch (sort) {
+          case "price-asc":
+            sorting.sort((a, b) => a.price - b.price);
+            break;
+          case "price-desc":
+            sorting.sort((a, b) => b.price - a.price);
+            break;
+          case "bedrooms-asc":
+            sorting.sort((a, b) => a.bedrooms - b.bedrooms);
+            break;
+          case "bedrooms-desc":
+            sorting.sort((a, b) => b.bedrooms - a.bedrooms);
+            break;
+          case "bathrooms-asc":
+            sorting.sort((a, b) => a.bathrooms - b.bathrooms);
+            break;
+          case "bathrooms-desc":
+            sorting.sort((a, b) => b.bathrooms - a.bathrooms);
+            break;
+          case "sqft-asc":
+            sorting.sort((a, b) => a.square_footage - b.square_footage);
+            break;
+          case "sqft-desc":
+            sorting.sort((a, b) => b.square_footage - a.square_footage);
+            break;
+          default:
+            sorting = sortedData;
+        }
+        setSortedData(sorting);
+      }
+      // sorting bug test
     }
-  }, [filter, savedSearchAddress]);
+  }, [filter, savedSearchAddress,sort]);
 
   // debug currlisting
 
@@ -915,7 +916,7 @@ const Listing: React.FC<ListingProps> = ({
           <select
             onChange={changeSort}
             className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-orange-400"
-            onClick={() => setActiveFilter(6)}
+            onClick={() => setActiveFilter(0)}
           >
             <option disabled selected value="">
               Sort

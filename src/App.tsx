@@ -319,12 +319,6 @@ function App() {
         setBuyFilter(false);
         setMoreFilter(false);
         break;
-      case 6:
-        setBedBathFilter(false);
-        setPriceFilter(false);
-        setBuyFilter(false);
-        setMoreFilter(false);
-        break;
     }
   };
   useEffect(() => {
