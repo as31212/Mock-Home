@@ -40,11 +40,11 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
     : null;
 
   return (
-    <div className="min-h-screen flex flex-wrap flex-col bg-[#FFFAF7]">
+    <div className="min-h-screen flex flex-col bg-[#FFFAF7]">
       {/* images collage */}
       <div
         id="listing-detail-images"
-        className="flex gap-3 mx-auto w-2/3 max-w-[1800px] max-h-[60vh] mt-10"
+        className="flex gap-3 mx-auto w-2/3 min-w-[650px] max-w-[1800px] max-h-[60vh] mt-10"
       >
         <img
           className="rounded-xl w-2/3 h-full max-h-[556px]"
@@ -147,7 +147,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
             </div>
           </div>
         </div>
-        <div className="w-2/12" id="right-divs">
+        <div className="w-2/12 min-w-64" id="right-divs">
           <div className="flex flex-col p-5 gap-5 border-2 rounded-lg bg-white">
             <h2 className="font-bold text-2xl">Request Visit</h2>
             <input
@@ -196,7 +196,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
       >
         <div
           id="details-page-listings-header"
-          className="flex justify-between items-center px-[290px]"
+          className="flex flex-wrap justify-around items-center px-20"
         >
           <h2 className="font-bold text-2xl">Latest Properties</h2>
           <Link to="/Listing">
@@ -215,7 +215,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                 return (
                   <div
                     key={el.id}
-                    className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white overflow-hidden"
+                    className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 mb-10 bg-white overflow-hidden"
                   >
                     <img
                       className="h-1/2 rounded-t-xl hover:scale-105 hover:brightness-75 duration-200"
@@ -223,7 +223,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                       alt={`${el.address} picture`}
                     />
                     <div className="flex flex-col px-10 gap-4 ">
-                      <p className="font-bold text-[18px] h-[50px]">
+                      <p className="font-bold text-[18px] h-[50px] mb-4">
                         <IoIosPin className="inline relative top-[-2px] left-[-3px] text-xl" />
                         {`${el.address},${el.city},${el.state} ${el.zip}`}
                       </p>
