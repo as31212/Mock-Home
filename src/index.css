@@ -122,27 +122,31 @@
     margin: auto;
     position: relative;
     bottom: 250px;
+    right: 10px;
   }
   .filters-price{
     width: 100vw;
     height: 130vh;
     margin: auto;
     position: relative;
-    bottom: 252px;
+    bottom: 225px;
+    right: 10px;
   }
   .filters-bath{
     width: 100vw;
     height: 130vh;
     margin: auto;
     position: relative;
-    bottom: 250px;
+    bottom: 300px;
+    right: 10px;
   }
   .filters-more{
     width: 100vw;
     height: 130vh;
     margin: auto;
     position: relative;
-    bottom: 250px;
+    bottom: 380px;
+    right: 10px;
   }
   .short-page{
     height: 10px;
@@ -153,6 +157,18 @@
   }
   .agent-cards{
     width: 400px;
+  }
+  #listing-page-search{
+    flex-direction: column;
+  }
+  .width-max-out-mq{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem ;
+  }
+  #delete-saved-search{
+    left: 95%;
   }
 }
 @media (min-width: 700px) {
@@ -193,6 +209,7 @@
 #listing-detail-images img{
   width: 100%;
 }
+
 }
 
 /* nav menu to x styles and smooth dropdown*/
@@ -274,17 +291,6 @@
 
   /* styling for listing filters */
 @media (max-width:600px) {
-  #listing-page-search{
-    flex-direction: column;
-  }
-  .width-max-out-mq{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem ;
-  }
-  #delete-saved-search{
-    left: 95%;
-  }
+ 
 
 }
