@@ -255,7 +255,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                             </button>
                           </a>
                      
-                        <p className="font-bold text-2xl">{`$${el.price}`}</p>
+                        <p className="font-bold text-2xl">{`$${addComma(el.price)}`}</p>
                       </div>
                     </div>
                   </div>

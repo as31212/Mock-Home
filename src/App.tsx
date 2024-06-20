@@ -388,7 +388,6 @@ function App() {
   ];
 
   const maxNumbers = [
-    "0",
     "50,000",
     "100,000",
     "150,000",
@@ -521,6 +520,11 @@ function App() {
     }
     return final.reverse().join('');
 }
+
+  // sort change === page 1
+  useEffect(()=>{
+    setPage(1);
+  },[sort])
 
   return (
     <>

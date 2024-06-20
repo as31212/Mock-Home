@@ -125,26 +125,6 @@ const Listing: React.FC<ListingProps> = ({
   setMaxSqft,
   setMinSqft
 }) => {
-  const minNumber = [...minNumbers].map((el, index) => {
-    return (
-      <li
-        onClick={() => changeMinByBtn(index)}
-        className="text-lg hover:bg-orange-200 p-3"
-        key={index}
-      >{`$${el}`}</li>
-    );
-  });
-
-  const maxNumber = [...maxNumbers].map((el, index) => {
-    return (
-      <li
-        onClick={() => changeMaxByBtn(index)}
-        className="text-lg hover:bg-orange-200 p-3"
-        key={index}
-      >{`$${el}`}</li>
-    );
-  });
-
   // parsing logic for max and min
   const parseListNumbers = (str: string): number => {
     if (str === "Any Number") {
@@ -154,14 +134,40 @@ const Listing: React.FC<ListingProps> = ({
       str = str.replace("M", "");
       const parts = str.split(".");
       if (parts.length === 2) {
-        return Number(parts[0]) * 1000000 + Number(parts[1]) * 100000;
+        // If there are two parts, handle up to two decimal places
+        const millions = Number(parts[0]) * 1000000;
+        const decimals = Number(parts[1].padEnd(2, '0')) * 10000;
+        return millions + decimals;
       } else {
+        // If there is no decimal part
         return Number(parts[0]) * 1000000;
       }
     }
     return Number(str.replace(/,/g, ""));
   };
 
+
+  const minNumber = [...minNumbers].map((el, index) => {
+    return (
+      <li
+        onClick={() => changeMinByBtn(index)}
+        className={`text-lg hover:bg-orange-200 p-3 ${parseListNumbers(maxValue) < parseListNumbers(el) && maxValue !== '' ? 'hidden' : ''}`}
+        key={index}
+      >{`$${el}`}</li>
+    );
+  });
+
+  const maxNumber = [...maxNumbers].map((el, index) => {
+    return (
+      <li
+        onClick={() => changeMaxByBtn(index)}
+        className={`text-lg hover:bg-orange-200 p-3 ${parseListNumbers(minValue) > parseListNumbers(el) && minValue !== '' ? 'hidden' : ''}`}
+        key={index}
+      >{`$${el}`}</li>
+    );
+  });
+
+  
   // load when sorted data mutates
 
   useEffect(()=>{
@@ -225,7 +231,7 @@ const Listing: React.FC<ListingProps> = ({
       if (sortedData) {
         let sorting = [...filtered]; // Create a copy of the data
         switch (sort) {
-          case "default":
+          case "":
             sorting.sort((a,b)=> a.id - b.id);
             break;
           case "price-asc":
@@ -256,10 +262,15 @@ const Listing: React.FC<ListingProps> = ({
             sorting = sortedData;
         }
         setSortedData(sorting);
+        return;
       }
+      setSortedData(filtered);
+      return;
       // sorting bug test
     }
   }, [filter, savedSearchAddress,sort]);
+
+
 
   // debug currlisting
 
@@ -346,6 +357,44 @@ const Listing: React.FC<ListingProps> = ({
     <div></div>
   );
 
+  // parsing nums for price name logic
+
+  const filterPriceNameLogic = (num: string): string | void => {
+    if(num.includes('M')){
+      return num;
+    }
+
+    const cleanedNum = num.replace(/\D/g, '').replace(/^0+/, '');
+    if (cleanedNum === '') {
+        return '0';
+    }
+    if (isNaN(Number(cleanedNum))) {
+      return num;
+ }
+
+    const numLength = cleanedNum.length;
+    let formattedNum = '';
+
+    switch (true) {
+        case (numLength <= 3):
+            formattedNum = cleanedNum;
+            break;
+        case (numLength <= 6):
+            formattedNum = (parseInt(cleanedNum) / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+            break;
+        case (numLength <= 9):
+            formattedNum = (parseInt(cleanedNum) / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+            break;
+        default:
+            formattedNum = (parseInt(cleanedNum) / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+            break;
+    }
+
+    return formattedNum;
+}
+
+
+
   // price name logic
   const priceTitle = () => {
     if (
@@ -360,20 +409,15 @@ const Listing: React.FC<ListingProps> = ({
       maxValue === "Any Number"
     ) {
       // if min is something and max is nothing
-      return `$${
-        minValue.includes("M") ? minValue : minValue.replace(",000", "K")
-      }+`;
+      return `$${filterPriceNameLogic(minValue)}+`;
     }
     if (minValue.length <= 1 && maxValue.length > 1) {
       // if min is nothing and max is something
-      return `up to $${
-        maxValue.includes("M") ? maxValue : maxValue.replace(",000", "K")
-      }`;
+      return `$${filterPriceNameLogic(maxValue)}+`;
+
     }
     if (minValue.length > 1 && maxValue.length > 1) {
-      return `$${
-        minValue.includes("M") ? minValue : minValue.replace(",000", "K")
-      }-$${maxValue.includes("M") ? maxValue : maxValue.replace(",000", "K")}`;
+      return `$${filterPriceNameLogic(minValue)} - $${filterPriceNameLogic(maxValue)}`;
     }
   };
 
@@ -921,7 +965,7 @@ const Listing: React.FC<ListingProps> = ({
             className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-orange-400"
             onClick={() => setActiveFilter(0)}
           >
-            <option selected value="default">
+            <option selected value="">
               Homes For You
             </option>
             <option value="price-asc">Price: Low to High</option>
