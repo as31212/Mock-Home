@@ -172,7 +172,7 @@ function App() {
           // search functions
           (el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
             el.city.toLowerCase().includes(searchAddress.toLowerCase()) ||
-            (el.state.toLowerCase().includes(stateAbbreviations[searchAddress]?.toLowerCase() || searchAddress.toLowerCase())) ||  
+            (el.state.toLowerCase().includes(stateAbbreviations[searchAddress]?.toLowerCase() || searchAddress.toLowerCase())) ||  // this error is currently cuased by an attempt to add the ability to type the name of the full state and produce a listing of that state by the state abbreviations array
             el.state.toLowerCase().includes(searchAddress.toLowerCase()) ||
             el.zip.toLowerCase().includes(searchAddress.toLowerCase())) &&
           // filter functions

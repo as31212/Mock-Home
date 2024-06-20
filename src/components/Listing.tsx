@@ -225,6 +225,9 @@ const Listing: React.FC<ListingProps> = ({
       if (sortedData) {
         let sorting = [...filtered]; // Create a copy of the data
         switch (sort) {
+          case "default":
+            sorting.sort((a,b)=> a.id - b.id);
+            break;
           case "price-asc":
             sorting.sort((a, b) => a.price - b.price);
             break;
@@ -918,8 +921,8 @@ const Listing: React.FC<ListingProps> = ({
             className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-orange-400"
             onClick={() => setActiveFilter(0)}
           >
-            <option disabled selected value="">
-              Sort
+            <option selected value="default">
+              Homes For You
             </option>
             <option value="price-asc">Price: Low to High</option>
             <option value="price-desc">Price: High to Low</option>
