@@ -96,7 +96,7 @@ const Home: React.FC<HomeInterface> = ({
                 value={searchAddress}
                 type="text"
                 placeholder="State/City/Street"
-                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500 pr-10"
+                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500 pr-10 "
               />
               <CiSearch
                 id="search-before-wrap"

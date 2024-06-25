@@ -388,6 +388,7 @@ function App() {
   ];
 
   const maxNumbers = [
+    "Any Number",
     "50,000",
     "100,000",
     "150,000",
@@ -440,7 +441,6 @@ function App() {
     "16M",
     "17M",
     "18M",
-    "Any Number",
   ];
 
   useEffect(() => console.log(filter.sqft), [filter]);
@@ -493,8 +493,8 @@ function App() {
 
   // min and max sqft state and retireve use input function
 
-  const [minSqft, setMinSqft] = useState<string>("0");
-  const [maxSqft, setMaxSqft] = useState<string>("0");
+  const [minSqft, setMinSqft] = useState<string>("");
+  const [maxSqft, setMaxSqft] = useState<string>("");
   const changeMaxSqft = (e: ChangeEvent<HTMLSelectElement>) => {
     setMaxSqft(e.target.value);
   };
@@ -526,6 +526,14 @@ function App() {
     setPage(1);
   },[sort])
 
+  // sqft use state 
+  const [sqftMinValue,setSqftMinValue] = useState<string>("");
+  const [sqftMaxValue,setSqftMaxValue] = useState<string>("");
+
+
+
+  // price title state
+  const [priceTitle,setPriceTitle] = useState<string>('Price');
   return (
     <>
       <Router>
@@ -565,6 +573,12 @@ function App() {
             path="/Listing"
             element={
               <Listing
+              setSqftMinValue={setSqftMinValue}
+              setSqftMaxValue={setSqftMaxValue}
+              sqftMaxValue={sqftMaxValue}
+              sqftMinValue={sqftMinValue}
+              setPriceTitle={setPriceTitle}
+              priceTitle={priceTitle}
               addComma={addComma}
               changeCurrListing={changeCurrListing}
               currListing={currListing}

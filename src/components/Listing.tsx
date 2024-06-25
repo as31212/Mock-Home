@@ -12,7 +12,7 @@ import { FilterInterface } from "../interfaces/FilterInterface";
 import { TiDelete } from "react-icons/ti";
 
 interface ListingProps {
-  addComma: (price:number)=> string;
+  addComma: (price: number) => string;
   changeSearchAddress: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchAddress: string;
   increasePage: () => void;
@@ -55,21 +55,33 @@ interface ListingProps {
   changeMaxByInput: (e: ChangeEvent<HTMLInputElement>) => void;
   minNumbers: string[];
   maxNumbers: string[];
-  setMinValue: (value:string)=> void;
-  setMaxValue: (value:string)=> void;
-  setLoading: (load:boolean)=> void;
-  sqftOptions: string[] ;
+  setMinValue: (value: string) => void;
+  setMaxValue: (value: string) => void;
+  setLoading: (load: boolean) => void;
+  sqftOptions: string[];
   maxSqft: string;
   minSqft: string;
-  changeMaxSqft: (e:ChangeEvent<HTMLSelectElement>)=> void;
-  changeMinSqft: (e:ChangeEvent<HTMLSelectElement>)=> void;
-  setMaxSqft: (sqft:string)=> void;
-  setMinSqft: (sqft:string)=> void;
+  changeMaxSqft: (e: ChangeEvent<HTMLSelectElement>) => void;
+  changeMinSqft: (e: ChangeEvent<HTMLSelectElement>) => void;
+  setMaxSqft: (sqft: string) => void;
+  setMinSqft: (sqft: string) => void;
   currListing: number;
-  changeCurrListing: (elId:number)=> void;
+  changeCurrListing: (elId: number) => void;
+  setPriceTitle: (obj: string) => void;
+  priceTitle: string;
+  sqftMinValue: string;
+  sqftMaxValue: string;
+  setSqftMinValue: (value: string) => void;
+  setSqftMaxValue: (value: string) => void;
 }
 
 const Listing: React.FC<ListingProps> = ({
+  sqftMaxValue,
+  sqftMinValue,
+  setSqftMaxValue,
+  setSqftMinValue,
+  priceTitle,
+  setPriceTitle,
   addComma,
   currListing,
   changeCurrListing,
@@ -123,12 +135,16 @@ const Listing: React.FC<ListingProps> = ({
   maxSqft,
   minSqft,
   setMaxSqft,
-  setMinSqft
+  setMinSqft,
 }) => {
   // parsing logic for max and min
   const parseListNumbers = (str: string): number => {
-    if (str === "Any Number") {
+    if (str === "No Min") {
       return 0;
+    }
+    // I have altered the way that any num and no max are handled so that the function that determines which li elements are displayed can act as intended
+    if (str === "No Max" || str === "Any Number") {
+      return 1000000000000;
     }
     if (str.includes("M")) {
       str = str.replace("M", "");
@@ -136,7 +152,7 @@ const Listing: React.FC<ListingProps> = ({
       if (parts.length === 2) {
         // If there are two parts, handle up to two decimal places
         const millions = Number(parts[0]) * 1000000;
-        const decimals = Number(parts[1].padEnd(2, '0')) * 10000;
+        const decimals = Number(parts[1].padEnd(2, "0")) * 10000;
         return millions + decimals;
       } else {
         // If there is no decimal part
@@ -146,12 +162,15 @@ const Listing: React.FC<ListingProps> = ({
     return Number(str.replace(/,/g, ""));
   };
 
-
   const minNumber = [...minNumbers].map((el, index) => {
     return (
       <li
         onClick={() => changeMinByBtn(index)}
-        className={`text-lg hover:bg-orange-200 p-3 ${parseListNumbers(maxValue) < parseListNumbers(el) && maxValue !== '' ? 'hidden' : ''}`}
+        className={`text-lg hover:bg-orange-200 p-3 ${
+          parseListNumbers(maxValue) < parseListNumbers(el) && maxValue !== ""
+            ? "hidden"
+            : ""
+        }`}
         key={index}
       >{`$${el}`}</li>
     );
@@ -161,22 +180,27 @@ const Listing: React.FC<ListingProps> = ({
     return (
       <li
         onClick={() => changeMaxByBtn(index)}
-        className={`text-lg hover:bg-orange-200 p-3 ${parseListNumbers(minValue) > parseListNumbers(el) && minValue !== '' ? 'hidden' : ''}`}
+        className={`text-lg hover:bg-orange-200 p-3 ${
+          parseListNumbers(minValue) > parseListNumbers(el) &&
+          minValue !== "" &&
+          !el.includes("Any")
+            ? "hidden"
+            : ""
+        }`}
         key={index}
-      >{`$${el}`}</li>
+      >{`${el.includes("Any") ? "" : "$"}${el}`}</li>
     );
   });
 
-  
   // load when sorted data mutates
 
-  useEffect(()=>{
-    setLoading(true)
-    setTimeout(()=>setLoading(false),500)
-  },[sortedData])
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 500);
+  }, [sortedData]);
 
   // sort
- //BUG ASSOCTED WITH SORTED DATA INTERFERING WITH THE OTHER USE EFFECT THAT USE SORTED DATA DEPENDECY
+  //BUG ASSOCTED WITH SORTED DATA INTERFERING WITH THE OTHER USE EFFECT THAT USE SORTED DATA DEPENDECY
 
   // filter
 
@@ -184,12 +208,10 @@ const Listing: React.FC<ListingProps> = ({
     if (listingData) {
       const filtered = [...listingData].filter((el) => {
         return (
-
           // bedrooms && bathrooms
           el.bedrooms >= filter.bedrooms &&
           el.bathrooms >= filter.bathrooms &&
           el.buy_or_rent === filter.buySell &&
-
           // price range
           (filter.priceRange[0] === 0
             ? true
@@ -197,20 +219,13 @@ const Listing: React.FC<ListingProps> = ({
           (filter.priceRange[1] === 0
             ? true
             : el.price <= filter.priceRange[1]) &&
-
-            // Home type
-            el.square_footage >= filter.sqft[0] &&
-            (filter.sqft[1] !== 0 ? el.square_footage <= filter.sqft[1] : true) &&
-
-        (
-          (filter.type[0] && el.apt_type === 'apartment') ||
-          (filter.type[1] && el.apt_type === 'family') ||
-          (filter.type[2] && el.apt_type === 'single family')
-        ) &&
-
-
-
-            // search
+          // Home type
+          el.square_footage >= filter.sqft[0] &&
+          (filter.sqft[1] !== 0 ? el.square_footage <= filter.sqft[1] : true) &&
+          ((filter.type[0] && el.apt_type === "apartment") ||
+            (filter.type[1] && el.apt_type === "family") ||
+            (filter.type[2] && el.apt_type === "single family")) &&
+          // search
           (savedSearchAddress !== ""
             ? el.address
                 .toLowerCase()
@@ -232,7 +247,7 @@ const Listing: React.FC<ListingProps> = ({
         let sorting = [...filtered]; // Create a copy of the data
         switch (sort) {
           case "":
-            sorting.sort((a,b)=> a.id - b.id);
+            sorting.sort((a, b) => a.id - b.id);
             break;
           case "price-asc":
             sorting.sort((a, b) => a.price - b.price);
@@ -268,16 +283,13 @@ const Listing: React.FC<ListingProps> = ({
       return;
       // sorting bug test
     }
-  }, [filter, savedSearchAddress,sort]);
-
-
+  }, [filter, savedSearchAddress, sort]);
 
   // debug currlisting
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(currListing);
-    
-  },[currListing])
+  }, [currListing]);
 
   // listing cards
   const listingTemplate = sortedData ? (
@@ -318,17 +330,21 @@ const Listing: React.FC<ListingProps> = ({
               </p>
             </div>
             <div className="flex gap-10 ">
-              <Link onClick={()=>changeCurrListing(el.id)} className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300" to='/PropertyDetails'>
-                <button className="">
-                  Details
-                </button>
+              <Link
+                onClick={() => changeCurrListing(el.id)}
+                className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 duration-300"
+                to="/PropertyDetails"
+              >
+                <button className="">Details</button>
               </Link>
               <p
                 className={`font-bold mb-2 ${
                   el.buy_or_rent === "Buy" ? "text-2xl" : "text-xl mt-2"
                 }`}
               >{`$${
-                el.buy_or_rent === "Buy" ? addComma(el.price) : `${addComma(el.price)}/mo`
+                el.buy_or_rent === "Buy"
+                  ? addComma(el.price)
+                  : `${addComma(el.price)}/mo`
               }`}</p>
             </div>
           </div>
@@ -360,86 +376,115 @@ const Listing: React.FC<ListingProps> = ({
   // parsing nums for price name logic
 
   const filterPriceNameLogic = (num: string): string | void => {
-    if(num.includes('M')){
+    if (num.includes("M")) {
       return num;
     }
 
-    const cleanedNum = num.replace(/\D/g, '').replace(/^0+/, '');
-    if (cleanedNum === '') {
-        return '0';
+    const cleanedNum = num.replace(/\D/g, "").replace(/^0+/, "");
+    if (cleanedNum === "") {
+      return "0";
     }
     if (isNaN(Number(cleanedNum))) {
       return num;
- }
+    }
 
     const numLength = cleanedNum.length;
-    let formattedNum = '';
+    let formattedNum = "";
 
     switch (true) {
-        case (numLength <= 3):
-            formattedNum = cleanedNum;
-            break;
-        case (numLength <= 6):
-            formattedNum = (parseInt(cleanedNum) / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-            break;
-        case (numLength <= 9):
-            formattedNum = (parseInt(cleanedNum) / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-            break;
-        default:
-            formattedNum = (parseInt(cleanedNum) / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
-            break;
+      case numLength <= 3:
+        formattedNum = cleanedNum;
+        break;
+      case numLength <= 6:
+        formattedNum =
+          (parseInt(cleanedNum) / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+        break;
+      case numLength <= 9:
+        formattedNum =
+          (parseInt(cleanedNum) / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+        break;
+      default:
+        formattedNum =
+          (parseInt(cleanedNum) / 1000000000).toFixed(1).replace(/\.0$/, "") +
+          "B";
+        break;
     }
 
     return formattedNum;
-}
-
-
+  };
 
   // price name logic
-  const priceTitle = () => {
+  const priceTitleLogic = () => {
+    let price = "Price";
     if (
       (minValue.length <= 1 && maxValue.length <= 1) ||
-      maxValue === "Any Number"
+      (maxValue === "Any Number" && minValue === "0")
     ) {
       // if they are '' or 0
-      return "Price";
-    }
-    if (
+      price = "Price";
+    } else if (
       (minValue.length > 1 && maxValue.length <= 1) ||
       maxValue === "Any Number"
     ) {
       // if min is something and max is nothing
-      return `$${filterPriceNameLogic(minValue)}+`;
-    }
-    if (minValue.length <= 1 && maxValue.length > 1) {
+      price = `$${filterPriceNameLogic(minValue)}+`;
+    } else if (minValue.length <= 1 && maxValue.length > 1) {
       // if min is nothing and max is something
-      return `$${filterPriceNameLogic(maxValue)}+`;
-
+      price = `Up to $${filterPriceNameLogic(maxValue)}`;
+    } else if (minValue.length > 1 && maxValue.length > 1) {
+      price = `$${filterPriceNameLogic(minValue)} - $${filterPriceNameLogic(
+        maxValue
+      )}`;
     }
-    if (minValue.length > 1 && maxValue.length > 1) {
-      return `$${filterPriceNameLogic(minValue)} - $${filterPriceNameLogic(maxValue)}`;
-    }
+    setPriceTitle(price);
   };
 
+  useEffect(() => {
+    priceTitleLogic();
+  }, [sortedData]);
 
   // sqft mapped options
 
-  const sqftMinMapped = sqftOptions.map((el,index)=>{
-      return(
-        <option key={index} value={el}>{el}</option>
-      );
-    })
+  const sqftMinMapped = sqftOptions.map((el, index) => {
+    return (
+      <option
+        className={`${
+          parseListNumbers(el) > parseListNumbers(maxSqft) &&
+          maxSqft !== 'No Max'
+            ? "hidden"
+            : ""
+        }`}
+        key={index}
+        value={el}
+      >
+        {el}
+      </option>
+    );
+  });
+
+  // test
+useEffect(()=>{
+  console.log(minSqft,maxSqft);
   
+},[minSqft,maxSqft])
+  // test
 
-
-
-  const sqftMaxMapped =
-    [...sqftOptions].map((el,index)=>{
-      return(
-        <option key={index} value={el}>{el}</option>
-      );
-    })
-
+  const sqftMaxMapped = [...sqftOptions].map((el, index) => {
+    return (
+      <option
+        className={`${
+          parseListNumbers(el) < parseListNumbers(minSqft) &&
+          minSqft !== 'No Min'
+            ? "hidden"
+            : ""
+        }`}
+        key={index}
+        value={el}
+      >
+        {el}
+      </option>
+    );
+  });
 
   return (
     <>
@@ -464,7 +509,7 @@ const Listing: React.FC<ListingProps> = ({
                 placeholder="State/City/Street"
               />
               <div
-              id="delete-saved-search"
+                id="delete-saved-search"
                 className={`absolute flex gap-2 p-1 rounded-md justify-between border-2 h-[35px] w-auto bg-gray-200 font-bold text-center top-2 left-[440px] transform -translate-x-full ${
                   savedSearchAddress !== "" ? "" : "hidden"
                 }`}
@@ -571,7 +616,7 @@ const Listing: React.FC<ListingProps> = ({
                   priceFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
-                {priceTitle()}
+                {priceTitle}
                 <FaChevronDown
                   className={`inline relative bottom-[2px] left-2 text-lg ${
                     priceFilter ? "hidden" : ""
@@ -667,7 +712,6 @@ const Listing: React.FC<ListingProps> = ({
           {/* Bed Bath Filter button 3*/}
           <div>
             <div
-           
               onClick={() => {
                 toggleBedBath();
                 setActiveFilter(3);
@@ -869,21 +913,31 @@ const Listing: React.FC<ListingProps> = ({
                   >
                     <select
                       className="text-gray-700 w-2/3 text-lg py-2 border-[1px]"
-                      onChange={(event)=>changeMinSqft(event)}
+                      onChange={(event) => changeMinSqft(event)}
                       name=""
                       id=""
                     >
-                      <option selected={minSqft === '0' ? true : false} value="0">No Min</option>
+                      <option
+                        selected={minSqft === 'No Min'? true : false}
+                        value="No Min"
+                      >
+                        No Min
+                      </option>
                       {sqftMinMapped}
                     </select>
                     <select
                       className="text-gray-700 w-2/3 text-lg py-2 border-[1px]"
-                      onChange={(event)=>changeMaxSqft(event)}
+                      onChange={(event) => changeMaxSqft(event)}
                       name=""
                       id=""
                     >
                       {sqftMaxMapped}
-                      <option selected={maxSqft === '0' ? true : false} value="0">No Max</option>
+                      <option
+                        selected={maxSqft === 'No Max' ? true : false}
+                        value="No Max"
+                      >
+                        No Max
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -899,7 +953,15 @@ const Listing: React.FC<ListingProps> = ({
                         type="checkbox"
                         id="apt-check"
                         checked={filter.type[0] ? true : false}
-                        onChange={()=>updateFilter({type : [!filter.type[0],filter.type[1],filter.type[2]]})}
+                        onChange={() =>
+                          updateFilter({
+                            type: [
+                              !filter.type[0],
+                              filter.type[1],
+                              filter.type[2],
+                            ],
+                          })
+                        }
                       />
                       Apartment
                     </label>
@@ -909,7 +971,15 @@ const Listing: React.FC<ListingProps> = ({
                         type="checkbox"
                         id="family-check"
                         checked={filter.type[1] ? true : false}
-                        onChange={()=>updateFilter({type : [filter.type[0],!filter.type[1],filter.type[2]]})}
+                        onChange={() =>
+                          updateFilter({
+                            type: [
+                              filter.type[0],
+                              !filter.type[1],
+                              filter.type[2],
+                            ],
+                          })
+                        }
                       />
                       Family
                     </label>
@@ -919,7 +989,15 @@ const Listing: React.FC<ListingProps> = ({
                         type="checkbox"
                         id="single-family-check"
                         checked={filter.type[2] ? true : false}
-                        onChange={()=>updateFilter({type : [filter.type[0],filter.type[1],!filter.type[2]]})}
+                        onChange={() =>
+                          updateFilter({
+                            type: [
+                              filter.type[0],
+                              filter.type[1],
+                              !filter.type[2],
+                            ],
+                          })
+                        }
                       />
                       Single Family
                     </label>
@@ -932,15 +1010,16 @@ const Listing: React.FC<ListingProps> = ({
                     updateFilter({
                       buySell: "Buy",
                       priceRange: [0, 0],
-                      type: [true,true,true],
+                      type: [true, true, true],
                       bedrooms: 0,
                       bathrooms: 0,
                       sqft: [0, 0],
                     });
-                    setMaxValue('');
-                    setMinValue('');
-                    setMaxSqft('0');
-                    setMinSqft('0');
+                    setMaxValue("");
+                    setMinValue("");
+                    setMaxSqft("No Max");
+                    setMinSqft("No Min");
+                    setActiveFilter(0);
                   }}
                   className=" w-1/2  text-orange-400 font-bold rounded-md py-2 hover:underline duration-200 ease-in-out"
                 >
@@ -950,7 +1029,12 @@ const Listing: React.FC<ListingProps> = ({
                   onClick={() => {
                     toggleMore();
                     setActiveFilter(0);
-                    updateFilter({sqft: [Number(minSqft.replace(',','')),Number(maxSqft.replace(',',''))]})
+                    updateFilter({
+                      sqft: [
+                        parseListNumbers(minSqft),
+                        parseListNumbers(maxSqft),
+                      ],
+                    });
                   }}
                   className="border-2 w-1/2 bg-orange-300 text-white font-bold rounded-md py-2 hover:brightness-75 duration-200 ease-in-out"
                 >
@@ -977,7 +1061,8 @@ const Listing: React.FC<ListingProps> = ({
             <option value="sqft-asc">Square Footage: Low to High</option>
             <option value="sqft-desc">Square Footage: High to Low</option>
           </select>
-          <button id="listing-search-btn"
+          <button
+            id="listing-search-btn"
             onClick={
               sortedData
                 ? () => {
@@ -1022,40 +1107,45 @@ const Listing: React.FC<ListingProps> = ({
             }`}
             id="listing-page-buttons"
           >
-            {page <= 1 ?  <button
-                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
-              >{"<<"}</button> : <a href="#nav">
-              <button
-                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
-                onClick={decreasePage}
-              >
+            {page <= 1 ? (
+              <button className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out">
                 {"<<"}
               </button>
-            </a> }
+            ) : (
+              <a href="#nav">
+                <button
+                  className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
+                  onClick={decreasePage}
+                >
+                  {"<<"}
+                </button>
+              </a>
+            )}
             {numberButtons}
-            
+
             <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">
               ...
             </button>
             <button className="px-4 py-2 shadow-lg rounded-lg bg-gray-300 mx-1">
               {sortedData ? Math.ceil(sortedData.length / 8) : ""}
             </button>
-            {sortedData && sortedData?.length / 8 <= page ? <button
-                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
-              >
-                {">>"}
-              </button> : <a href="#nav">
-              <button
-                className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
-                onClick={increasePage}
-              >
+            {sortedData && sortedData?.length / 8 <= page ? (
+              <button className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out">
                 {">>"}
               </button>
-              </a>}
+            ) : (
+              <a href="#nav">
+                <button
+                  className="px-4 py-2 border-2 shadow-lg rounded-lg hover:border-orange-300 duration-150 ease-in-out"
+                  onClick={increasePage}
+                >
+                  {">>"}
+                </button>
+              </a>
+            )}
           </div>
         </div>
       </div>
-      
     </>
   );
 };
