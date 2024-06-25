@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import { AgentInterface } from "../interfaces/AgentInterface";
 import StarRatings from "./StarRatings";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 interface AgentProps {
   agentData: AgentInterface[] | null;
@@ -9,9 +10,10 @@ interface AgentProps {
   review: string;
   filteredAgentData: AgentInterface[] | null;
   setFilteredAgentData:(data: AgentInterface[] | null) => void;
+  changeCurrAgent: (id:number)=> void;
 }
 
-const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filteredAgentData ,setFilteredAgentData }) => {
+const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filteredAgentData ,setFilteredAgentData,changeCurrAgent }) => {
   
   const sortReview = () => {
     // Reset to initial data
@@ -64,9 +66,9 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
                   goodStarAmt={Math.floor(el.rating)}
                 />
               </div>
-              <button className=" font-bold border-2 w-full p-2 rounded-lg hover:bg-black hover:text-white duration-200">
-                View Profile
-              </button>
+              <Link onClick={()=>changeCurrAgent(el.id)} className=" font-bold border-2 w-full p-2 rounded-lg text-center hover:bg-black hover:text-white duration-200" to='/AgentsDetails'>
+                  View Profile
+              </Link>
             </div>
           </div>
         );
@@ -79,13 +81,13 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
         <h2 className="text-2xl font-bold">Agents Near You</h2>
         <div id="agent-search" className="flex w-full items-center px-28 gap-2">
           <input
-            className="flex-grow p-2 py-3 text-lg rounded-lg border-2 agent-searches"
+            className="flex-grow p-2 py-3 text-lg rounded-lg border-2 agent-searches hover:border-black"
             type="text"
             placeholder="Enter your address"
           />
           <select
             onChange={(event) => changeReview(event)}
-            className="py-4 px-10 font-bold rounded-lg border-2 agent-searches text-center"
+            className="py-4 px-10 font-bold rounded-lg border-2 agent-searches"
           >
             <option className="font-bold" value="">Review</option>
             <option className="font-bold" value="5">5 stars</option>

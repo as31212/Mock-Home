@@ -151,34 +151,34 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
           <div className="flex flex-col p-5 gap-5 border-2 rounded-lg bg-white">
             <h2 className="font-bold text-2xl">Request Visit</h2>
             <input
-              className="border-2 p-3 rounded-lg"
+              className="border-2 p-3 rounded-lg hover:border-black"
               placeholder="Full Name"
               type="text"
               name=""
               id=""
             />
             <input
-              className="border-2 p-3 rounded-lg"
+              className="border-2 p-3 rounded-lg hover:border-black"
               placeholder="Email Address"
               type="email"
               name=""
               id=""
             />
             <input
-              className="border-2 p-3 rounded-lg"
+              className="border-2 p-3 rounded-lg hover:border-black"
               placeholder="Phone Number"
               type="text"
               name=""
               id=""
             />
             <input
-              className="border-2 p-3 rounded-lg"
+              className="border-2 p-3 rounded-lg hover:border-black"
               type="date"
               name=""
               id=""
             />
             <textarea
-              className="border-2 rounded-lg p-2 resize-none"
+              className="border-2 rounded-lg p-2 resize-none hover:border-black"
               rows={5}
               placeholder="message"
               name=""
@@ -211,7 +211,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
           className="flex gap-12 flex-wrap justify-center items-center"
         >
           {listingData
-            ? [...listingData].slice(4, 7).map((el) => {
+            ? [...listingData].slice(randomAgentId, randomAgentId + 3).map((el) => {
                 return (
                   <div
                     key={el.id}

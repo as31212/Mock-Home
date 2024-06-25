@@ -96,7 +96,7 @@ const Home: React.FC<HomeInterface> = ({
                 value={searchAddress}
                 type="text"
                 placeholder="State/City/Street"
-                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500 pr-10 "
+                className="border-2 w-full border-gray-300 p-3 text-lg rounded-lg focus:outline-none focus:border-gray-500 pr-10 hover:border-black"
               />
               <CiSearch
                 id="search-before-wrap"
@@ -219,7 +219,7 @@ const Home: React.FC<HomeInterface> = ({
 
       <div
         id="home-page-listings"
-        className="flex flex-col gap-20 mt-20 h-auto min-h-[750px] justify-center"
+        className="flex flex-col gap-20 my-20 h-auto min-h-[750px] justify-center"
       >
         <div
           id="home-page-listings-header"
@@ -296,7 +296,7 @@ const Home: React.FC<HomeInterface> = ({
       {/* page 4 */}
       <div
         id="home-page-four"
-        className="flex flex-wrap p-5 justify-center items-center min-h-screen h-auto bg-orange-50"
+        className="flex flex-wrap p-7 justify-center items-center min-h-screen h-auto bg-orange-50"
       >
         <div className="text-page-4 w-[45vw] flex flex-col gap-5 justify-center ">
           <h2 className="text-4xl font-bold">Find Agents That Work For You</h2>

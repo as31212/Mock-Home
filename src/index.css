@@ -54,6 +54,15 @@
     
 }
 @media (max-width: 700px) {
+  /* blog */
+  #blog-search , #blog-dropdown-1 , #blog-dropdown-2 {
+    width: 90%;
+  }
+
+  .articles{
+    width: 90%;
+  }
+  /* end blog */
     #main-nav{
         display: none;
     }

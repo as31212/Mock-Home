@@ -4,27 +4,27 @@ const Blog: React.FC = () => {
   return (
     <>
       <div className="min-h-screen p-10 flex flex-col bg-[#FFFAF7]" id="Blog">
-        <h2 className="font-bold text-2xl mb-8 text-center text-gray-800">Real Estate News & Blogs</h2>
+        <h2 className="font-bold text-2xl mb-8 text-center text-black">Real Estate News & Blogs</h2>
         <div className="flex flex-col items-center" id="not-title-blog">
           <div className="flex gap-4 mb-8 flex-wrap w-full justify-center" id="search-blogs">
             <input
-              className="w-1/3 min-w-[300px] py-2 border-2 rounded-lg text-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-1/3 min-w-[300px] pl-2 py-3 border-2 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-orange-400 hover:border-orange-300"
               placeholder="Title"
               type="text"
               name=""
-              id=""
+              id="blog-search"
             />
             <select
-              className="text-lg w-1/4 min-w-[300px] py-2 rounded-lg text-gray-500 font-bold border-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="text-lg w-1/4 min-w-[300px] pl-2  py-3 rounded-lg text-black font-bold border-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
               name=""
-              id=""
+              id="blog-dropdown-1"
             >
               <option value="">Category</option>
             </select>
             <select
-              className="text-lg w-1/4 min-w-[300px] py-2 rounded-lg border-2 text-gray-500 font-bold  focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="text-lg w-1/4 min-w-[300px] pl-2 py-3 rounded-lg border-2 text-black font-bold  focus:outline-none focus:ring-2 focus:ring-orange-400"
               name=""
-              id=""
+              id="blog-dropdown-2"
             >
               <option value="">Popular</option>
             </select>

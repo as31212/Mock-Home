@@ -491,7 +491,7 @@ function App() {
     setMaxValue(e.target.value);
   };
 
-  // min and max sqft state and retireve use input function
+  // min and max sqft state and retrieve use input function
 
   const [minSqft, setMinSqft] = useState<string>("");
   const [maxSqft, setMaxSqft] = useState<string>("");
@@ -526,14 +526,22 @@ function App() {
     setPage(1);
   },[sort])
 
-  // sqft use state 
-  const [sqftMinValue,setSqftMinValue] = useState<string>("");
-  const [sqftMaxValue,setSqftMaxValue] = useState<string>("");
 
 
 
   // price title state
   const [priceTitle,setPriceTitle] = useState<string>('Price');
+
+  // current Agent state
+  const [currAgent,setCurrAgent] = useState<number>(1);
+  const changeCurrAgent = (id:number): void =>{
+    setCurrAgent(id);
+  }
+  useEffect(()=>{
+    console.log(currAgent);
+    
+  },[currAgent])
+
   return (
     <>
       <Router>
@@ -556,7 +564,7 @@ function App() {
               />
             }
           />
-          <Route path="/AgentsDetails" element={<AgentsDetails />} />
+          <Route path="/AgentsDetails" element={<AgentsDetails currAgent={currAgent} agentData={agentData} />} />
           <Route
             path="/Agents"
             element={
@@ -566,6 +574,7 @@ function App() {
                 changeReview={changeReview}
                 filteredAgentData={filteredAgentData}
                 setFilteredAgentData={setFilteredAgentData}
+                changeCurrAgent={changeCurrAgent}
               />
             }
           />
@@ -573,10 +582,6 @@ function App() {
             path="/Listing"
             element={
               <Listing
-              setSqftMinValue={setSqftMinValue}
-              setSqftMaxValue={setSqftMaxValue}
-              sqftMaxValue={sqftMaxValue}
-              sqftMinValue={sqftMinValue}
               setPriceTitle={setPriceTitle}
               priceTitle={priceTitle}
               addComma={addComma}

@@ -69,17 +69,9 @@ interface ListingProps {
   changeCurrListing: (elId: number) => void;
   setPriceTitle: (obj: string) => void;
   priceTitle: string;
-  sqftMinValue: string;
-  sqftMaxValue: string;
-  setSqftMinValue: (value: string) => void;
-  setSqftMaxValue: (value: string) => void;
 }
 
 const Listing: React.FC<ListingProps> = ({
-  sqftMaxValue,
-  sqftMinValue,
-  setSqftMaxValue,
-  setSqftMinValue,
   priceTitle,
   setPriceTitle,
   addComma,
@@ -504,7 +496,7 @@ useEffect(()=>{
                 onFocus={() => setActiveFilter(0)}
                 value={searchAddress}
                 onChange={(event) => changeSearchAddress(event)}
-                className=" py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className=" py-3 pl-2 pr-32 border-2 text-xl rounded-md relative w-full focus:outline-none focus:ring-2 focus:ring-orange-400 hover:border-orange-300"
                 type="text"
                 placeholder="State/City/Street"
               />
