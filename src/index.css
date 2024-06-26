@@ -53,7 +53,26 @@
 
     
 }
+
+@media (max-width: 1000px) {
+  #agent-details-page{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  #left-divs-agent-details , #contact-us-div{
+    width: 100%;
+  }
+  
+}
 @media (max-width: 700px) {
+  /* agent detials */
+  #agent-details-page{
+    width: 100%;
+    padding: 2rem;
+  }
+  /* agent details end */
   /* blog */
   #blog-search , #blog-dropdown-1 , #blog-dropdown-2 {
     width: 90%;

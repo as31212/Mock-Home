@@ -493,8 +493,8 @@ function App() {
 
   // min and max sqft state and retrieve use input function
 
-  const [minSqft, setMinSqft] = useState<string>("");
-  const [maxSqft, setMaxSqft] = useState<string>("");
+  const [minSqft, setMinSqft] = useState<string>("No Min");
+  const [maxSqft, setMaxSqft] = useState<string>("No Max");
   const changeMaxSqft = (e: ChangeEvent<HTMLSelectElement>) => {
     setMaxSqft(e.target.value);
   };
