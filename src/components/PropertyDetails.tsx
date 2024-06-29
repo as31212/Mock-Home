@@ -21,6 +21,7 @@ interface PropertyDetailsInterface {
   agentData: AgentInterface[] | null;
   listingData: ListingInterface[] | null;
   changeCurrListing: (elId:number)=> void;
+  changeCurrAgent: (id:number)=> void;
 }
 
 const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
@@ -30,6 +31,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
   agentData,
   listingData,
   changeCurrListing,
+  changeCurrAgent
 }) => {
   const currObj = sortedData?.find((el) => el.id === currListing);
   const randomAgentId = agentData
@@ -127,23 +129,25 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                 src={currAgent?.img}
                 alt={`image of ${currAgent?.name}`}
               />
-              <div className="flex flex-col gap-2">
-              <p>{currAgent?.name}</p>
-                <div>
-                  <p className="flex gap-2 font-semibold">
-                    <StarRatings
-                      goodStarAmt={Math.floor(
-                        currAgent ? currAgent?.rating : 0
-                      )}
-                      badStarAmt={
-                        5 - Math.floor(currAgent ? currAgent?.rating : 0)
-                      }
-                    />
-                    {`${currAgent?.rating} Review`}
-                  </p>
+              <Link onClick={()=>changeCurrAgent(currAgent?.id)} to='/AgentsDetails'>
+                <div className="flex flex-col gap-2">
+                <p>{currAgent?.name}</p>
+                  <div>
+                    <p className="flex gap-2 font-semibold">
+                      <StarRatings
+                        goodStarAmt={Math.floor(
+                          currAgent ? currAgent?.rating : 0
+                        )}
+                        badStarAmt={
+                          5 - Math.floor(currAgent ? currAgent?.rating : 0)
+                        }
+                      />
+                      {`${currAgent?.rating} Review`}
+                    </p>
+                  </div>
+                  <p className="text-gray-600 flex gap-2"><CiMail className="inline relative top-[5px]"/> {`${currAgent?.name.toLowerCase().replace(/\s+/g, '')}@realit.com`}</p>
                 </div>
-                <p className="text-gray-600 flex gap-2"><CiMail className="inline relative top-[5px]"/> {`${currAgent?.name.toLowerCase().replace(/\s+/g, '')}@realit.com`}</p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

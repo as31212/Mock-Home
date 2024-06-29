@@ -643,7 +643,7 @@ function App() {
             }
           />
           <Route path="/About" element={<About />} />
-              <Route path="/PropertyDetails" element={<PropertyDetails changeCurrListing={changeCurrListing} sortedData={sortedData} currListing={currListing} addComma={addComma} agentData={agentData} listingData={listingData} />} />
+              <Route path="/PropertyDetails" element={<PropertyDetails changeCurrListing={changeCurrListing} sortedData={sortedData} currListing={currListing} addComma={addComma} agentData={agentData} listingData={listingData} changeCurrAgent={changeCurrAgent} />} />
               <Route path="/Blog" element={<Blog />} />
         </Routes>
         <Footer activeFilter={activeFilter} />

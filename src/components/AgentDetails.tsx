@@ -50,7 +50,7 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
           id="agent-details-page"
           className="min-h-screen w-8/12 pt-20 border-2 rounded-md p-5 mx-auto flex justify-around"
         >
-          <div className="flex flex-col gap-10" id="left-divs-agent-details">
+          <div className="flex flex-col gap-5" id="left-divs-agent-details">
             <div
               className="flex flex-wrap justify-center border-2 p-5 rounded-md border-black items-center gap-5"
               id="agent-details-bio"
@@ -87,15 +87,16 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
             <div className="" id="agent-listings">
                 {/* listings */}
                 <div
-        id="home-page-listings"
-        className="flex flex-col gap-20 my-20 h-auto min-h-[750px] justify-center"
+        id="agent-listings"
+        className="flex flex-col h-auto min-h-[750px] "
       >
         <div
           id="featured-listings-container"
-          className="flex flex-wrap justify-center items-center"
+          className="flex flex-wrap"
         >
           {listingData
-            ? [...listingData].filter(el=>el.state === currAgentObj.state).slice(1, 3).map((el) => {
+          // ensured that listings will always be from the state of origin for agents and also ensures that the listings will be homes and not apts
+            ? [...listingData].filter(el=>el.state === currAgentObj.state && el.buy_or_rent === 'Buy').slice(1, 3).map((el) => {
                 return (
                   <div
                     key={el.id}
