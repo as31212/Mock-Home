@@ -90,13 +90,12 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
         id="home-page-listings"
         className="flex flex-col gap-20 my-20 h-auto min-h-[750px] justify-center"
       >
-        <h2 className="text-center font-bold text-2xl">{currAgentObj ? `${currAgentObj.name}s Listings` : ''}</h2>
         <div
           id="featured-listings-container"
           className="flex flex-wrap justify-center items-center"
         >
           {listingData
-            ? [...listingData].slice(0, 4).map((el) => {
+            ? [...listingData].filter(el=>el.state === currAgentObj.state).slice(1, 3).map((el) => {
                 return (
                   <div
                     key={el.id}
