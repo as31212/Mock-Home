@@ -1038,7 +1038,7 @@ useEffect(()=>{
 
           <select
             onChange={changeSort}
-            className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="py-3 px-2 border-[2px] border-black text-lg rounded-md font-bold hover:border-orange-400 focus:border-orange-400"
             onClick={() => setActiveFilter(0)}
           >
             <option selected value="">

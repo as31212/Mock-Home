@@ -564,7 +564,8 @@ function App() {
               />
             }
           />
-          <Route path="/AgentsDetails" element={<AgentsDetails currAgent={currAgent} agentData={agentData} />} />
+          <Route path="/AgentsDetails" element={<AgentsDetails currAgent={currAgent} agentData={agentData} listingData={listingData} addComma={addComma}
+                changeCurrListing={changeCurrListing} />} />
           <Route
             path="/Agents"
             element={

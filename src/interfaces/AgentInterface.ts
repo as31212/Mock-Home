@@ -8,6 +8,14 @@ export interface AvailabilitySubInterface {
   Sunday: string;
 }
 
+export interface SaleHistorySubInterface {
+  id: number;
+  address: string;
+  dateOfSale: string;
+  closingPrice: string;
+  represented: string;
+}
+
 export interface AgentInterface {
   id: number;
   name: string;
@@ -15,4 +23,5 @@ export interface AgentInterface {
   rating: number;
   state: string;
   availability: AvailabilitySubInterface;
+  saleHistory: SaleHistorySubInterface[];
 }

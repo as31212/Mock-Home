@@ -1,483 +1,915 @@
 [
-    {
-      "id": 1,
-      "name": "John Smith",
-      "img": "https://corporateheadshots.com/wp-content/uploads/2019/03/i-QbSwWMG-X3.jpg",
-      "rating": 4.8,
-      "state": "CA",
-      "availability": {
-        "Monday": "9 AM - 5 PM",
-        "Tuesday": "9 AM - 5 PM",
-        "Wednesday": "9 AM - 5 PM",
-        "Thursday": "9 AM - 5 PM",
-        "Friday": "9 AM - 5 PM",
-        "Saturday": "10 AM - 4 PM",
-        "Sunday": "Unavailable"
-      }
+  {
+    "id": 1,
+    "name": "John Smith",
+    "img": "https://corporateheadshots.com/wp-content/uploads/2019/03/i-QbSwWMG-X3.jpg",
+    "rating": 4.8,
+    "state": "CA",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 2,
-      "name": "Jane Doe",
-      "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_Professional_Headshots_and_Corporate_Portraits__374d8824-9a34-4e1b-8d9b-bd0d2d5dd432-copy.webp",
-      "rating": 5,
-      "state": "NY",
-      "availability": {
-        "Monday": "10 AM - 6 PM",
-        "Tuesday": "10 AM - 6 PM",
-        "Wednesday": "10 AM - 6 PM",
-        "Thursday": "10 AM - 6 PM",
-        "Friday": "10 AM - 6 PM",
-        "Saturday": "11 AM - 3 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "1234 Elm St, San Francisco, CA",
+        "dateOfSale": "2023-05-15",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "5678 Oak St, San Francisco, CA",
+        "dateOfSale": "2022-11-03",
+        "closingPrice": "$1,200,000",
+        "represented": "buyer"
       }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_Professional_Headshots_and_Corporate_Portraits__374d8824-9a34-4e1b-8d9b-bd0d2d5dd432-copy.webp",
+    "rating": 5,
+    "state": "NY",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 3,
-      "name": "Michael Brown",
-      "img": "https://www.neilsonreeves.co.uk/wp-content/uploads/corporate-headshot-neutral-grey-bg.jpg",
-      "rating": 4.7,
-      "state": "TX",
-      "availability": {
-        "Monday": "9 AM - 5 PM",
-        "Tuesday": "9 AM - 5 PM",
-        "Wednesday": "9 AM - 5 PM",
-        "Thursday": "9 AM - 5 PM",
-        "Friday": "9 AM - 5 PM",
-        "Saturday": "10 AM - 4 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "1010 Maple Ave, New York, NY",
+        "dateOfSale": "2023-07-20",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "2020 Pine St, New York, NY",
+        "dateOfSale": "2023-01-15",
+        "closingPrice": "$1,300,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 3,
+        "address": "3030 Cedar Blvd, New York, NY",
+        "dateOfSale": "2022-12-02",
+        "closingPrice": "$900,000",
+        "represented": "seller and buyer"
       }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Michael Brown",
+    "img": "https://www.neilsonreeves.co.uk/wp-content/uploads/corporate-headshot-neutral-grey-bg.jpg",
+    "rating": 4.7,
+    "state": "TX",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 4,
-      "name": "Emily Davis",
-      "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2022/05/pretty-black-female-business-headshot.jpg",
-      "rating": 4.9,
-      "state": "FL",
-      "availability": {
-        "Monday": "8 AM - 4 PM",
-        "Tuesday": "8 AM - 4 PM",
-        "Wednesday": "8 AM - 4 PM",
-        "Thursday": "8 AM - 4 PM",
-        "Friday": "8 AM - 4 PM",
-        "Saturday": "9 AM - 2 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4040 Walnut St, Austin, TX",
+        "dateOfSale": "2023-03-10",
+        "closingPrice": "$700,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "5050 Birch Ln, Austin, TX",
+        "dateOfSale": "2022-08-30",
+        "closingPrice": "$750,000",
+        "represented": "seller and buyer"
       }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2022/05/pretty-black-female-business-headshot.jpg",
+    "rating": 4.9,
+    "state": "FL",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 5,
-      "name": "David Wilson",
-      "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/DuqueLaw-3-998x1024.jpg",
-      "rating": 5,
-      "state": "IL",
-      "availability": {
-        "Monday": "9 AM - 5 PM",
-        "Tuesday": "9 AM - 5 PM",
-        "Wednesday": "9 AM - 5 PM",
-        "Thursday": "9 AM - 5 PM",
-        "Friday": "9 AM - 5 PM",
-        "Saturday": "10 AM - 4 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "6060 Cypress Dr, Miami, FL",
+        "dateOfSale": "2023-02-18",
+        "closingPrice": "$1,100,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "7070 Pineapple Rd, Miami, FL",
+        "dateOfSale": "2022-05-25",
+        "closingPrice": "$1,050,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 3,
+        "address": "8080 Mango St, Miami, FL",
+        "dateOfSale": "2023-08-05",
+        "closingPrice": "$1,200,000",
+        "represented": "seller and buyer"
       }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "David Wilson",
+    "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/DuqueLaw-3-998x1024.jpg",
+    "rating": 5,
+    "state": "IL",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 6,
-      "name": "Sarah Johnson",
-      "img": "https://image4.photobiz.com/8911/25_20220728232424_10002749_large.jpg",
-      "rating": 4.8,
-      "state": "NV",
-      "availability": {
-        "Monday": "10 AM - 6 PM",
-        "Tuesday": "10 AM - 6 PM",
-        "Wednesday": "10 AM - 6 PM",
-        "Thursday": "10 AM - 6 PM",
-        "Friday": "10 AM - 6 PM",
-        "Saturday": "11 AM - 3 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "9090 Cherry Ave, Chicago, IL",
+        "dateOfSale": "2022-10-10",
+        "closingPrice": "$950,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "1010 Apple St, Chicago, IL",
+        "dateOfSale": "2023-06-01",
+        "closingPrice": "$1,000,000",
+        "represented": "seller"
       }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sarah Johnson",
+    "img": "https://image4.photobiz.com/8911/25_20220728232424_10002749_large.jpg",
+    "rating": 4.8,
+    "state": "NV",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 7,
-      "name": "Chris Lee",
-      "img": "https://image10.photobiz.com/4411/6_20200320132451_17431620_xlarge.jpg",
-      "rating": 4.4,
-      "state": "WA",
-      "availability": {
-        "Monday": "9 AM - 5 PM",
-        "Tuesday": "9 AM - 5 PM",
-        "Wednesday": "9 AM - 5 PM",
-        "Thursday": "9 AM - 5 PM",
-        "Friday": "9 AM - 5 PM",
-        "Saturday": "10 AM - 4 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "1111 Elmwood St, Las Vegas, NV",
+        "dateOfSale": "2023-04-21",
+        "closingPrice": "$900,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "1212 Maple Dr, Las Vegas, NV",
+        "dateOfSale": "2022-09-15",
+        "closingPrice": "$850,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 3,
+        "address": "1313 Oak Blvd, Las Vegas, NV",
+        "dateOfSale": "2023-12-19",
+        "closingPrice": "$920,000",
+        "represented": "seller and buyer"
       }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Chris Lee",
+    "img": "https://image10.photobiz.com/4411/6_20200320132451_17431620_xlarge.jpg",
+    "rating": 4.4,
+    "state": "WA",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 8,
-      "name": "Jessica Martinez",
-      "img": "https://images.squarespace-cdn.com/content/v1/5cb618a4755be255f4b4d181/850140af-4248-4139-abfc-6f06b6631fa7/actor+headshot+photographers+oak+bay+victoria+bc+langford+westshore+colwood+royal+bay+saanich+oak+bay_0334.jpg",
-      "rating": 4.9,
-      "state": "AZ",
-      "availability": {
-        "Monday": "8 AM - 4 PM",
-        "Tuesday": "8 AM - 4 PM",
-        "Wednesday": "8 AM - 4 PM",
-        "Thursday": "8 AM - 4 PM",
-        "Friday": "8 AM - 4 PM",
-        "Saturday": "9 AM - 2 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+
+
+      {
+        "id": 1,
+        "address": "1414 Pine St, Seattle, WA",
+        "dateOfSale": "2023-03-03",
+        "closingPrice": "$750,000",
+        "represented": "buyer"
       }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Jessica Martinez",
+    "img": "https://images.squarespace-cdn.com/content/v1/5cb618a4755be255f4b4d181/850140af-4248-4139-abfc-6f06b6631fa7/actor+headshot+photographers+oak+bay+victoria+bc+langford+westshore+colwood+royal+bay+saanich+oak+bay_0334.jpg",
+    "rating": 4.9,
+    "state": "AZ",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 9,
-      "name": "Robert Miller",
-      "img": "https://image4.photobiz.com/8053/6_20200320132509_17431638_xlarge.jpg",
-      "rating": 4.5,
-      "state": "CO",
-      "availability": {
-        "Monday": "9 AM - 5 PM",
-        "Tuesday": "9 AM - 5 PM",
-        "Wednesday": "9 AM - 5 PM",
-        "Thursday": "9 AM - 5 PM",
-        "Friday": "9 AM - 5 PM",
-        "Saturday": "10 AM - 4 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "1515 Birch Ln, Phoenix, AZ",
+        "dateOfSale": "2023-05-05",
+        "closingPrice": "$800,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "1616 Cedar St, Phoenix, AZ",
+        "dateOfSale": "2022-06-20",
+        "closingPrice": "$850,000",
+        "represented": "buyer"
       }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Robert Miller",
+    "img": "https://image4.photobiz.com/8053/6_20200320132509_17431638_xlarge.jpg",
+    "rating": 4.5,
+    "state": "CO",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
     },
-    {
-      "id": 10,
-      "name": "Laura Garcia",
-      "img": "https://alimondphotography.com/wp-content/uploads/2021/05/K5C0060_PRINT-scaled.jpg",
-      "rating": 4.7,
-      "state": "OR",
-      "availability": {
-        "Monday": "10 AM - 6 PM",
-        "Tuesday": "10 AM - 6 PM",
-        "Wednesday": "10 AM - 6 PM",
-        "Thursday": "10 AM - 6 PM",
-        "Friday": "10 AM - 6 PM",
-        "Saturday": "11 AM - 3 PM",
-        "Sunday": "Unavailable"
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "1717 Maple Ave, Denver, CO",
+        "dateOfSale": "2023-07-15",
+        "closingPrice": "$950,000",
+        "represented": "seller"
       }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Laura Garcia",
+    "img": "https://alimondphotography.com/wp-content/uploads/2021/05/K5C0060_PRINT-scaled.jpg",
+    "rating": 4.7,
+    "state": "OR",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
     },
+    "saleHistory": [
       {
-        "id": 11,
-        "name": "Paul Anderson",
-        "img": "https://paloaltoheadshots.com/wp-content/uploads/2020/11/formal-business-headshot.jpg",
-        "rating": 4.6,
-        "state": "AL",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
+        "id": 1,
+        "address": "1818 Oak St, Portland, OR",
+        "dateOfSale": "2023-09-09",
+        "closingPrice": "$850,000",
+        "represented": "seller"
       },
       {
-        "id": 12,
-        "name": "Karen Thomas",
-        "img": "https://image13.photobiz.com/10309/25_20220728213011_10002739_large.jpg",
-        "rating": 4.7,
-        "state": "AK",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 13,
-        "name": "Lisa Jackson",
-        "img": "https://images.squarespace-cdn.com/content/v1/54ee6b54e4b094722873774d/1661193481466-5KGJY88ZD0IWGF2HTD6X/304.jpg?format=2500w",
-        "rating": 4.8,
-        "state": "AR",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 14,
-        "name": "James White",
-        "img": "https://images.squarespace-cdn.com/content/v1/5a5f81d812abd9f0929541c8/1517777313099-EA1WR174E4GWVO7O5IFL/DSC_8257-reduced.jpg",
-        "rating": 4.9,
-        "state": "CT",
-        "availability": {
-          "Monday": "8 AM - 4 PM",
-          "Tuesday": "8 AM - 4 PM",
-          "Wednesday": "8 AM - 4 PM",
-          "Thursday": "8 AM - 4 PM",
-          "Friday": "8 AM - 4 PM",
-          "Saturday": "9 AM - 2 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 15,
-        "name": "Patricia Harris",
-        "img": "https://peakcityheadshots.com/wp-content/uploads/slider/cache/0dba6cab5ce3e7d6c65484f0902d491a/business-headshots-nakeshaHarding-Boyce01089-275px-Tall-v3.jpg",
-        "rating": 3.8,
-        "state": "DE",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 16,
-        "name": "George Martinez",
-        "img": "https://i0.wp.com/www.davd.photo/wp-content/uploads/2013/03/jay-professional-headshots-3.jpg?ssl=1",
-        "rating": 4.7,
-        "state": "GA",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 17,
-        "name": "Susan Clark",
-        "img": "https://erikrenninger.com/images/bagallery/gallery-19/thumbnail/category-1/corporateheadshotphotography-7.jpg?1691783711",
-        "rating": 4.6,
-        "state": "HI",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 18,
-        "name": "Steven Rodriguez",
-        "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_a_male_business_headshots_shot_outdoors_in_offi_9a228509-0f9a-438c-aeab-ab8dce7f414b.webp",
-        "rating": 4.8,
-        "state": "ID",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 19,
-        "name": "Dorothy Lewis",
-        "img": "https://ginaloganphotography.com/wp-content/uploads/2021/08/26-51468-pp_gallery/FAVGinaLoganPhotographyGL3_3921.jpg",
-        "rating": 4.9,
-        "state": "IN",
-        "availability": {
-          "Monday": "8 AM - 4 PM",
-          "Tuesday": "8 AM - 4 PM",
-          "Wednesday": "8 AM - 4 PM",
-          "Thursday": "8 AM - 4 PM",
-          "Friday": "8 AM - 4 PM",
-          "Saturday": "9 AM - 2 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 20,
-        "name": "Daniel Young",
-        "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2020/02/Jonathan-Business-Headshot.jpg",
-        "rating": 4.4,
-        "state": "IA",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 21,
-        "name": "Nancy Hall",
-        "img": "https://image13.photobiz.com/10309/17_20230130104534_10100447_large.jpg",
-        "rating": 4.6,
-        "state": "KS",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 22,
-        "name": "Kevin Walker",
-        "img": "https://pwglens.com/wp-content/uploads/2023/11/IBM-Headshots-014-Edit.jpg",
-        "rating": 4.7,
-        "state": "KY",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 23,
-        "name": "Jennifer King",
-        "img": "https://catieronquillo.com/wp-content/uploads/2022/11/Web-Designer-Brand-Photos_06.jpg",
-        "rating": 3.9,
-        "state": "LA",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 24,
-        "name": "Brian Scott",
-        "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/FelipeSoriano-124.jpeg",
-        "rating": 4.5,
-        "state": "ME",
-        "availability": {
-          "Monday": "8 AM - 4 PM",
-          "Tuesday": "8 AM - 4 PM",
-          "Wednesday": "8 AM - 4 PM",
-          "Thursday": "8 AM - 4 PM",
-          "Friday": "8 AM - 4 PM",
-          "Saturday": "9 AM - 2 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 25,
-        "name": "Betty Green",
-        "img": "https://images.squarespace-cdn.com/content/v1/572e050c4d088ea3a8f0ac9d/1652567753661-R2Q0NDAPAXPO9I7OQ6EK/850_6727-PRINT.jpg?format=1000w",
-        "rating": 4.9,
-        "state": "MD",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 26,
-        "name": "William Adams",
-        "img": "https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/f0df1a6e-4c61-449f-a283-02846723f50c/2022-08-16-Trinet-0277-Lee-Micheal.jpg",
-        "rating": 4.8,
-        "state": "MN",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 27,
-        "name": "Linda Nelson",
-        "img": "https://www.brookestraiton.com/blog/wp-content/uploads/2021/10/2021_0828_Danielle-lores-1.jpg",
-        "rating": 4.7,
-        "state": "MS",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 28,
-        "name": "Barbara Baker",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBMlxJtfPiOKSVSKBoGlwSGuiy-IL1KzNdHA&s",
-        "rating": 4.6,
-        "state": "MO",
-        "availability": {
-          "Monday": "8 AM - 4 PM",
-          "Tuesday": "8 AM - 4 PM",
-          "Wednesday": "8 AM - 4 PM",
-          "Thursday": "8 AM - 4 PM",
-          "Friday": "8 AM - 4 PM",
-          "Saturday": "9 AM - 2 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 29,
-        "name": "Richard Perez",
-        "img": "https://i0.wp.com/www.sergiogarciaheadshots.com/wp-content/uploads/2021/04/actor-headshot-photographer-los-angeles-dallas-sergio-garcia-headshots-6-scaled.jpg",
-        "rating": 4.9,
-        "state": "MT",
-        "availability": {
-          "Monday": "10 AM - 6 PM",
-          "Tuesday": "10 AM - 6 PM",
-          "Wednesday": "10 AM - 6 PM",
-          "Thursday": "10 AM - 6 PM",
-          "Friday": "10 AM - 6 PM",
-          "Saturday": "11 AM - 3 PM",
-          "Sunday": "Unavailable"
-        }
-      },
-      {
-        "id": 30,
-        "name": "Joseph Roberts",
-        "img": "https://solarisstudios.com/wp-content/uploads/2016/09/Houston-Business-Headshot-Leo-Revuelta2.jpg",
-        "rating": 3.9,
-        "state": "NE",
-        "availability": {
-          "Monday": "9 AM - 5 PM",
-          "Tuesday": "9 AM - 5 PM",
-          "Wednesday": "9 AM - 5 PM",
-          "Thursday": "9 AM - 5 PM",
-          "Friday": "9 AM - 5 PM",
-          "Saturday": "10 AM - 4 PM",
-          "Sunday": "Unavailable"
-        }
+        "id": 2,
+        "address": "1919 Pine Blvd, Portland, OR",
+        "dateOfSale": "2022-10-22",
+        "closingPrice": "$900,000",
+        "represented": "buyer"
       }
-  ]
-  
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Paul Anderson",
+    "img": "https://paloaltoheadshots.com/wp-content/uploads/2020/11/formal-business-headshot.jpg",
+    "rating": 4.6,
+    "state": "AL",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2020 Birch Ln, Birmingham, AL",
+        "dateOfSale": "2023-11-11",
+        "closingPrice": "$750,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Karen Thomas",
+    "img": "https://image13.photobiz.com/10309/25_20220728213011_10002739_large.jpg",
+    "rating": 4.7,
+    "state": "AK",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2121 Cedar St, Anchorage, AK",
+        "dateOfSale": "2023-03-30",
+        "closingPrice": "$800,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "2222 Maple Ave, Anchorage, AK",
+        "dateOfSale": "2022-04-18",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Lisa Jackson",
+    "img": "https://images.squarespace-cdn.com/content/v1/54ee6b54e4b094722873774d/1661193481466-5KGJY88ZD0IWGF2HTD6X/304.jpg?format=2500w",
+    "rating": 4.8,
+    "state": "AR",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2323 Oak Blvd, Little Rock, AR",
+        "dateOfSale": "2023-02-02",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "2424 Pine St, Little Rock, AR",
+        "dateOfSale": "2022-12-01",
+        "closingPrice": "$900,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "James White",
+    "img": "https://images.squarespace-cdn.com/content/v1/5a5f81d812abd9f0929541c8/1517777313099-EA1WR174E4GWVO7O5IFL/DSC_8257-reduced.jpg",
+    "rating": 4.9,
+    "state": "CT",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2525 Birch Ln, Hartford, CT",
+        "dateOfSale": "2023-06-06",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "2626 Cedar St, Hartford, CT",
+        "dateOfSale": "2022-11-11",
+        "closingPrice": "$1,000,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Patricia Harris",
+    "img": "https://peakcityheadshots.com/wp-content/uploads/slider/cache/0dba6cab5ce3e7d6c65484f0902d491a/business-headshots-nakeshaHarding-Boyce01089-275px-Tall-v3.jpg",
+    "rating": 3.8,
+    "state": "DE",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2727 Elmwood St, Wilmington, DE",
+        "dateOfSale": "2023-08-08",
+        "closingPrice": "$900,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "George Martinez",
+    "img": "https://i0.wp.com/www.davd.photo/wp-content/uploads/2013/03/jay-professional-headshots-3.jpg?ssl=1",
+    "rating": 4.7,
+    "state": "GA",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "2828 Maple Ave, Atlanta, GA",
+        "dateOfSale": "2023-01-01",
+        "closingPrice": "$850,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "2929 Oak Blvd, Atlanta, GA",
+        "dateOfSale": "2022-09-09",
+        "closingPrice": "$900,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Susan Clark",
+    "img": "https://erikrenninger.com/images/bagallery/gallery-19/thumbnail/category-1/corporateheadshotphotography-7.jpg?1691783711",
+    "rating": 4.6,
+    "state": "HI",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3030 Pine St, Honolulu, HI",
+        "dateOfSale": "2023-03-03",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Steven Rodriguez",
+    "img": "https://alexkaplanphoto.com/wp-content/uploads/2024/01/alexkaplanphoto_a_male_business_headshots_shot_outdoors_in_offi_9a228509-0f9a-438c-aeab-ab8dce7f414b.webp",
+    "rating": 4.8,
+    "state": "ID",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3131 Cedar St, Boise, ID",
+        "dateOfSale": "2023-04-04",
+        "closingPrice": "$800,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "3232 Maple Ave, Boise, ID",
+        "dateOfSale": "2022-08-08",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Dorothy Lewis",
+    "img": "https://ginaloganphotography.com/wp-content/uploads/2021/08/26-51468-pp_gallery/FAVGinaLoganPhotographyGL3_3921.jpg",
+    "rating": 4.9,
+    "state": "IN",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3333 Oak Blvd, Indianapolis, IN",
+        "dateOfSale": "2023-05-05",
+        "closingPrice": "$900,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "3434 Pine St, Indianapolis, IN",
+        "dateOfSale": "2022-10-10",
+        "closingPrice": "$950,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Daniel Young",
+    "img": "https://www.bethesdaheadshots.com/wp-content/uploads/2020/02/Jonathan-Business-Headshot.jpg",
+    "rating": 4.4,
+    "state": "IA",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3535 Cedar St, Des Moines, IA",
+        "dateOfSale": "2023-07-07",
+        "closingPrice": "$800,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Nancy Hall",
+    "img": "https://image13.photobiz.com/10309/17_20230130104534_10100447_large.jpg",
+    "rating": 4.6,
+    "state": "KS",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3636 Maple Ave, Wichita, KS",
+        "dateOfSale": "2023-02-02",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "3737 Oak Blvd, Wichita, KS",
+        "dateOfSale": "2022-11-11",
+        "closingPrice": "$900,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Kevin Walker",
+    "img": "https://pwglens.com/wp-content/uploads/2023/11/IBM-Headshots-014-Edit.jpg",
+    "rating": 4.7,
+    "state": "KY",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3838 Pine St, Louisville, KY",
+        "dateOfSale": "2023-09-09",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Jennifer King",
+    "img": "https://catieronquillo.com/wp-content/uploads/2022/11/Web-Designer-Brand-Photos_06.jpg",
+    "rating": 3.9,
+    "state": "LA",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "3939 Birch Ln, New Orleans, LA",
+        "dateOfSale": "2023-04-04",
+        "closingPrice": "$800,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Brian Scott",
+    "img": "https://christophertoddstudios.com/wp-content/uploads/2022/12/FelipeSoriano-124.jpeg",
+    "rating": 4.5,
+    "state": "ME",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4040 Maple Ave, Portland, ME",
+        "dateOfSale": "2023-01-01",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "4141 Oak Blvd, Portland, ME",
+        "dateOfSale": "2022-10-10",
+        "closingPrice": "$900,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Betty Green",
+    "img": "https://images.squarespace-cdn.com/content/v1/572e050c4d088ea3a8f0ac9d/1652567753661-R2Q0NDAPAXPO9I7OQ6EK/850_6727-PRINT.jpg?format=1000w",
+    "rating": 4.9,
+    "state": "MD",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4242 Cedar St, Baltimore, MD",
+        "dateOfSale": "2023-06-06",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "William Adams",
+    "img": "https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/f0df1a6e-4c61-449f-a283-02846723f50c/2022-08-16-Trinet-0277-Lee-Micheal.jpg",
+    "rating": 4.8,
+    "state": "MN",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4343 Maple Ave, Minneapolis, MN",
+        "dateOfSale": "2023-03-03",
+        "closingPrice": "$800,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "4444 Oak Blvd, Minneapolis, MN",
+        "dateOfSale": "2022-09-09",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Linda Nelson",
+    "img": "https://www.brookestraiton.com/blog/wp-content/uploads/2021/10/2021_0828_Danielle-lores-1.jpg",
+    "rating": 4.7,
+    "state": "MS",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4545 Birch Ln, Jackson, MS",
+        "dateOfSale": "2023-05-05",
+        "closingPrice": "$850,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Barbara Baker",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBMlxJtfPiOKSVSKBoGlwSGuiy-IL1KzNdHA&s",
+    "rating": 4.6,
+    "state": "MO",
+    "availability": {
+      "Monday": "8 AM - 4 PM",
+      "Tuesday": "8 AM - 4 PM",
+      "Wednesday": "8 AM - 4 PM",
+      "Thursday": "8 AM - 4 PM",
+      "Friday": "8 AM - 4 PM",
+      "Saturday": "9 AM - 2 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4646 Cedar St, Kansas City, MO",
+        "dateOfSale": "2023-11-11",
+        "closingPrice": "$900,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "4747 Maple Ave, Kansas City, MO",
+        "dateOfSale": "2022-12-12",
+        "closingPrice": "$950,000",
+        "represented": "seller"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Richard Perez",
+    "img": "https://i0.wp.com/www.sergiogarciaheadshots.com/wp-content/uploads/2021/04/actor-headshot-photographer-los-angeles-dallas-sergio-garcia-headshots-6-scaled.jpg",
+    "rating": 4.9,
+    "state": "MT",
+    "availability": {
+      "Monday": "10 AM - 6 PM",
+      "Tuesday": "10 AM - 6 PM",
+      "Wednesday": "10 AM - 6 PM",
+      "Thursday": "10 AM - 6 PM",
+      "Friday": "10 AM - 6 PM",
+      "Saturday": "11 AM - 3 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "4848 Oak Blvd, Billings, MT",
+        "dateOfSale": "2023-01-01",
+        "closingPrice": "$800,000",
+        "represented": "seller"
+      },
+      {
+        "id": 2,
+        "address": "4949 Pine St, Billings, MT",
+        "dateOfSale": "2022-08-08",
+        "closingPrice": "$850,000",
+        "represented": "buyer"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Joseph Roberts",
+    "img": "https://solarisstudios.com/wp-content/uploads/2016/09/Houston-Business-Headshot-Leo-Revuelta2.jpg",
+    "rating": 3.9,
+    "state": "NE",
+    "availability": {
+      "Monday": "9 AM - 5 PM",
+      "Tuesday": "9 AM - 5 PM",
+      "Wednesday": "9 AM - 5 PM",
+      "Thursday": "9 AM - 5 PM",
+      "Friday": "9 AM - 5 PM",
+      "Saturday": "10 AM - 4 PM",
+      "Sunday": "Unavailable"
+    },
+    "saleHistory": [
+      {
+        "id": 1,
+        "address": "5050 Cedar St, Omaha, NE",
+        "dateOfSale": "2023-03-03",
+        "closingPrice": "$850,000",
+        "represented": "buyer"
+      },
+      {
+        "id": 2,
+        "address": "5151 Maple Ave, Omaha, NE",
+        "dateOfSale": "2022-09-09",
+        "closingPrice": "$900,000",
+        "represented": "seller"
+      }
+    ]
+  }
+]
