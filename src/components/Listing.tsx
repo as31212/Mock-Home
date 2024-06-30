@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { ListingInterface } from "../interfaces/ListingsInterface";
 import { FaShower, FaBed, FaHome } from "react-icons/fa";
@@ -113,7 +112,6 @@ const Listing: React.FC<ListingProps> = ({
   setSearchAddress,
   setActiveFilter,
   activeFilter,
-  checkFocus,
   setMaxToggle,
   setMinToggle,
   minToggle,

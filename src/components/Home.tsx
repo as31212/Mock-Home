@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { MdManageSearch } from "react-icons/md";
 import { FiEye } from "react-icons/fi";

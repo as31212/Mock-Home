@@ -1,11 +1,8 @@
-import { ChangeEvent, ReactHTMLElement, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link,
-  useLocation,
-  useActionData,
 } from "react-router-dom";
 import Nav from "./components/Nav";
 import Blog from "./components/Blog";

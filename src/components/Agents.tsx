@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import { AgentInterface } from "../interfaces/AgentInterface";
 import StarRatings from "./StarRatings";
 import { useEffect } from "react";
