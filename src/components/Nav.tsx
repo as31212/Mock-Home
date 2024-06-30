@@ -18,7 +18,7 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
         className={`flex justify-around p-2 h-auto min-h-16 text-2xl ${activeFilter !== 0 ? 'no-footer' : ''}`}
       >
         <div className="" id="logo">
-          <Link to="/Home">
+          <Link to="/">
             REAL-IT <FontAwesomeIcon icon={faHouse} />
           </Link>
         </div>
@@ -26,11 +26,11 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
           <li>
             <Link
               className={`border-gray-600 pb-1 ${
-                location.pathname === "/Home"
+                location.pathname === "/"
                   ? "border-b-2"
                   : "hover:border-b-2"
               }`}
-              to="/Home"
+              to="/"
             >
               Home
             </Link>
@@ -102,11 +102,11 @@ const Nav: React.FC<NavInterface> = ({ menu, toggleMenu, activeFilter}) => {
           <li onClick={()=>toggleMenu()}>
             <Link
               className={`border-gray-600 pb-1 ${
-                location.pathname === "/Home"
+                location.pathname === "/"
                   ? "border-b-2"
                   : "hover:border-b-2"
               }`}
-              to="/Home"
+              to="/"
             >
               Home
             </Link>

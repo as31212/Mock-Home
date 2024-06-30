@@ -478,6 +478,22 @@ const Listing: React.FC<ListingProps> = ({
     );
   });
 
+  const handleKeyDown = ()=>{
+    sortedData
+    ? () => {
+        if (searchAddress !== "") {
+          setSavedSearchAddress(searchAddress);
+        }
+        searchListings([...sortedData]);
+        setSearchAddress("");
+      }
+    : () => {
+        console.log("no data");
+      }
+  }
+
+ 
+
   return (
     <>
       <div

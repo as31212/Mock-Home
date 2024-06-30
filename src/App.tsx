@@ -492,7 +492,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route
-            path="/Home"
+            path="/"
             element={
               <Home
                 filter={filter}

@@ -191,7 +191,7 @@
     display: none;
   }
   .agent-cards{
-    width: 400px;
+    width: 100%;
   }
   #listing-page-search{
     flex-direction: column;
