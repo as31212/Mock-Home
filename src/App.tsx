@@ -85,62 +85,6 @@ function App() {
     setPage(page - 1);
   };
 
-  // state abbreviations for search algo
-
-  const stateAbbreviations = {
-    'Alabama': 'AL',
-    'Alaska': 'AK',
-    'Arizona': 'AZ',
-    'Arkansas': 'AR',
-    'California': 'CA',
-    'Colorado': 'CO',
-    'Connecticut': 'CT',
-    'Delaware': 'DE',
-    'Florida': 'FL',
-    'Georgia': 'GA',
-    'Hawaii': 'HI',
-    'Idaho': 'ID',
-    'Illinois': 'IL',
-    'Indiana': 'IN',
-    'Iowa': 'IA',
-    'Kansas': 'KS',
-    'Kentucky': 'KY',
-    'Louisiana': 'LA',
-    'Maine': 'ME',
-    'Maryland': 'MD',
-    'Massachusetts': 'MA',
-    'Michigan': 'MI',
-    'Minnesota': 'MN',
-    'Mississippi': 'MS',
-    'Missouri': 'MO',
-    'Montana': 'MT',
-    'Nebraska': 'NE',
-    'Nevada': 'NV',
-    'New Hampshire': 'NH',
-    'New Jersey': 'NJ',
-    'New Mexico': 'NM',
-    'New York': 'NY',
-    'North Carolina': 'NC',
-    'North Dakota': 'ND',
-    'Ohio': 'OH',
-    'Oklahoma': 'OK',
-    'Oregon': 'OR',
-    'Pennsylvania': 'PA',
-    'Rhode Island': 'RI',
-    'South Carolina': 'SC',
-    'South Dakota': 'SD',
-    'Tennessee': 'TN',
-    'Texas': 'TX',
-    'Utah': 'UT',
-    'Vermont': 'VT',
-    'Virginia': 'VA',
-    'Washington': 'WA',
-    'West Virginia': 'WV',
-    'Wisconsin': 'WI',
-    'Wyoming': 'WY'
-  };
-  
-
   // search algo logic for listings
   // passing in data as an arg made it so where it no longer was a part of the state and was functioning as a local variable making it not update
   // then when i would attempt to reset the state, it would not reset because the arg had already been passed and was no longer a part of the state
@@ -166,13 +110,14 @@ function App() {
     }, 1000);
     setPage(1);
     setSortedData(listingData);
-    if (listingData) {
+   if (listingData) {
+    // matienence
       const filteredData = [...listingData].filter((el) => {
         return (
           // search functions
           (el.address.toLowerCase().includes(searchAddress.toLowerCase()) ||
             el.city.toLowerCase().includes(searchAddress.toLowerCase()) ||
-            (el.state.toLowerCase().includes(stateAbbreviations[searchAddress]?.toLowerCase() || searchAddress.toLowerCase())) ||  // this error is currently cuased by an attempt to add the ability to type the name of the full state and produce a listing of that state by the state abbreviations array
+            el.full_state_name.toLowerCase().includes(searchAddress.toLowerCase())||
             el.state.toLowerCase().includes(searchAddress.toLowerCase()) ||
             el.zip.toLowerCase().includes(searchAddress.toLowerCase())) &&
           // filter functions

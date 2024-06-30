@@ -64,13 +64,20 @@
   #left-divs-agent-details , #contact-us-div{
     width: 100%;
   }
+  #contact-us-div, #right-divs-agent-details,#agent-schedule{
+    width: 100%;
+    padding: 1rem;
+  }
+  #agent-sale-history{
+    padding: 1rem;
+  }
   
 }
 @media (max-width: 700px) {
   /* agent detials */
   #agent-details-page{
     width: 100%;
-    padding: 2rem;
+    padding: 0;
   }
   /* agent details end */
   /* blog */

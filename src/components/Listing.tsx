@@ -228,6 +228,9 @@ const Listing: React.FC<ListingProps> = ({
               el.state
                 .toLowerCase()
                 .includes(savedSearchAddress.toLowerCase()) ||
+              el.full_state_name
+                .toLowerCase()
+                .includes(savedSearchAddress.toLowerCase()) ||
               el.zip.toLowerCase().includes(savedSearchAddress.toLowerCase())
             : true)
           // finish the rest
@@ -442,7 +445,7 @@ const Listing: React.FC<ListingProps> = ({
       <option
         className={`${
           parseListNumbers(el) > parseListNumbers(maxSqft) &&
-          maxSqft !== 'No Max'
+          maxSqft !== "No Max"
             ? "hidden"
             : ""
         }`}
@@ -455,10 +458,9 @@ const Listing: React.FC<ListingProps> = ({
   });
 
   // test
-useEffect(()=>{
-  console.log(minSqft,maxSqft);
-  
-},[minSqft,maxSqft])
+  useEffect(() => {
+    console.log(minSqft, maxSqft);
+  }, [minSqft, maxSqft]);
   // test
 
   const sqftMaxMapped = [...sqftOptions].map((el, index) => {
@@ -466,7 +468,7 @@ useEffect(()=>{
       <option
         className={`${
           parseListNumbers(el) < parseListNumbers(minSqft) &&
-          minSqft !== 'No Min'
+          minSqft !== "No Min"
             ? "hidden"
             : ""
         }`}
@@ -910,7 +912,7 @@ useEffect(()=>{
                       id=""
                     >
                       <option
-                        selected={minSqft === 'No Min'? true : false}
+                        selected={minSqft === "No Min" ? true : false}
                         value="No Min"
                       >
                         No Min
@@ -925,7 +927,7 @@ useEffect(()=>{
                     >
                       {sqftMaxMapped}
                       <option
-                        selected={maxSqft === 'No Max' ? true : false}
+                        selected={maxSqft === "No Max" ? true : false}
                         value="No Max"
                       >
                         No Max
@@ -1038,7 +1040,7 @@ useEffect(()=>{
 
           <select
             onChange={changeSort}
-            className="py-3 px-2 border-[2px] border-black text-lg rounded-md font-bold hover:border-orange-400 focus:border-orange-400"
+            className="py-3 px-2 border-[1px] border-gray-400 text-lg rounded-md font-bold hover:border-orange-400 focus:border-orange-400"
             onClick={() => setActiveFilter(0)}
           >
             <option selected value="">

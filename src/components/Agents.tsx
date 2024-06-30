@@ -87,9 +87,9 @@ const Agents: React.FC<AgentProps> = ({ agentData, review, changeReview, filtere
           />
           <select
             onChange={(event) => changeReview(event)}
-            className="py-4 px-10 font-bold rounded-lg border-2 agent-searches"
+            className="py-4 px-10 font-bold rounded-lg border-2 agent-searches hover:border-black"
           >
-            <option className="font-bold" value="">Review</option>
+            <option className="font-bold" value="">Rating</option>
             <option className="font-bold" value="5">5 stars</option>
             <option className="font-bold" value="4">4+ stars</option>
             <option className="font-bold" value="3">3+ stars</option>

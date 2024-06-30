@@ -48,11 +48,11 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
       <div className="bg-[#FFFAF7]" id="outer-page">
         <div
           id="agent-details-page"
-          className="min-h-screen w-8/12 pt-20 border-2 rounded-md p-5 mx-auto flex justify-around"
+          className="min-h-screen w-8/12 pt-20 rounded-md p-5 mx-auto flex justify-around"
         >
-          <div className="flex flex-col gap-5" id="left-divs-agent-details">
+          <div className="flex flex-col gap-5 items-start" id="left-divs-agent-details">
             <div
-              className="flex flex-wrap justify-center border-2 p-5 rounded-md border-black items-center gap-5"
+              className="flex flex-wrap justify-center p-5 rounded-md border-black items-center gap-5"
               id="agent-details-bio"
             >
               <img
@@ -74,7 +74,7 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
                 </p>
               </div>
             </div>
-            <div className="" id="agent-sale-history">
+            <div className="p-5 w-full" id="agent-sale-history">
                 <h2 className="font-bold text-xl mb-5">Recent Sales</h2>
               <div className="flex gap-5 font-bold border-b-2 py-2 px-4 bg-orange-400 text-white rounded-lg">
                 <p className="w-1/4">Address</p>
@@ -84,15 +84,17 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
               </div>
               <div className="p-4 h-40 overflow-y-scroll border-x-2 border-b-2 border-t-0 rounded-lg" id="mapped-sales">{mappedSales}</div>
             </div>
+            
             <div className="" id="agent-listings">
                 {/* listings */}
                 <div
         id="agent-listings"
         className="flex flex-col h-auto min-h-[750px] "
       >
+        <h2 className="p-4 font-bold text-xl">For Sale</h2>
         <div
-          id="featured-listings-container"
-          className="flex flex-wrap"
+          id="agent-details-listings-container"
+          className="flex flex-wrap justify-center"
         >
           {listingData
           // ensured that listings will always be from the state of origin for agents and also ensures that the listings will be homes and not apts
@@ -178,7 +180,7 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
                 id="contact-phone-input"
               />
               <label className="font-bold mb-4" htmlFor="contact-message-input">
-                Message <span className="text-gray-400">(optional)</span>
+                Message <span className="text-gray-400 font-normal">(optional)</span>
               </label>
               <textarea
                 rows={5}
@@ -191,7 +193,7 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
               </button>
             </div>
             <div
-              className="flex flex-col gap-5 w-80 rounded-md border-2 p-5"
+              className="flex flex-col gap-9 w-80 h-[590px] rounded-md border-2 p-5"
               id="agent-schedule"
             >
               <h2 className="font-bold text-xl mb-4">Agent Schedule</h2>

@@ -20,14 +20,35 @@
         "address": "1234 Elm St, San Francisco, CA",
         "dateOfSale": "2023-05-15",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "5678 Oak St, San Francisco, CA",
         "dateOfSale": "2022-11-03",
         "closingPrice": "$1,200,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "7890 Pine St, San Francisco, CA",
+        "dateOfSale": "2023-02-20",
+        "closingPrice": "$980,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3456 Maple Ave, San Francisco, CA",
+        "dateOfSale": "2023-06-10",
+        "closingPrice": "$1,150,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4321 Birch Blvd, San Francisco, CA",
+        "dateOfSale": "2022-08-22",
+        "closingPrice": "$1,300,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -52,21 +73,42 @@
         "address": "1010 Maple Ave, New York, NY",
         "dateOfSale": "2023-07-20",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "2020 Pine St, New York, NY",
         "dateOfSale": "2023-01-15",
         "closingPrice": "$1,300,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 3,
         "address": "3030 Cedar Blvd, New York, NY",
         "dateOfSale": "2022-12-02",
         "closingPrice": "$900,000",
-        "represented": "seller and buyer"
+        "represented": "Seller and Buyer"
+      },
+      {
+        "id": 4,
+        "address": "4040 Oak Dr, New York, NY",
+        "dateOfSale": "2023-03-14",
+        "closingPrice": "$1,100,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 5,
+        "address": "5050 Birch Ln, New York, NY",
+        "dateOfSale": "2022-07-25",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 6,
+        "address": "6060 Elm St, New York, NY",
+        "dateOfSale": "2023-05-30",
+        "closingPrice": "$1,250,000",
+        "represented": "Seller"
       }
     ]
   },
@@ -91,14 +133,35 @@
         "address": "4040 Walnut St, Austin, TX",
         "dateOfSale": "2023-03-10",
         "closingPrice": "$700,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "5050 Birch Ln, Austin, TX",
         "dateOfSale": "2022-08-30",
         "closingPrice": "$750,000",
-        "represented": "seller and buyer"
+        "represented": "Seller and Buyer"
+      },
+      {
+        "id": 3,
+        "address": "6060 Pine St, Austin, TX",
+        "dateOfSale": "2023-01-25",
+        "closingPrice": "$820,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "7070 Maple Ave, Austin, TX",
+        "dateOfSale": "2022-05-15",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "8080 Oak Blvd, Austin, TX",
+        "dateOfSale": "2023-07-19",
+        "closingPrice": "$1,050,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -123,21 +186,42 @@
         "address": "6060 Cypress Dr, Miami, FL",
         "dateOfSale": "2023-02-18",
         "closingPrice": "$1,100,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "7070 Pineapple Rd, Miami, FL",
         "dateOfSale": "2022-05-25",
         "closingPrice": "$1,050,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 3,
         "address": "8080 Mango St, Miami, FL",
         "dateOfSale": "2023-08-05",
         "closingPrice": "$1,200,000",
-        "represented": "seller and buyer"
+        "represented": "Seller and Buyer"
+      },
+      {
+        "id": 4,
+        "address": "9090 Lemon Ln, Miami, FL",
+        "dateOfSale": "2023-04-25",
+        "closingPrice": "$1,150,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 5,
+        "address": "1010 Lime St, Miami, FL",
+        "dateOfSale": "2022-07-12",
+        "closingPrice": "$1,000,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 6,
+        "address": "1111 Orange Ave, Miami, FL",
+        "dateOfSale": "2023-03-19",
+        "closingPrice": "$1,300,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -162,14 +246,35 @@
         "address": "9090 Cherry Ave, Chicago, IL",
         "dateOfSale": "2022-10-10",
         "closingPrice": "$950,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "1010 Apple St, Chicago, IL",
         "dateOfSale": "2023-06-01",
         "closingPrice": "$1,000,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "1111 Grape Ln, Chicago, IL",
+        "dateOfSale": "2023-01-20",
+        "closingPrice": "$980,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "1212 Pineapple Dr, Chicago, IL",
+        "dateOfSale": "2022-05-25",
+        "closingPrice": "$1,050,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "1313 Orange St, Chicago, IL",
+        "dateOfSale": "2023-07-15",
+        "closingPrice": "$1,200,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -194,21 +299,42 @@
         "address": "1111 Elmwood St, Las Vegas, NV",
         "dateOfSale": "2023-04-21",
         "closingPrice": "$900,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "1212 Maple Dr, Las Vegas, NV",
         "dateOfSale": "2022-09-15",
         "closingPrice": "$850,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 3,
         "address": "1313 Oak Blvd, Las Vegas, NV",
         "dateOfSale": "2023-12-19",
         "closingPrice": "$920,000",
-        "represented": "seller and buyer"
+        "represented": "Seller and Buyer"
+      },
+      {
+        "id": 4,
+        "address": "1414 Pine St, Las Vegas, NV",
+        "dateOfSale": "2023-01-10",
+        "closingPrice": "$870,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 5,
+        "address": "1515 Cedar Ln, Las Vegas, NV",
+        "dateOfSale": "2022-06-05",
+        "closingPrice": "$930,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 6,
+        "address": "1616 Birch St, Las Vegas, NV",
+        "dateOfSale": "2023-11-01",
+        "closingPrice": "$1,100,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -228,14 +354,33 @@
       "Sunday": "Unavailable"
     },
     "saleHistory": [
-
-
       {
         "id": 1,
         "address": "1414 Pine St, Seattle, WA",
         "dateOfSale": "2023-03-03",
         "closingPrice": "$750,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 2,
+        "address": "1515 Maple Ave, Seattle, WA",
+        "dateOfSale": "2022-04-14",
+        "closingPrice": "$800,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "1616 Birch Blvd, Seattle, WA",
+        "dateOfSale": "2023-07-07",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 4,
+        "address": "1717 Oak St, Seattle, WA",
+        "dateOfSale": "2022-09-29",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
       }
     ]
   },
@@ -260,14 +405,35 @@
         "address": "1515 Birch Ln, Phoenix, AZ",
         "dateOfSale": "2023-05-05",
         "closingPrice": "$800,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "1616 Cedar St, Phoenix, AZ",
         "dateOfSale": "2022-06-20",
         "closingPrice": "$850,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "1717 Pine Ave, Phoenix, AZ",
+        "dateOfSale": "2023-02-25",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "1818 Maple Dr, Phoenix, AZ",
+        "dateOfSale": "2022-09-15",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "1919 Oak St, Phoenix, AZ",
+        "dateOfSale": "2023-11-10",
+        "closingPrice": "$950,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -292,7 +458,28 @@
         "address": "1717 Maple Ave, Denver, CO",
         "dateOfSale": "2023-07-15",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "1818 Pine St, Denver, CO",
+        "dateOfSale": "2022-08-18",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "1919 Oak Blvd, Denver, CO",
+        "dateOfSale": "2023-01-25",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2020 Birch Ln, Denver, CO",
+        "dateOfSale": "2023-10-10",
+        "closingPrice": "$1,100,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -317,14 +504,35 @@
         "address": "1818 Oak St, Portland, OR",
         "dateOfSale": "2023-09-09",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "1919 Pine Blvd, Portland, OR",
         "dateOfSale": "2022-10-22",
         "closingPrice": "$900,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "2020 Maple Ave, Portland, OR",
+        "dateOfSale": "2023-01-15",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2121 Birch Ln, Portland, OR",
+        "dateOfSale": "2022-07-25",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "2222 Cedar St, Portland, OR",
+        "dateOfSale": "2023-08-19",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -349,7 +557,28 @@
         "address": "2020 Birch Ln, Birmingham, AL",
         "dateOfSale": "2023-11-11",
         "closingPrice": "$750,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "2121 Pine St, Birmingham, AL",
+        "dateOfSale": "2022-12-01",
+        "closingPrice": "$800,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "2222 Maple Ave, Birmingham, AL",
+        "dateOfSale": "2023-04-05",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2323 Oak Blvd, Birmingham, AL",
+        "dateOfSale": "2022-07-18",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -374,14 +603,35 @@
         "address": "2121 Cedar St, Anchorage, AK",
         "dateOfSale": "2023-03-30",
         "closingPrice": "$800,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "2222 Maple Ave, Anchorage, AK",
         "dateOfSale": "2022-04-18",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "2323 Pine St, Anchorage, AK",
+        "dateOfSale": "2023-05-20",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2424 Oak Blvd, Anchorage, AK",
+        "dateOfSale": "2022-08-29",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "2525 Birch Ln, Anchorage, AK",
+        "dateOfSale": "2023-10-11",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -406,14 +656,35 @@
         "address": "2323 Oak Blvd, Little Rock, AR",
         "dateOfSale": "2023-02-02",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "2424 Pine St, Little Rock, AR",
         "dateOfSale": "2022-12-01",
         "closingPrice": "$900,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "2525 Cedar Ln, Little Rock, AR",
+        "dateOfSale": "2023-05-05",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2626 Birch St, Little Rock, AR",
+        "dateOfSale": "2022-08-20",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "2727 Maple Ave, Little Rock, AR",
+        "dateOfSale": "2023-07-15",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -438,14 +709,35 @@
         "address": "2525 Birch Ln, Hartford, CT",
         "dateOfSale": "2023-06-06",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "2626 Cedar St, Hartford, CT",
         "dateOfSale": "2022-11-11",
         "closingPrice": "$1,000,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "2727 Pine Ave, Hartford, CT",
+        "dateOfSale": "2023-02-20",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "2828 Maple Dr, Hartford, CT",
+        "dateOfSale": "2022-07-18",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "2929 Oak St, Hartford, CT",
+        "dateOfSale": "2023-04-11",
+        "closingPrice": "$1,050,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -470,7 +762,28 @@
         "address": "2727 Elmwood St, Wilmington, DE",
         "dateOfSale": "2023-08-08",
         "closingPrice": "$900,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "2828 Pine Ave, Wilmington, DE",
+        "dateOfSale": "2022-07-10",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "2929 Maple Dr, Wilmington, DE",
+        "dateOfSale": "2023-01-18",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3030 Oak Blvd, Wilmington, DE",
+        "dateOfSale": "2023-05-22",
+        "closingPrice": "$1,000,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -495,14 +808,35 @@
         "address": "2828 Maple Ave, Atlanta, GA",
         "dateOfSale": "2023-01-01",
         "closingPrice": "$850,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "2929 Oak Blvd, Atlanta, GA",
         "dateOfSale": "2022-09-09",
         "closingPrice": "$900,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "3030 Pine St, Atlanta, GA",
+        "dateOfSale": "2023-03-15",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3131 Birch Ln, Atlanta, GA",
+        "dateOfSale": "2022-08-20",
+        "closingPrice": "$800,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "3232 Cedar Ave, Atlanta, GA",
+        "dateOfSale": "2023-05-25",
+        "closingPrice": "$1,050,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -527,7 +861,28 @@
         "address": "3030 Pine St, Honolulu, HI",
         "dateOfSale": "2023-03-03",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "3131 Maple Ave, Honolulu, HI",
+        "dateOfSale": "2022-07-11",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "3232 Birch Blvd, Honolulu, HI",
+        "dateOfSale": "2023-01-17",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3333 Oak Ln, Honolulu, HI",
+        "dateOfSale": "2023-10-01",
+        "closingPrice": "$1,000,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -552,14 +907,35 @@
         "address": "3131 Cedar St, Boise, ID",
         "dateOfSale": "2023-04-04",
         "closingPrice": "$800,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "3232 Maple Ave, Boise, ID",
         "dateOfSale": "2022-08-08",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "3333 Birch Blvd, Boise, ID",
+        "dateOfSale": "2023-01-22",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3434 Oak Ln, Boise, ID",
+        "dateOfSale": "2022-07-16",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "3535 Pine Ave, Boise, ID",
+        "dateOfSale": "2023-10-12",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -584,14 +960,35 @@
         "address": "3333 Oak Blvd, Indianapolis, IN",
         "dateOfSale": "2023-05-05",
         "closingPrice": "$900,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "3434 Pine St, Indianapolis, IN",
         "dateOfSale": "2022-10-10",
         "closingPrice": "$950,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "3535 Maple Ave, Indianapolis, IN",
+        "dateOfSale": "2023-01-18",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3636 Birch Ln, Indianapolis, IN",
+        "dateOfSale": "2022-08-22",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "3737 Cedar St, Indianapolis, IN",
+        "dateOfSale": "2023-11-11",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -616,7 +1013,28 @@
         "address": "3535 Cedar St, Des Moines, IA",
         "dateOfSale": "2023-07-07",
         "closingPrice": "$800,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 2,
+        "address": "3636 Birch Blvd, Des Moines, IA",
+        "dateOfSale": "2022-06-06",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "3737 Oak Ln, Des Moines, IA",
+        "dateOfSale": "2023-01-15",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3838 Pine Ave, Des Moines, IA",
+        "dateOfSale": "2023-09-09",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -641,14 +1059,35 @@
         "address": "3636 Maple Ave, Wichita, KS",
         "dateOfSale": "2023-02-02",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "3737 Oak Blvd, Wichita, KS",
         "dateOfSale": "2022-11-11",
         "closingPrice": "$900,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "3838 Pine St, Wichita, KS",
+        "dateOfSale": "2023-01-12",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "3939 Birch Ln, Wichita, KS",
+        "dateOfSale": "2022-08-25",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4040 Maple Ave, Wichita, KS",
+        "dateOfSale": "2023-07-10",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -673,7 +1112,35 @@
         "address": "3838 Pine St, Louisville, KY",
         "dateOfSale": "2023-09-09",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "3939 Oak Blvd, Louisville, KY",
+        "dateOfSale": "2022-12-12",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "4040 Birch Ln, Louisville, KY",
+        "dateOfSale": "2023-01-22",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4141 Maple Ave, Louisville, KY",
+        "dateOfSale": "2022-07-25",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4242 Cedar St, Louisville, KY",
+        "dateOfSale": "2023-07-15",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -698,7 +1165,28 @@
         "address": "3939 Birch Ln, New Orleans, LA",
         "dateOfSale": "2023-04-04",
         "closingPrice": "$800,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 2,
+        "address": "4040 Maple Ave, New Orleans, LA",
+        "dateOfSale": "2022-05-12",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "4141 Pine St, New Orleans, LA",
+        "dateOfSale": "2023-01-16",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4242 Oak Blvd, New Orleans, LA",
+        "dateOfSale": "2022-08-18",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
       }
     ]
   },
@@ -723,14 +1211,35 @@
         "address": "4040 Maple Ave, Portland, ME",
         "dateOfSale": "2023-01-01",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "4141 Oak Blvd, Portland, ME",
         "dateOfSale": "2022-10-10",
         "closingPrice": "$900,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "4242 Birch Ln, Portland, ME",
+        "dateOfSale": "2023-05-10",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4343 Pine Ave, Portland, ME",
+        "dateOfSale": "2022-07-20",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4444 Cedar St, Portland, ME",
+        "dateOfSale": "2023-10-18",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -755,7 +1264,35 @@
         "address": "4242 Cedar St, Baltimore, MD",
         "dateOfSale": "2023-06-06",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "4343 Maple Ave, Baltimore, MD",
+        "dateOfSale": "2022-07-15",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "4444 Pine St, Baltimore, MD",
+        "dateOfSale": "2023-02-21",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4545 Birch Ln, Baltimore, MD",
+        "dateOfSale": "2022-08-20",
+        "closingPrice": "$950,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4646 Oak Blvd, Baltimore, MD",
+        "dateOfSale": "2023-11-10",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -780,14 +1317,35 @@
         "address": "4343 Maple Ave, Minneapolis, MN",
         "dateOfSale": "2023-03-03",
         "closingPrice": "$800,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "4444 Oak Blvd, Minneapolis, MN",
         "dateOfSale": "2022-09-09",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "4545 Birch Ln, Minneapolis, MN",
+        "dateOfSale": "2023-01-12",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4646 Pine Ave, Minneapolis, MN",
+        "dateOfSale": "2022-07-25",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4747 Cedar St, Minneapolis, MN",
+        "dateOfSale": "2023-10-18",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -812,7 +1370,35 @@
         "address": "4545 Birch Ln, Jackson, MS",
         "dateOfSale": "2023-05-05",
         "closingPrice": "$850,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 2,
+        "address": "4646 Maple Ave, Jackson, MS",
+        "dateOfSale": "2022-08-10",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "4747 Pine St, Jackson, MS",
+        "dateOfSale": "2023-01-20",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4848 Oak Blvd, Jackson, MS",
+        "dateOfSale": "2022-06-25",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "4949 Cedar Ln, Jackson, MS",
+        "dateOfSale": "2023-07-11",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -837,14 +1423,35 @@
         "address": "4646 Cedar St, Kansas City, MO",
         "dateOfSale": "2023-11-11",
         "closingPrice": "$900,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "4747 Maple Ave, Kansas City, MO",
         "dateOfSale": "2022-12-12",
         "closingPrice": "$950,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "4848 Pine St, Kansas City, MO",
+        "dateOfSale": "2023-01-25",
+        "closingPrice": "$850,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "4949 Oak Blvd, Kansas City, MO",
+        "dateOfSale": "2022-07-30",
+        "closingPrice": "$900,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "5050 Birch Ln, Kansas City, MO",
+        "dateOfSale": "2023-07-19",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -869,14 +1476,35 @@
         "address": "4848 Oak Blvd, Billings, MT",
         "dateOfSale": "2023-01-01",
         "closingPrice": "$800,000",
-        "represented": "seller"
+        "represented": "Seller"
       },
       {
         "id": 2,
         "address": "4949 Pine St, Billings, MT",
         "dateOfSale": "2022-08-08",
         "closingPrice": "$850,000",
-        "represented": "buyer"
+        "represented": "Buyer"
+      },
+      {
+        "id": 3,
+        "address": "5050 Birch Ln, Billings, MT",
+        "dateOfSale": "2023-01-25",
+        "closingPrice": "$900,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "5151 Maple Ave, Billings, MT",
+        "dateOfSale": "2022-07-16",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "5252 Cedar St, Billings, MT",
+        "dateOfSale": "2023-10-11",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   },
@@ -901,14 +1529,35 @@
         "address": "5050 Cedar St, Omaha, NE",
         "dateOfSale": "2023-03-03",
         "closingPrice": "$850,000",
-        "represented": "buyer"
+        "represented": "Buyer"
       },
       {
         "id": 2,
         "address": "5151 Maple Ave, Omaha, NE",
         "dateOfSale": "2022-09-09",
         "closingPrice": "$900,000",
-        "represented": "seller"
+        "represented": "Seller"
+      },
+      {
+        "id": 3,
+        "address": "5252 Birch Blvd, Omaha, NE",
+        "dateOfSale": "2023-01-18",
+        "closingPrice": "$950,000",
+        "represented": "Seller"
+      },
+      {
+        "id": 4,
+        "address": "5353 Pine Ave, Omaha, NE",
+        "dateOfSale": "2022-08-25",
+        "closingPrice": "$850,000",
+        "represented": "Buyer"
+      },
+      {
+        "id": 5,
+        "address": "5454 Oak St, Omaha, NE",
+        "dateOfSale": "2023-07-15",
+        "closingPrice": "$1,000,000",
+        "represented": "Seller and Buyer"
       }
     ]
   }
