@@ -4,5 +4,6 @@ Real-IT is a mock real-estate web application
 * displays the ability to parse through information through search, sort, and filter data based on user preference
 * implements pagination for high-volume listing data
 * offers a custom user-friendly responsive design for use on any device
+* uses the react routing library to offer seamless page transition and a modular design
 
 web application link: [https://real-it.netlify.app/Agents](https://real-it.netlify.app/)
