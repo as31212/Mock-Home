@@ -5,7 +5,6 @@ import { FaShower } from "react-icons/fa";
 import { FaBed } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { IoIosPin } from "react-icons/io";
-import { FaArrowRight } from "react-icons/fa";
 import { PiCirclesFourFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
@@ -98,7 +97,7 @@ const AgentsDetails: React.FC<AgentDetailsInterface> = ({
         >
           {listingData
           // ensured that listings will always be from the state of origin for agents and also ensures that the listings will be homes and not apts
-            ? [...listingData].filter(el=>el.state === currAgentObj.state && el.buy_or_rent === 'Buy').slice(1, 3).map((el) => {
+            ? [...listingData].filter(el=> currAgentObj && el.state === currAgentObj.state && el.buy_or_rent === 'Buy').slice(1, 3).map((el) => {
                 return (
                   <div
                     key={el.id}

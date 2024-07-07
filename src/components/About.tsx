@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import Article from "./Article";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
@@ -230,7 +229,7 @@ const About: React.FC = () => {
           </div>
           <div className="w-2/3 min-w-80 h-auto min-h-[300px] flex flex-col gap-8 items-center bg-white opacity-80 rounded-xl p-5" id="news-subscription">
             <h2 className="font-bold text-black text-2xl">For Recent Update, News.</h2>
-            <p className="text-black font-normal text-center w-[80%]">This helps keep you up to date on all the latest hosuing trends offered within the Real-IT blog</p>
+            <p className="text-black font-normal text-center w-[80%]">This helps keep you up to date on all the latest housing trends offered within the Real-IT blog</p>
             <div className="flex gap-2 w-full justify-center" id="email-input">
               <input className=" text-black font-normal border-[2px] rounded-lg w-[50%] pr-8 pl-4 py-2 bg-opacity-100" placeholder="Enter your Email" type="text" name="" id="" />
               <button className="bg-black text-white opacity-100 py-2 px-4 rounded-lg font-semibold">Subscribe</button>

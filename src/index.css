@@ -158,6 +158,7 @@
     position: relative;
     bottom: 250px;
     right: 10px;
+    max-width: none;
   }
   .filters-price{
     width: 100vw;
@@ -166,6 +167,8 @@
     position: relative;
     bottom: 225px;
     right: 10px;
+    max-width: none;
+
   }
   .filters-bath{
     width: 100vw;
@@ -174,6 +177,8 @@
     position: relative;
     bottom: 300px;
     right: 10px;
+    max-width: none;
+
   }
   .filters-more{
     width: 100vw;
@@ -182,6 +187,11 @@
     position: relative;
     bottom: 380px;
     right: 10px;
+    max-width: none;
+  }
+  #listing-page-search{
+    width: 100%;
+    justify-content: center;
   }
   .short-page{
     height: 10px;

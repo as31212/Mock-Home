@@ -414,7 +414,7 @@ const Listing: React.FC<ListingProps> = ({
       (maxValue === "Any Number" && minValue === "0")
     ) {
       // if they are '' or 0
-      price = "Price";
+      price = "Price Range";
     } else if (
       (minValue.length > 1 && maxValue.length <= 1) ||
       maxValue === "Any Number"
@@ -477,34 +477,18 @@ const Listing: React.FC<ListingProps> = ({
       </option>
     );
   });
-
-  const handleKeyDown = ()=>{
-    sortedData
-    ? () => {
-        if (searchAddress !== "") {
-          setSavedSearchAddress(searchAddress);
-        }
-        searchListings([...sortedData]);
-        setSearchAddress("");
-      }
-    : () => {
-        console.log("no data");
-      }
-  }
-
  
-
   return (
     <>
       <div
         id="listing-page"
-        className={`p-10 bg-[#FFFAF7] flex flex-col min-h-screen ${
+        className={`py-10 bg-[#FFFAF7] flex flex-col min-h-screen ${
           activeFilter !== 0 ? "short-page" : ""
         }`}
       >
         <div
           id="listing-page-search"
-          className={`flex flex-wrap justify-center gap-5  `}
+          className={`flex flex-wrap w-[70%] mx-auto gap-5`}
         >
           <div className="relative w-full max-w-md">
             <div className="relative w-full flex items-center">
@@ -540,7 +524,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-[117px] py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   buyFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -620,7 +604,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-[164px] py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   priceFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -638,7 +622,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] border-2 w-[500px] h-64 absolute mt-1 z-10 rounded-md shadow-2xl filters-price ${
+              className={`bg-[#FFFAF7] border-2  h-64 absolute mt-1 z-10 rounded-md shadow-2xl filters-price ${
                 priceFilter ? "" : "hidden"
               }`}
             >
@@ -726,7 +710,7 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] border-gray-400 width-max-out-mq font-bold px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] border-gray-400 width-max-out-mq font-bold px-[136px] py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   bedBathFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
@@ -748,7 +732,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[400px] h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl filters-bath ${
+              className={`bg-[#FFFAF7] max-w-[400px] min-h-[410px] flex flex-col gap-10 absolute mt-1 z-10 rounded-md shadow-2xl filters-bath ${
                 bedBathFilter ? "" : "hidden"
               }`}
             >
@@ -877,7 +861,6 @@ const Listing: React.FC<ListingProps> = ({
               </div>
             </div>
           </div>
-
           {/* More Filter button 4*/}
           <div>
             <div
@@ -887,11 +870,11 @@ const Listing: React.FC<ListingProps> = ({
               }}
             >
               <button
-                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-10 py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
+                className={`border-[1px] width-max-out-mq border-gray-400 font-bold  px-[116px] py-4 rounded-md hover:bg-gray-100 hover:border-gray-400 duration-200 ease-in-out ${
                   moreFilter ? "bg-orange-200 border-orange-300 " : ""
                 }`}
               >
-                More{" "}
+                More Listing Filters{" "}
                 <FaChevronDown
                   className={`inline relative bottom-[2px] left-2 text-lg ${
                     moreFilter ? "hidden" : ""
@@ -905,7 +888,7 @@ const Listing: React.FC<ListingProps> = ({
               </button>
             </div>
             <div
-              className={`bg-[#FFFAF7] w-[600px] h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl filters-more ${
+              className={`bg-[#FFFAF7] max-w-[600px] min-w-[400px] min-h-[350px] absolute mt-1 z-10 rounded-md shadow-2xl filters-more ${
                 moreFilter ? "" : "hidden"
               }`}
             >

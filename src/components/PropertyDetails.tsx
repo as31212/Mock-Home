@@ -80,12 +80,15 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
             </h2>
             <div className="flex gap-5" id="month-and-total-price">
               <div className="border-2 w-52 rounded-lg p-1 flex flex-col gap-2">
-                <p className="font-semibold text-2xl">{`$${
-                  currObj.buy_or_rent === 'Buy' ? addComma(currObj?.price ) : `${addComma(currObj?.price)}/month`
-                }`}</p>
+              <p className="font-semibold text-2xl">
+  {currObj ? (
+    ` ${currObj.buy_or_rent === 'Buy' ? addComma(currObj.price) : `${addComma(currObj.price)}/month`}`
+  ) : null}
+</p>
+
                 <p className="text-gray-500 text-sm">Online / Cash Payment</p>
               </div>
-              <div className={`border-2 w-52 rounded-lg p-1 flex flex-col gap-2 ${currObj.buy_or_rent === 'Buy' ? '' : 'hidden'}`}>
+              <div className={`border-2 w-52 rounded-lg p-1 flex flex-col gap-2 ${currObj && currObj.buy_or_rent === 'Buy' ? '' : 'hidden'}`}>
                 <p className="font-semibold text-2xl">{`$${
                   currObj ? addComma(Math.floor(currObj?.price / 240)) : ""
                 } / month`}</p>
@@ -129,7 +132,7 @@ const PropertyDetails: React.FC<PropertyDetailsInterface> = ({
                 src={currAgent?.img}
                 alt={`image of ${currAgent?.name}`}
               />
-              <Link onClick={()=>changeCurrAgent(currAgent?.id)} to='/AgentsDetails'>
+              <Link onClick={()=>{if(currAgent){changeCurrAgent(currAgent?.id)}}} to='/AgentsDetails'>
                 <div className="flex flex-col gap-2">
                 <p>{currAgent?.name}</p>
                   <div>
