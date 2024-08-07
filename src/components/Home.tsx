@@ -28,7 +28,7 @@ interface HomeInterface {
   changeSearchAddress: (e: ChangeEvent<HTMLInputElement>) => void;
   searchAddress: string;
   changeCurrListing: (elId: number) => void;
-  addComma: (price:number) => void;
+  addComma: (price: number) => void;
 }
 
 const Home: React.FC<HomeInterface> = ({
@@ -128,7 +128,12 @@ const Home: React.FC<HomeInterface> = ({
         id="home-page-two"
         className="py-20 flex justify-center items-center p-5 gap-5"
       >
-        <div className="page-2-large-div h-[500px] w-1/2 bg-orange-200 rounded-2xl flex flex-col justify-center gap-5 p-5 ">
+        <motion.div 
+        initial={{y: 200}}
+        whileInView={{y: 0}}
+        transition={{duration: .5}}
+        viewport={{once:true}}
+        className="page-2-large-div h-[500px] w-1/2 bg-orange-200 rounded-2xl flex flex-col justify-center gap-5 p-5 ">
           <h2 className="font-bold text-2xl">
             Home acquisition and rental made simple
           </h2>
@@ -141,40 +146,44 @@ const Home: React.FC<HomeInterface> = ({
               Get Started
             </button>
           </Link>
-        </div>
+        </motion.div>
         <div className="page-2-large-div min-w-96 h-[500px] w-1/3 flex flex-wrap gap-2">
-          <motion.div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
+          <motion.div
+            className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
+            initial={{y: 200}}
+            whileInView={{y: 0}}
+            transition={{duration: .5}}
+            viewport={{ once: true }}
           >
             <MdManageSearch className="mx-auto text-3xl text-orange-400" />
             <h2>Search your location</h2>
           </motion.div>
-          <motion.div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 4 }}
-          viewport={{ once: true }}
+          <motion.div
+            className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
+            initial={{y: 200}}
+        whileInView={{y: 0}}
+        transition={{duration: .5}}
+            viewport={{ once: true }}
           >
             <FaHouseFlag className="mx-auto text-3xl text-orange-400" />
             <h2>Get your dream house</h2>
           </motion.div>
-          <motion.div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 6 }}
-          viewport={{ once: true }}
+          <motion.div
+            className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
+            initial={{y: 200}}
+        whileInView={{y: 0}}
+        transition={{duration: .5}}
+            viewport={{ once: true }}
           >
             <FiEye className="mx-auto text-3xl text-orange-400" />
             <h2>Detailed Walk-Throughs</h2>
           </motion.div>
-          <motion.div className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 8 }}
-          viewport={{ once: true }}
+          <motion.div
+            className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
+            initial={{y: 200}}
+        whileInView={{y: 0}}
+        transition={{duration: .5}}
+            viewport={{ once: true }}
           >
             <FaAward className="mx-auto text-3xl text-orange-400" />
             <h2>World class agents</h2>
@@ -303,7 +312,9 @@ const Home: React.FC<HomeInterface> = ({
                             Details
                           </button>
                         </Link>
-                        <p className="font-bold text-2xl">{`$${addComma(el.price)}`}</p>
+                        <p className="font-bold text-2xl">{`$${addComma(
+                          el.price
+                        )}`}</p>
                       </div>
                     </div>
                   </div>
