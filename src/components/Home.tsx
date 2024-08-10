@@ -129,8 +129,8 @@ const Home: React.FC<HomeInterface> = ({
         className="py-20 flex justify-center items-center p-5 gap-5"
       >
         <motion.div 
-        initial={{y: 200}}
-        whileInView={{y: 0}}
+        initial={{y: 200, opacity:0}}
+        whileInView={{y: 0 , opacity:1}}
         transition={{duration: .5}}
         viewport={{once:true}}
         className="page-2-large-div h-[500px] w-1/2 bg-orange-200 rounded-2xl flex flex-col justify-center gap-5 p-5 ">
@@ -160,8 +160,8 @@ const Home: React.FC<HomeInterface> = ({
           </motion.div>
           <motion.div
             className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-            initial={{y: 200}}
-        whileInView={{y: 0}}
+            initial={{y: 200 , opacity: 0}}
+        whileInView={{y: 0 ,  opacity: 1}}
         transition={{duration: .5}}
             viewport={{ once: true }}
           >
@@ -170,8 +170,8 @@ const Home: React.FC<HomeInterface> = ({
           </motion.div>
           <motion.div
             className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-            initial={{y: 200}}
-        whileInView={{y: 0}}
+            initial={{y: 200 , opacity: 0}}
+        whileInView={{y: 0 ,  opacity: 1}}
         transition={{duration: .5}}
             viewport={{ once: true }}
           >
@@ -180,8 +180,8 @@ const Home: React.FC<HomeInterface> = ({
           </motion.div>
           <motion.div
             className="bg-orange-50 w-5/12 h-5/12 rounded-lg flex flex-col justify-center font-bold text-center text-3xl p-5 gap-3 home-2-box"
-            initial={{y: 200}}
-        whileInView={{y: 0}}
+            initial={{y: 200, opacity:0}}
+        whileInView={{y: 0 , opacity: 1}}
         transition={{duration: .5}}
             viewport={{ once: true }}
           >
@@ -269,7 +269,11 @@ const Home: React.FC<HomeInterface> = ({
           {listingData
             ? [...listingData].slice(0, 4).map((el) => {
                 return (
-                  <div
+                  <motion.div
+                    initial={{opacity: 0 , y: 100}}
+                    whileInView={{opacity: 1 , y: 0}}
+                    transition={{duration: 1}}
+                    viewport={{once: true}}
                     key={el.id}
                     className="flex flex-col w-96 h-[500px] pb-5 m-3 shadow-xl rounded-xl gap-5 bg-white overflow-hidden"
                   >
@@ -317,7 +321,7 @@ const Home: React.FC<HomeInterface> = ({
                         )}`}</p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })
             : "No Data Found"}
@@ -330,12 +334,12 @@ const Home: React.FC<HomeInterface> = ({
         className="flex flex-wrap p-7 justify-center items-center min-h-screen h-auto bg-orange-50"
       >
         <div className="text-page-4 w-[45vw] flex flex-col gap-5 justify-center ">
-          <h2 className="text-4xl font-bold">Find Agents That Work For You</h2>
-          <p>
+          <motion.h2 initial={{y: 100 , opacity: 0}} viewport={{once:true}} transition={{duration: 1}} whileInView={{y: 0 , opacity: 1}} className="text-4xl font-bold">Find Agents That Work For You</motion.h2>
+          <motion.p initial={{y: 100 , opacity: 0}} viewport={{once:true}} transition={{duration: 1.5}} whileInView={{y: 0 , opacity: 1}}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore est
             inventore tempore quos cum ipsa modi nam ad numquam cumque adipisci,
             quis deleniti autem incidunt facere aut! Soluta, unde quae?
-          </p>
+          </motion.p >
           <Link to="/Agents">
             <button className="get-started-btn mt-16 mb-16 bg-black text-white w-32 py-3 rounded-lg hover:bg-gray-800 duration-300">
               Get Started
@@ -351,7 +355,7 @@ const Home: React.FC<HomeInterface> = ({
           <img
             id="img-div-home-page-4"
             className="w-80 h-[300px] rounded-lg"
-            src="https://www.thestaffingstream.com/wp-content/uploads/2015/07/ThinkstockPhotos-465328301.jpg"
+            src="https://st.depositphotos.com/1017986/3081/i/950/depositphotos_30810607-stock-photo-woman-hand-holding-house-keys.jpg"
             alt="agent handing over keys"
           />
           <img
